@@ -1,0 +1,84 @@
+@import url(reset.css);
+@font-face {
+  font-family: "CircularBook";
+  src: url("fonts/CircularStd-Book.eot");
+  src: url("fonts/CircularStd-Book.eot?#iefix") format("embedded-opentype"), url("fonts/CircularStd-Book.woff") format("woff"), url("fonts/CircularStd-Book.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+@font-face {
+  font-family: "CircularBlack";
+  src: url("fonts/CircularStd-Black.eot");
+  src: url("fonts/CircularStd-Black.eot?#iefix") format("embedded-opentype"), url("fonts/CircularStd-Black.woff") format("woff"), url("fonts/CircularStd-Black.ttf") format("truetype");
+  font-weight: 700;
+  font-style: bold; }
+.hideDisplay {
+  display: none; }
+
+.showDisplay {
+  display: block; }
+
+.showDisplayFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; }
+
+.showOpacity {
+  opacity: 1; }
+
+.hideOpacity {
+  opacity: 0; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+* a {
+  cursor: pointer;
+  text-decoration: none; }
+
+h1, h2, h3, h4, h5, h6, b {
+  font-family: "CircularBlack", sans-serif; }
+
+body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  font-size: 16px;
+  font-family: "CircularBook", sans-serif;
+  color: #fff;
+  background: #000; }
+  body #loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    z-index: 9000;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -webkit-transition: opacity 0.5s ease-out;
+    -moz-transition: opacity 0.5s ease-out;
+    -ms-transition: opacity 0.5s ease-out;
+    -o-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out; }
+  body #main, body #mainsection {
+    width: 100vw;
+    height: 300px; }
+
+/*# sourceMappingURL=master.css.map */
