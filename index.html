@@ -51,17 +51,94 @@ fluo.com.mx
     <!-- NAVIGATION -->
     <nav id="top">
         <!-- TOP -->
-        <ul></ul>
+        <ul class="showDisplayFlex">
+          <li>
+            <a role="button">
+              <div id="logotipoMenu"></div>
+            </a>
+          </li>
+          <li class="aboutLi">
+            <a role="button">About this project</a>
+          </li>
+          <li class="menuLi">
+            <a role="button">Menu</a>
+          </li>
+        </ul>
     </nav>
     <nav id="bottom">
       <!-- BOTTOM -->
-      <ul></ul>
+      <ul class="showDisplayFlex">
+        <li class="showLi">
+          <a role="button">Showreel</a>
+        </li>
+        <li class="contactLi">
+          <a role="button">About/ <br> Contact</a>
+        </li>
+      </ul>
     </nav>
     <nav id="back">
-      <!-- BACK -->
-      <ul></ul>
+      <a href="#loading" data-scroll="" onmouseover="overLine('over', '#lineBackTo')" onmouseout="overLine('out', '#lineBackTo')">
+        <span>Back to top</span>
+      </a>
+      <div>
+        <span id="lineBackTo" class="scaleDownLine"></span>
+      </div>
     </nav>
-    <div id="main" class="hideDisplay" style="background:pink">
+    <!-- CONTENIDO -->
+    <div class="fullsection" style="background:#000"></div>
+    <div class="fullsection" style="background:#000">
+      <footer>
+        <article class="projects">
+          <!-- Proyecto previo -->
+          <a>
+            <div class="background backgroundImage" style="background-image:url('img/projects/enoteliaprev.png')"></div>
+            <div class="information showDisplayFlex" style="background:#323334">
+              <span>
+                <h3>Lemon</h3>
+                <span class="gradientFluo"></span>
+              </span>
+              <span>
+                <p>Comercializadora de vinos y licores en México</p>
+              </span>
+              <span class="left arrow">
+                <img class="rotIcon" src="img/icons/arrow_footer.svg" height="10">
+                <p>Previous</p>
+              </span>
+            </div>
+          </a>
+          <!-- Proyecto siguiente -->
+          <a>
+            <div class="background backgroundImage" style="background-image:url('img/projects/enotelianext.png')"></div>
+            <div class="information showDisplayFlex" style="background:#323334">
+              <span>
+                <h3>Yot</h3>
+                <span class="gradientFluo"></span>
+              </span>
+              <span>
+                <p>
+                  Asociación sin fines de lucro para
+                  fomentar el crecimiento de mujeres
+                  y niños de bajos recursos
+                </p>
+              </span>
+              <span class="left arrow">
+                <p>Next</p>
+                <img src="img/icons/arrow_footer.svg" height="10">
+              </span>
+            </div>
+          </a>
+        </article>
+        <article class="info"></article>
+      </footer>
     </div>
+    <script src="js/bowser.min.js" charset="utf-8"></script>
+    <script src="js/pixi.min.js"></script>
+    <script src="js/smooth-scroll.min.js" async></script>
+    <script src="js/main.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    window.onresize = function(){
+      var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";
+    }
+    </script>
 </body>
 </html>
