@@ -133,13 +133,13 @@ body {
         -o-transition: opacity 0.5s ease-out;
         transition: opacity 0.5s ease-out; }
       body nav#bottom ul li a div, body nav#top ul li a div {
-        width: 70px;
-        height: 70px; }
+        width: 60px;
+        height: 60px; }
         body nav#bottom ul li a div canvas, body nav#top ul li a div canvas {
           position: absolute;
           left: 0;
-          width: 70px;
-          height: 70px; }
+          width: 100%;
+          height: 100%; }
       body nav#bottom ul li::before, body nav#bottom ul li::after, body nav#top ul li::before, body nav#top ul li::after {
         position: absolute;
         top: -2px;
@@ -202,29 +202,40 @@ body {
     -o-transition: opacity 0.5s ease-out;
     transition: opacity 0.5s ease-out; }
   body .fullsection {
+    position: relative;
     width: 100vw;
     min-width: 300px;
-    height: 100vh; }
-    body .fullsection footer {
-      width: 100%;
-      min-width: 300px;
-      height: 100%; }
-      body .fullsection footer article {
+    height: auto;
+    z-index: 100; }
+    body .fullsection .projects {
+      position: relative;
+      width: 100vw;
+      height: 50vh;
+      margin-bottom: calc(50vh + 90px); }
+      body .fullsection .projects article {
         width: 100%;
         min-width: 300px;
-        height: 50%;
+        height: 100%;
+        min-height: 200px;
+        background: #323334;
         box-sizing: border-box; }
-        body .fullsection footer article a {
-          display: block;
+        body .fullsection .projects article a {
           position: relative;
+          float: left;
+          display: block;
           width: 100%;
           height: 50%;
-          box-sizing: border-box; }
-          body .fullsection footer article a div {
+          box-sizing: border-box;
+          color: #fff; }
+          body .fullsection .projects article a div {
             position: absolute;
             width: 100%;
-            height: 100%; }
-          body .fullsection footer article a div.information {
+            height: 100%;
+            left: 0;
+            top: 0; }
+          body .fullsection .projects article a div.info {
+            position: absolute;
+            background: #323334;
             opacity: 1;
             -webkit-flex-direction: column;
             -moz-flex-direction: column;
@@ -241,61 +252,100 @@ body {
             -ms-transition: opacity 0.5s ease-out;
             -o-transition: opacity 0.5s ease-out;
             transition: opacity 0.5s ease-out; }
-            body .fullsection footer article a div.information span.arrow {
-              width: 90%;
-              height: 50px;
-              display: -webkit-box;
-              display: -ms-flexbox;
-              display: -webkit-flex;
-              display: flex;
-              -webkit-flex-direction: row;
-              -moz-flex-direction: row;
-              -ms-flex-direction: row;
-              -o-flex-direction: row;
-              flex-direction: row;
-              -webkit-justify-content: space-between;
-              -moz-justify-content: space-between;
-              -ms-justify-content: space-between;
-              -o-justify-content: space-between;
-              justify-content: space-between;
-              -webkit-align-items: center;
-              -moz-align-items: center;
-              -ms-align-items: center;
-              -o-align-items: center;
-              align-items: center; }
-              body .fullsection footer article a div.information span.arrow p {
-                display: inline-block;
-                width: auto; }
-            body .fullsection footer article a div.information span {
-              display: block;
-              width: 150px;
-              height: 2px;
-              padding-left: 30px; }
-              body .fullsection footer article a div.information span p {
-                width: 220px;
-                display: block; }
-              body .fullsection footer article a div.information span h3 {
-                font-size: 1.5rem; }
-          body .fullsection footer article a div.information:hover {
+            body .fullsection .projects article a div.info span {
+              padding-left: 20px; }
+              body .fullsection .projects article a div.info span h3 {
+                font-size: 1.4rem; }
+              body .fullsection .projects article a div.info span span {
+                display: block;
+                width: 150px;
+                height: 2px; }
+          body .fullsection .projects article a div.info:hover {
             opacity: 0; }
+  body #projArrowPrev, body #projArrowNext {
+    width: 80%;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -o-justify-content: space-between;
+    justify-content: space-between; }
+  body footer {
+    position: fixed;
+    bottom: 90px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    min-height: 400px; }
+    body footer div {
+      position: absolute;
+      bottom: 0;
+      width: 100vw;
+      height: 50vh; }
+      body footer div article {
+        position: relative;
+        width: 100vw;
+        height: 100%;
+        min-width: 300px;
+        background: rgba(0, 0, 0, 0);
+        z-index: 50; }
+        body footer div article div {
+          position: relative;
+          top: 0;
+          margin-top: 20px;
+          width: 100vw;
+          height: auto;
+          box-sizing: border-box;
+          border: 1px solid red; }
+          body footer div article div ul {
+            padding: 10px;
+            border: 1px solid orange;
+            text-align: center;
+            box-sizing: border-box;
+            -webkit-flex-direction: column;
+            -moz-flex-direction: column;
+            -ms-flex-direction: column;
+            -o-flex-direction: column;
+            flex-direction: column; }
+            body footer div article div ul li {
+              padding: 5px;
+              display: inline-block;
+              background: green; }
+              body footer div article div ul li a {
+                color: #fff; }
+            body footer div article div ul li.pipe {
+              display: none; }
+      body footer div div#waveWrap {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        min-width: 300px;
+        height: 80%;
+        background: blue; }
 
 @media screen and (min-width: 800px) {
-  body .fullsection footer article a {
-    width: 50%;
-    height: 100%;
-    float: left; }
-
   body nav#back {
     display: block; }
 
   body nav#top ul li.aboutLi {
     width: 150px; }
-    body nav#top ul li.aboutLi a div {
+
+  body nav#top ul li a div {
+    width: 80px;
+    height: 80px; }
+    body nav#top ul li a div canvas {
       width: 80px;
       height: 80px; }
-      body nav#top ul li.aboutLi a div canvas {
-        width: 80px;
-        height: 80px; } }
+
+  body div div.projects article a {
+    width: 50% !important;
+    height: 100% !important; }
+
+  #projArrowPrev {
+    -webkit-flex-direction: row-reverse;
+    -moz-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    -o-flex-direction: row-reverse;
+    flex-direction: row-reverse; } }
 @-webkit-keyframes glitch {
   0% {
     -webkit-transform: translate(0);
