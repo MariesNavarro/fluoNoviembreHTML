@@ -231,10 +231,20 @@ body {
       -o-align-items: center;
       align-items: center; }
       body .projects article a {
+        position: relative;
         display: block;
         width: 100vw;
         height: 280px;
         background: #323334; }
+        body .projects article a div {
+          position: absolute;
+          width: 100%;
+          height: 100%; }
+      body .projects article a.izq div {
+        right: 0;
+        background: orange; }
+      body .projects article a.der div {
+        background: blue; }
   body footer {
     position: fixed !important;
     width: 100vw;
