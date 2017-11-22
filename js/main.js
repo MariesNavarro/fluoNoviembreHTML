@@ -77,6 +77,7 @@ function loadingLogo(){
 function checkForDevice(){
   var ph = _('#telefonofluo'),
       mn = _('#triggerMenu'),
+      reel = _('#triggerReel'),
       d = _('#desktopinnner');
   if(checkBowser){
     console.log("Mobile");
@@ -84,6 +85,9 @@ function checkForDevice(){
     d.classList.add('hideDisplay');
     mn.setAttribute('onclick', 'mainMenuMob("open")');
     ph.setAttribute('href', 'tel:57303009');
+    reel.setAttribute('href', 'https://vimeo.com/175730619');
+    reel.setAttribute('target', '_blank');
+    reel.setAttribute('rel', 'noopener noreferrer');
   } else {
     console.log("Desktop");
     d.setAttribute('onmouseover', 'mainMenuDes("over")');
@@ -91,7 +95,8 @@ function checkForDevice(){
     mn.setAttribute('onmouseover', 'mainMenuDes("over")');
     mn.setAttribute('onmouseout', 'mainMenuDes("out")');
     ph.setAttribute('onclick', 'phonePop("open")');
-    ph.setAttribute('title', 'Ver teléfono y horarios')
+    ph.setAttribute('title', 'Ver teléfono y horarios');
+    reel.setAttribute('onclick', 'popReel("open")');
   }
 }
 
@@ -111,7 +116,7 @@ function mainMenuDes(c){
   if(c === 'over'){
     wr.style.right = "2vw";
   } else {
-    wr.style.right = "-10vw";
+    wr.style.right = "-18vw";
   }
 }
 
@@ -134,10 +139,36 @@ checkForDevice();
 function popReel(c){
   var wr = _('#showreel');
   if(c === 'open'){
-    // wr.style.display  = "none"
+    console.log("OPEEEEN");
+    wr.style.display  = "block"
+    setTimeout(function(){ wr.style.opacity  = "1" },600);
   } else {
-    console.log("Close");
-    wr.style.display  = "none"
+    wr.style.opacity  = "0"
+    setTimeout(function(){ wr.style.display  = "none" },600);
+  }
+}
+
+function aboutThisPop(c){
+  var wr = _('#abouthis'),
+      trigger = _('#triggerAbout'),
+      about = trigger.children[0],
+      close = trigger.children[1];
+  if(c === 'open'){
+    wr.style.display = "block";
+    about.style.display = "none";
+    close.style.display = "block";
+    setTimeout(function(){
+      wr.style.opacity = "1"
+      trigger.setAttribute('onclick', 'aboutThisPop("close")');
+    },600);
+  } else {
+    wr.style.opacity = "0"
+    about.style.display = "block";
+    close.style.display = "none";
+    setTimeout(function(){
+      wr.style.display = "none"
+      trigger.setAttribute('onclick', 'aboutThisPop("open")');
+    },600);
   }
 }
 
@@ -173,13 +204,16 @@ window.onorientationchange = function(){
   }
 }
 window.onscroll = function(){
-  var wave = _('#wavewrap');
-  var center = window.innerHeight/2;
-  var triggerWrap = _('.projects');
-  var trigger = triggerWrap.getBoundingClientRect().top;
+  var about = _('#triggerAbout'),
+      wave = _('#wavewrap'),
+      center = window.innerHeight/2,
+      triggerWrap = _('.projects'),
+      trigger = triggerWrap.getBoundingClientRect().top;
   if(trigger < center){
+    about.style.opacity = "0"
     wave.style.bottom = "0"
   } else {
+    about.style.opacity = "1"
     wave.style.bottom = "-120px"
   }
 }

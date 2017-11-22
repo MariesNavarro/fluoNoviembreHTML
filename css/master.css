@@ -20,6 +20,9 @@
   cursor: pointer;
   text-decoration: none; }
 
+* i {
+  font-style: italic; }
+
 h1, h2, h3, h4, h5, h6, b {
   font-family: "CircularBlack", sans-serif; }
 
@@ -36,7 +39,7 @@ body {
   overflow-x: hidden; }
   body nav {
     position: fixed;
-    z-index: 4500; }
+    z-index: 9000; }
   body #mobileinner {
     width: 100vw;
     height: 100vh;
@@ -69,11 +72,37 @@ body {
       -o-justify-content: space-around;
       justify-content: space-around; }
       body #mobileinner div a {
+        position: relative;
         color: #fff;
         font-size: 1.7rem;
         display: inline-block; }
         body #mobileinner div a p {
+          position: relative;
           padding: 5px 0; }
+          body #mobileinner div a p i {
+            position: relative; }
+          body #mobileinner div a p i::after, body #mobileinner div a p i::before {
+            content: "Close";
+            position: absolute;
+            opacity: 0.4;
+            -webkit-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+            -moz-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+            -ms-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+            -o-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+            animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+            -webkit-transition: all 0.5s ease-out;
+            -moz-transition: all 0.5s ease-out;
+            -ms-transition: all 0.5s ease-out;
+            -o-transition: all 0.5s ease-out;
+            transition: all 0.5s ease-out; }
+          body #mobileinner div a p i::after {
+            color: #37e6ef;
+            left: -4px;
+            top: -5px; }
+          body #mobileinner div a p i::before {
+            color: #e337fc;
+            left: 3px;
+            top: 5px; }
           body #mobileinner div a p span {
             display: block;
             width: 100%;
@@ -81,7 +110,7 @@ body {
             background: #fff;
             margin: 5px 0; }
   body #desktopinnner {
-    right: -10vw;
+    right: -18vw;
     top: 67px;
     width: auto;
     -webkit-flex-direction: column;
@@ -213,6 +242,58 @@ body {
         -ms-transition: opacity 0.5s ease-out;
         -o-transition: opacity 0.5s ease-out;
         transition: opacity 0.5s ease-out; }
+        body nav#bottom ul li a.aboutLi, body nav#top ul li a.aboutLi {
+          position: relative;
+          text-align: center;
+          display: inline-block;
+          width: 100px; }
+        body nav#bottom ul li a.aboutLi::before, body nav#bottom ul li a.aboutLi::after, body nav#top ul li a.aboutLi::before, body nav#top ul li a.aboutLi::after {
+          text-align: center;
+          width: 100px;
+          display: inline-block;
+          position: absolute;
+          content: "About this project";
+          opacity: 0.4;
+          -webkit-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+          -moz-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+          -ms-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+          -o-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+          animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+          -webkit-transition: all 0.5s ease-out;
+          -moz-transition: all 0.5s ease-out;
+          -ms-transition: all 0.5s ease-out;
+          -o-transition: all 0.5s ease-out;
+          transition: all 0.5s ease-out; }
+        body nav#bottom ul li a.aboutLi::after, body nav#top ul li a.aboutLi::after {
+          top: 0;
+          left: -2px;
+          color: #e337fc; }
+        body nav#bottom ul li a.aboutLi::before, body nav#top ul li a.aboutLi::before {
+          top: 0;
+          left: 2px;
+          color: #37e6ef; }
+        body nav#bottom ul li a.closeLi::before, body nav#bottom ul li a.closeLi::after, body nav#top ul li a.closeLi::before, body nav#top ul li a.closeLi::after {
+          position: absolute;
+          content: "Close";
+          opacity: 0.4;
+          -webkit-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+          -moz-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+          -ms-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+          -o-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+          animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+          -webkit-transition: all 0.5s ease-out;
+          -moz-transition: all 0.5s ease-out;
+          -ms-transition: all 0.5s ease-out;
+          -o-transition: all 0.5s ease-out;
+          transition: all 0.5s ease-out; }
+        body nav#bottom ul li a.closeLi::before, body nav#top ul li a.closeLi::before {
+          top: -2px;
+          left: 4px;
+          color: #37e6ef; }
+        body nav#bottom ul li a.closeLi::after, body nav#top ul li a.closeLi::after {
+          top: 3px;
+          left: 5px;
+          color: #e337fc; }
       body nav#bottom ul li a div, body nav#top ul li a div {
         width: 60px;
         height: 60px; }
@@ -242,70 +323,169 @@ body {
         color: #37e6ef;
         top: 2px;
         left: 5px; }
-      body nav#bottom ul li.aboutLi, body nav#top ul li.aboutLi {
-        width: 60px; }
       body nav#bottom ul li:hover::before, body nav#bottom ul li:hover::after, body nav#top ul li:hover::before, body nav#top ul li:hover::after {
         opacity: 0.6; }
-      body nav#bottom ul li.aboutLi::before, body nav#bottom ul li.aboutLi::after, body nav#top ul li.aboutLi::before, body nav#top ul li.aboutLi::after {
-        content: "About this project"; }
       body nav#bottom ul li.menuLi::before, body nav#bottom ul li.menuLi::after, body nav#top ul li.menuLi::before, body nav#top ul li.menuLi::after {
         content: "Menu"; }
       body nav#bottom ul li.showLi::before, body nav#bottom ul li.showLi::after, body nav#top ul li.showLi::before, body nav#top ul li.showLi::after {
         content: "Showreel"; }
       body nav#bottom ul li.contactLi::before, body nav#bottom ul li.contactLi::after, body nav#top ul li.contactLi::before, body nav#top ul li.contactLi::after {
         content: "About/ \a Contact"; }
+  body #abouthis {
+    position: fixed;
+    width: 100vw;
+    height: 120vh;
+    left: 0;
+    top: 0;
+    z-index: 7000;
+    overflow-y: scroll;
+    text-align: center;
+    display: none;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease-out;
+    -moz-transition: opacity 0.5s ease-out;
+    -ms-transition: opacity 0.5s ease-out;
+    -o-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out; }
+    body #abouthis #wavethis {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 350px;
+      height: 350px;
+      background-image: url("../img/wave-this.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      display: none; }
+    body #abouthis article {
+      font-size: 0.9rem;
+      position: relative;
+      text-align: left;
+      width: 80%;
+      margin: 90px auto 0 auto;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      -o-flex-direction: column;
+      flex-direction: column;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      -ms-justify-content: center;
+      -o-justify-content: center;
+      justify-content: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+      align-items: center; }
+      body #abouthis article .izq {
+        width: 100%;
+        z-index: 100; }
+        body #abouthis article .izq p {
+          padding: 15px 0; }
+        body #abouthis article .izq h4 {
+          display: inline-block;
+          font-size: 1.5rem;
+          padding: 5px 0; }
+          body #abouthis article .izq h4 .pleca {
+            display: block;
+            width: 100%;
+            height: 3px; }
+      body #abouthis article .der {
+        width: 100%;
+        z-index: 100;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        -o-flex-direction: column;
+        flex-direction: column;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        -ms-justify-content: center;
+        -o-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        -ms-align-items: center;
+        -o-align-items: center;
+        align-items: center; }
+        body #abouthis article .der div {
+          width: 100%; }
+          body #abouthis article .der div ul {
+            margin-top: 15px;
+            grid-template-columns: 50% 50%;
+            -ms-grid-template-columns: 50% 50%;
+            grid-row-gap: 15px; }
+          body #abouthis article .der div h5 {
+            font-size: 1.1rem;
+            padding: 3px 0; }
+          body #abouthis article .der div p {
+            padding: 15px 0;
+            line-height: 1.2; }
+    body #abouthis .bts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 180vh;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: -20; }
   body #showreel {
     position: fixed;
     top: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 8000; }
-    body #showreel div {
+    z-index: 8000;
+    opacity: 0;
+    display: none;
+    -webkit-transition: opacity 0.5s ease-out;
+    -moz-transition: opacity 0.5s ease-out;
+    -ms-transition: opacity 0.5s ease-out;
+    -o-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out; }
+    body #showreel a {
+      font-style: italic;
       position: absolute;
-      top: 0;
-      width: 100vw;
-      height: 100vh;
+      left: calc(50% - 24px);
+      top: 100px;
+      width: 48px;
+      display: block;
+      line-height: 40px;
+      height: 40px;
       text-align: center; }
-      body #showreel div a {
-        position: absolute;
-        left: calc(50% - 24px);
-        top: 100px;
-        width: 48px;
-        display: block;
-        line-height: 40px;
-        height: 40px;
-        text-align: center; }
-      body #showreel div a::before, body #showreel div a::after {
-        position: absolute;
-        content: "Close";
-        opacity: 0;
-        -webkit-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
-        -moz-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
-        -ms-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
-        -o-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
-        animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
-        -webkit-transition: opacity 0.5s ease-out;
-        -moz-transition: opacity 0.5s ease-out;
-        -ms-transition: opacity 0.5s ease-out;
-        -o-transition: opacity 0.5s ease-out;
-        transition: opacity 0.5s ease-out; }
-      body #showreel div a:hover::before, body #showreel div a:hover::after {
-        opacity: 0.4; }
-      body #showreel div a::before {
-        top: 2px;
-        left: 5px;
-        color: #37e6ef; }
-      body #showreel div a::after {
-        top: -2px;
-        left: -2px;
-        color: #e337fc; }
-      body #showreel div #videoWrap {
-        border: 1px solid blue;
-        position: relative;
-        width: 80%;
-        max-width: 780px;
-        height: 435px;
-        margin: 150px auto 0 auto; }
+    body #showreel a::before, body #showreel a::after {
+      position: absolute;
+      content: "Close";
+      font-style: italic;
+      opacity: 0;
+      -webkit-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+      -moz-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+      -ms-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+      -o-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+      animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+      -webkit-transition: opacity 0.5s ease-out;
+      -moz-transition: opacity 0.5s ease-out;
+      -ms-transition: opacity 0.5s ease-out;
+      -o-transition: opacity 0.5s ease-out;
+      transition: opacity 0.5s ease-out; }
+    body #showreel a:hover::before, body #showreel a:hover::after {
+      opacity: 0.4; }
+    body #showreel a::before {
+      top: 2px;
+      left: 5px;
+      color: #37e6ef; }
+    body #showreel a::after {
+      top: -2px;
+      left: -2px;
+      color: #e337fc; }
+    body #showreel #videoWrap {
+      border: 1px solid blue;
+      position: relative;
+      width: 80%;
+      max-width: 780px;
+      height: 435px;
+      margin: 150px auto 0 auto; }
     body #showreel span {
       position: absolute;
       top: 0;
@@ -621,11 +801,43 @@ body {
 
 /* DESKTOP */
 @media screen and (min-width: 800px) {
+  /* Showreel */
+  body #abouthis {
+    height: 100vh; }
+    body #abouthis #wavethis {
+      display: block; }
+    body #abouthis article {
+      width: 80%;
+      /* Fix text height problem */
+      height: 80%;
+      background: #323334;
+      padding: 5%;
+      overflow: hidden;
+      -webkit-flex-direction: row;
+      -moz-flex-direction: row;
+      -ms-flex-direction: row;
+      -o-flex-direction: row;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start; }
+      body #abouthis article .izq {
+        width: 25%;
+        margin-right: 15%;
+        font-size: 1.9rem;
+        font-size: 1.1rem; }
+      body #abouthis article .der {
+        width: 30%; }
+    body #abouthis .bts {
+      height: 100vh; }
+
   body nav#back {
     display: block; }
 
-  body nav#top ul li.aboutLi {
-    width: 150px; }
+  body nav#top ul li a.aboutLi {
+    width: 200px; }
+
+  body nav#top ul li a.aboutLi::after, body nav#top ul li a.aboutLi::before {
+    width: 200px; }
 
   body nav#top ul li a div {
     width: 80px;
@@ -701,8 +913,17 @@ body {
       padding: 0 5px; } }
 /* MAX DESKTOP */
 @media screen and (min-width: 1300px) {
+  body {
+    font-size: 22px; }
+
   body .projects article a {
     height: 360px; }
+
+  a.izq .info_wr {
+    margin-left: 70px !important; }
+
+  a.der .info_wr {
+    margin-right: 70px !important; }
 
   body footer article ul li p, body footer article ul li a {
     font-size: 1.1rem; } }
@@ -885,6 +1106,10 @@ body {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex; }
+
+.showGrid {
+  display: -ms-grid;
+  display: grid; }
 
 .showOpacity {
   opacity: 1; }

@@ -67,8 +67,9 @@ fluo.com.mx
               <div id="logotipoMenu"></div>
             </a>
           </li>
-          <li class="aboutLi">
-            <a id="aboutthis" role="button">About this project</a>
+          <li  id="triggerAbout" onclick="aboutThisPop('open')">
+            <a role="button" class="aboutLi">About this project</a>
+            <a role="button" class="closeLi" style="display:none">Close</a>
           </li>
           <li id="triggerMenu" class="menuLi">
             <a role="button">Menu</a>
@@ -78,7 +79,7 @@ fluo.com.mx
     <nav id="bottom">
       <!-- NAV BOTTOM -->
       <ul class="showDisplayFlex">
-        <li class="showLi">
+        <li id="triggerReel" class="showLi">
           <a role="button">Showreel</a>
         </li>
         <li class="contactLi">
@@ -114,8 +115,7 @@ fluo.com.mx
       <div class="showDisplayFlex">
         <a role="button" onclick="mainMenuMob('close')">
           <p>
-            Close
-            <span></span>
+            <i>Close</i>
           </p>
         </a>
         <a href="#" role="button">
@@ -213,13 +213,76 @@ fluo.com.mx
       </article>
     </footer>
     <!-- POP REEL -->
-    <div id="showreel">
+    <section id="showreel">
       <span onclick="popReel('close')"></span>
-      <div>
         <a role="button" onclick="popReel('close')"> Close </a>
         <div id="videoWrap"></div>
-      </div>
-    </div>
+    </section>
+    <!-- ABOUT THIS -->
+    <section id="abouthis">
+      <span class="bts"></span>
+      <article class="showDisplayFlex">
+        <div class="izq">
+          <h4>
+            Enotelia
+            <span class="pleca gradientFluo"></span>
+          </h4>
+          <p>
+            <b>
+              Comercializadora de vinos y
+              licores en México.
+            </b>
+          </p>
+          <p>
+            Construcción y desarrollo de
+            una marca nueva; intrigante,
+            ambiciosa, conocedora y
+            extrovertida.
+          </p>
+        </div>
+        <div class="der showDisplayFlex">
+          <div>
+            <h5>Objetivos</h5>
+            <p>
+              Creación de una nueva razón social
+              que permita a Enotelia diversificar
+              y desarrollar aún más su importación
+              y comercialización, para incluir otro
+              tipo de bebidas alcohólicas y/o licores,
+              expandiendo su mercado.
+            </p>
+            <p>
+              Posicionar Enotelia como una
+              empresa de calidad, resaltando
+              y celebrando el conocimiento
+              que tiene su público sobre el
+              mundo y las diferentes bebidas
+              que consume, así como las experiencias
+              que se viven para poder degustarlas.
+            </p>
+          </div>
+          <div>
+            <h5>Rol de Fluo</h5>
+            <ul class="showGrid">
+              <li>Naming</li>
+              <li>Estrategia</li>
+              <li>Logotipo</li>
+              <li>Identidad</li>
+              <li>Página web</li>
+              <li>Aplicaciones adicionales</li>
+              <li>Contenidos de redes</li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+        <div id="wavethis">
+            <div></div>
+        </div>
+      </article>
+    </section>
     <script src="js/bowser.min.js" charset="utf-8"></script>
     <script src="js/pixi.min.js" charset="utf-8"></script>
     <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
