@@ -1,4 +1,7 @@
 "use strict";
+var checkBowser = false;
+if(bowser.mobile || bowser.tablet || /SymbianOS/.test(window.navigator.userAgent)) checkBowser = true;
+
 window.console.log("%cCoded by Mn - http://fluo.com.mx", "color:pink;  font-size: 10px; background:#000; padding:2px;");
     function _(el){return document.querySelector(el); }
     function __(el){return document.querySelectorAll(el); }
@@ -27,17 +30,6 @@ function loadingLogo(){
   logotipo.appendChild(app.view);
   apphover = new PIXI.Application(100, 100,{antialias: false, transparent: true, resolution: 1});
   logotipo.appendChild(apphover.view);
-  // .on('progress', function(loader, loadedResource){
-  //   var num = Math.round(loader.progress);
-  //   percentage.innerHTML = num + '%';
-  //   if(num>99){
-  //     loading.style.opacity = 0;
-  //     setTimeout(function(){
-  //       loading.style.display = "none";
-  //       animationIntro();
-  //     },1000);
-  //   }
-  // })
   PIXI.loader
   .add('img/pixi/logotipo_1.json')
   .add('img/pixi/logotipo_2.json')
@@ -81,6 +73,74 @@ function loadingLogo(){
     apphover.stage.addChild(animH);
   }
 }
+
+function checkForDevice(){
+  var ph = _('#telefonofluo'),
+      mn = _('#triggerMenu'),
+      d = _('#desktopinnner');
+  if(checkBowser){
+    console.log("Mobile");
+    d.classList.remove('showDisplayFlex');
+    d.classList.add('hideDisplay');
+    mn.setAttribute('onclick', 'mainMenuMob("open")');
+    ph.setAttribute('href', 'tel:57303009');
+  } else {
+    console.log("Desktop");
+    d.setAttribute('onmouseover', 'mainMenuDes("over")');
+    d.setAttribute('onmouseout', 'mainMenuDes("out")');
+    mn.setAttribute('onmouseover', 'mainMenuDes("over")');
+    mn.setAttribute('onmouseout', 'mainMenuDes("out")');
+    ph.setAttribute('onclick', 'phonePop("open")');
+    ph.setAttribute('title', 'Ver teléfono y horarios')
+  }
+}
+
+function mainMenuMob(c){
+  var wr = _('#mobileinner');
+  if(c === 'open'){
+    wr.style.display = "block";
+    setTimeout(function(){ wr.style.opacity = "1"; },600);
+  } else {
+    wr.style.opacity = "0";
+    setTimeout(function(){ wr.style.display = "none"; },600);
+  }
+}
+
+function mainMenuDes(c){
+  var wr = _('#desktopinnner');
+  if(c === 'over'){
+    wr.style.right = "2vw";
+  } else {
+    wr.style.right = "-10vw";
+  }
+}
+
+function phonePop(c){
+  var wr = _('#popPhone');
+  if(c === "open"){
+    wr.classList.remove("hideDisplay");
+    wr.classList.add("showDisplayFlex");
+    wr.style.opacity = "1"
+  } else{
+    wr.style.opacity = "0"
+    setTimeout(function(){
+      wr.classList.remove("showDisplayFlex");
+      wr.classList.add("hideDisplay");
+    },600);
+  }
+}
+checkForDevice();
+
+function popReel(c){
+  var wr = _('#showreel');
+  if(c === 'open'){
+    // wr.style.display  = "none"
+  } else {
+    console.log("Close");
+    wr.style.display  = "none"
+  }
+}
+
 function overLine(c, e) {
   var e = _(e);
   switch (c) {
@@ -102,3 +162,32 @@ function overLine(c, e) {
   break;
   }
 }
+
+//e
+window.onorientationchange = function(){
+  var aboutthis = _('#aboutthis');
+  if(window.orientation == 90 || window.orientation == -90){
+    aboutthis.style.display = "none"
+  } else {
+    aboutthis.style.display = "block"
+  }
+}
+window.onscroll = function(){
+  var wave = _('#wavewrap');
+  var center = window.innerHeight/2;
+  var triggerWrap = _('.projects');
+  var trigger = triggerWrap.getBoundingClientRect().top;
+  if(trigger < center){
+    wave.style.bottom = "0"
+  } else {
+    wave.style.bottom = "-120px"
+  }
+}
+document.onkeydown = function(e){
+  var wr = _('#popPhone');
+  e = e || window.event;
+  if (e.keyCode == '27') {
+   phonePop('close');
+  }
+}
+smoothScroll.init();

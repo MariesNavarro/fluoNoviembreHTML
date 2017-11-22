@@ -47,19 +47,30 @@ fluo.com.mx
     <div id="loading" class="hideDisplay">
       <p id="percentage">1%</p>
     </div>
+    <!-- POP PHONE -->
+    <div id="popPhone" class="hideDisplay">
+      <span onclick="phonePop('close')"></span>
+      <a role="button" onclick="phonePop('close')">Close</a>
+      <div class="showDisplayFlex">
+        <p>+1 52 5730-3009</p>
+        <p>Horarios de atención:</p>
+        <p>Lunes - Viernes</p>
+        <p>9:00 a 18:00</p>
+      </div>
+    </div>
     <!-- NAVIGATION -->
     <nav id="top">
         <!-- NAV TOP -->
         <ul class="showDisplayFlex">
           <li>
-            <a role="button">
+            <a href="index.html" title="Ir a inicio">
               <div id="logotipoMenu"></div>
             </a>
           </li>
           <li class="aboutLi">
-            <a role="button">About this project</a>
+            <a id="aboutthis" role="button">About this project</a>
           </li>
-          <li class="menuLi">
+          <li id="triggerMenu" class="menuLi">
             <a role="button">Menu</a>
           </li>
         </ul>
@@ -76,15 +87,52 @@ fluo.com.mx
       </ul>
     </nav>
     <nav id="back">
-      <a href="#loading" data-scroll="" onmouseover="overLine('over', '#lineBackTo')" onmouseout="overLine('out', '#lineBackTo')">
+      <a href="#loading" data-scroll onmouseover="overLine('over', '#lineBackTo')" onmouseout="overLine('out', '#lineBackTo')">
         <span>Back to top</span>
       </a>
       <div>
         <span id="lineBackTo" class="scaleDownLine"></span>
       </div>
     </nav>
+    <!-- NAV DESKTOP -->
+    <nav id="desktopinnner" class="showDisplayFlex">
+      <a href="" title="Ir a Work">
+        <p>
+          Work
+          <span></span>
+        </p>
+      </a>
+      <a href="" title="Ir a Services">
+        <p>
+          Services
+          <span></span>
+        </p>
+      </a>
+    </nav>
+    <!-- NAV MOBILE -->
+    <nav id="mobileinner">
+      <div class="showDisplayFlex">
+        <a role="button" onclick="mainMenuMob('close')">
+          <p>
+            Close
+            <span></span>
+          </p>
+        </a>
+        <a href="#" role="button">
+          <p>
+            Work
+            <span></span>
+          </p>
+        </a>
+        <a href="#" role="button">
+          <p>
+            Services
+            <span></span>
+          </p>
+        </a>
+      </div>
+    </nav>
     <!-- MAIN -->
-    <section class="fullsection content" style="background:orange; height:100vh"></section>
     <section class="fullsection content" style="background:cadetblue; height:100vh">
       <div style="width:90vw; height:100vh;background:purple;margin:0 auto"></div>
     </section>
@@ -93,13 +141,49 @@ fluo.com.mx
       <article class="showDisplayFlex">
         <!-- PROJ PREV -->
         <a class="izq" href="#">
-          <div></div>
-          <div></div>
+          <!-- INFO -->
+          <div>
+            <div class="info_wr">
+              <span>
+                <h4> Lemon Films </h4>
+                <span class="linea gradientFluo"></span>
+              </span>
+              <p>
+                Asociación sin fines de lucro
+                para fomentar el crecimiento
+                de mujeres y niños de bajos
+                recursos.
+              </p>
+              <span class="navPrev">
+                <p>Anterior</p>
+                <img class="rotIcon" src="img/icons/arrow_footer.svg" height="10">
+              </span>
+            </div>
+          </div>
+          <!-- IMG -->
+          <div class="imgProject" style="background-image:url('img/projects/caratula-lemon.jpg')"></div>
         </a>
         <!-- PROJ NXT -->
         <a class="der" href="#">
-          <div></div>
-          <div></div>
+          <!-- INFO -->
+          <div>
+            <div class="info_wr">
+              <span>
+                <h4> Yot Mx </h4>
+                <span class="linea gradientFluo"></span>
+              </span>
+              <p>
+                Comercializadora de vinos
+                y licores en México.
+              </p>
+              <span class="navNext">
+                <p>Siguiente</p>
+                <img src="img/icons/arrow_footer.svg" height="10">
+              </span>
+            </div>
+          </div>
+          <!-- IMG -->
+          <div class="imgProject" style="background-image:url('img/projects/caratula-enotelia.jpg')"></div>
         </a>
       </article>
     </section>
@@ -111,10 +195,10 @@ fluo.com.mx
       <article>
           <div class="showDisplayFlex">
             <ul class="showDisplayFlex">
-              <li><a href="#" title="Ir a Facebook" target="blank" rel="noopener noreferrer">Facebook</a></li>
-              <li><a href="#" title="Ir a Instagram" target="blank" rel="noopener noreferrer">Instagram</a></li>
-              <li><a href="#" title="Ir a Behance" target="blank" rel="noopener noreferrer">Behance</a></li>
-              <li><a href="#" title="Ir a Vimeo" target="blank" rel="noopener noreferrer">Vimeo</a></li>
+              <li><a href="" title="Ir a Facebook" target="blank" rel="noopener noreferrer">Facebook</a></li>
+              <li><a href="https://www.instagram.com/fluomx/" title="Ir a Instagram" target="blank" rel="noopener noreferrer">Instagram</a></li>
+              <li><a href="https://www.behance.net/fluo_" title="Ir a Behance" target="blank" rel="noopener noreferrer">Behance</a></li>
+              <li><a href="https://vimeo.com/user48807238" title="Ir a Vimeo" target="blank" rel="noopener noreferrer">Vimeo</a></li>
               <li><a href="#" title="Enviar Mail" target="blank" rel="noopener noreferrer">Mail</a></li>
             </ul>
             <ul class="showDisplayFlex">
@@ -123,14 +207,22 @@ fluo.com.mx
             </ul>
           </div>
           <ul class="showDisplayFlex">
-            <li><a href="#" title="Ir a" target="blank" rel="noopener noreferrer">5730-3009</a></li>
-            <li><a href="#" title="Ir a" target="blank" rel="noopener noreferrer">info@fluo.com.mx</a></li>
+            <li><a id="telefonofluo" target="blank" rel="noopener noreferrer">5730-3009</a></li>
+            <li><a href="mailto:info@fluo.com.mx?Subject=Contacto%20desde%20web" title="Ir a" target="blank" rel="noopener noreferrer">info@fluo.com.mx</a></li>
           </ul>
       </article>
     </footer>
+    <!-- POP REEL -->
+    <div id="showreel">
+      <span onclick="popReel('close')"></span>
+      <div>
+        <a role="button" onclick="popReel('close')"> Close </a>
+        <div id="videoWrap"></div>
+      </div>
+    </div>
     <script src="js/bowser.min.js" charset="utf-8"></script>
     <script src="js/pixi.min.js" charset="utf-8"></script>
-    <script src="js/smooth-scroll.min.js" async charset="utf-8"></script>
+    <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
     <script type="text/javascript">
       window.onresize = function(){

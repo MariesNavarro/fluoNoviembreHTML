@@ -37,84 +37,6 @@ body {
   body nav {
     position: fixed;
     z-index: 4500; }
-  body #mobileinner {
-    width: 100vw;
-    height: 100vh;
-    display: none;
-    opacity: 0;
-    background: #000;
-    -webkit-transition: opacity 0.5s ease-out;
-    -moz-transition: opacity 0.5s ease-out;
-    -ms-transition: opacity 0.5s ease-out;
-    -o-transition: opacity 0.5s ease-out;
-    transition: opacity 0.5s ease-out; }
-    body #mobileinner div {
-      position: absolute;
-      top: 10%;
-      width: 100vw;
-      height: 60%;
-      -webkit-flex-direction: column;
-      -moz-flex-direction: column;
-      -ms-flex-direction: column;
-      -o-flex-direction: column;
-      flex-direction: column;
-      -webkit-align-items: center;
-      -moz-align-items: center;
-      -ms-align-items: center;
-      -o-align-items: center;
-      align-items: center;
-      -webkit-justify-content: space-around;
-      -moz-justify-content: space-around;
-      -ms-justify-content: space-around;
-      -o-justify-content: space-around;
-      justify-content: space-around; }
-      body #mobileinner div a {
-        color: #fff;
-        font-size: 1.7rem;
-        display: inline-block; }
-        body #mobileinner div a p {
-          padding: 5px 0; }
-          body #mobileinner div a p span {
-            display: block;
-            width: 100%;
-            height: 2px;
-            background: #fff;
-            margin: 5px 0; }
-  body #desktopinnner {
-    right: -10vw;
-    top: 67px;
-    width: auto;
-    -webkit-flex-direction: column;
-    -moz-flex-direction: column;
-    -ms-flex-direction: column;
-    -o-flex-direction: column;
-    flex-direction: column;
-    -webkit-align-items: flex-end;
-    -moz-align-items: flex-end;
-    -ms-align-items: flex-end;
-    -o-align-items: flex-end;
-    align-items: flex-end;
-    -webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease-out;
-    -ms-transition: all 0.5s ease-out;
-    -o-transition: all 0.5s ease-out;
-    transition: all 0.5s ease-out; }
-    body #desktopinnner a {
-      color: #fff;
-      display: inline-block;
-      padding: 5px 0; }
-    body #desktopinnner a:hover span {
-      width: 100%; }
-    body #desktopinnner span {
-      display: block;
-      width: 0%;
-      height: 1px;
-      background: #fff;
-      -webkit-transition: all 0.5s ease-out;
-      -moz-transition: all 0.5s ease-out;
-      -ms-transition: all 0.5s ease-out;
-      -o-transition: all 0.5s ease-out;
-      transition: all 0.5s ease-out; }
   body nav#back {
     display: none;
     top: 90px;
@@ -176,6 +98,10 @@ body {
         -ms-transform: rotate(90deg);
         -o-transform: rotate(90deg);
         transform: rotate(90deg); }
+  body #desktopinnner {
+    width: 200px !important;
+    height: 200px;
+    background: blue; }
   body nav#top {
     top: 0; }
   body nav#bottom {
@@ -254,64 +180,6 @@ body {
         content: "Showreel"; }
       body nav#bottom ul li.contactLi::before, body nav#bottom ul li.contactLi::after, body nav#top ul li.contactLi::before, body nav#top ul li.contactLi::after {
         content: "About/ \a Contact"; }
-  body #showreel {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 8000; }
-    body #showreel div {
-      position: absolute;
-      top: 0;
-      width: 100vw;
-      height: 100vh;
-      text-align: center; }
-      body #showreel div a {
-        position: absolute;
-        left: calc(50% - 24px);
-        top: 100px;
-        width: 48px;
-        display: block;
-        line-height: 40px;
-        height: 40px;
-        text-align: center; }
-      body #showreel div a::before, body #showreel div a::after {
-        position: absolute;
-        content: "Close";
-        opacity: 0;
-        -webkit-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
-        -moz-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
-        -ms-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
-        -o-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
-        animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
-        -webkit-transition: opacity 0.5s ease-out;
-        -moz-transition: opacity 0.5s ease-out;
-        -ms-transition: opacity 0.5s ease-out;
-        -o-transition: opacity 0.5s ease-out;
-        transition: opacity 0.5s ease-out; }
-      body #showreel div a:hover::before, body #showreel div a:hover::after {
-        opacity: 0.4; }
-      body #showreel div a::before {
-        top: 2px;
-        left: 5px;
-        color: #37e6ef; }
-      body #showreel div a::after {
-        top: -2px;
-        left: -2px;
-        color: #e337fc; }
-      body #showreel div #videoWrap {
-        border: 1px solid blue;
-        position: relative;
-        width: 80%;
-        max-width: 780px;
-        height: 435px;
-        margin: 150px auto 0 auto; }
-    body #showreel span {
-      position: absolute;
-      top: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.92); }
   body #loading {
     position: fixed;
     top: 0;
