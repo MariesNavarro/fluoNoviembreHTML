@@ -205,7 +205,7 @@ function overLine(c, e) {
 
 //e
 window.onorientationchange = function(){
-  var aboutthis = _('#aboutthis');
+  let aboutthis = _('#aboutthis');
   if(window.orientation == 90 || window.orientation == -90){
     aboutthis.style.display = "none"
   } else {
@@ -214,7 +214,7 @@ window.onorientationchange = function(){
 }
 
 function hideCoverLogo(){
-  var trigger = _('#mainprojects').getBoundingClientRect().top,
+  let trigger = _('#mainprojects').getBoundingClientRect().top,
       wr = _('#logoCoverWrap');
   if(trigger < -10){
     wr.classList.remove('showDisplayFlex');
@@ -225,12 +225,39 @@ function hideCoverLogo(){
   }
 }
 
+
+
+
 function changeBackground(){
-  console.log("Change back");
+  let backs = [],
+      wr = _('#mainprojects'),
+      cMain = wr.getAttribute('data-back'),
+      c = window.innerHeight/2,
+      f = __('.flag'),
+      fLen = f.length,
+      tops = [];
+      backs.push(cMain);
+
+  for (var i = 0; i < fLen; i++) {
+    backs.push(f[i].getAttribute('data-back'));
+    tops.push(f[i].getBoundingClientRect().top - c);
+  }
+
+  if(tops[0] < 0){
+    wr.style.background = backs[1];
+  }  else {
+    wr.style.background = backs[0];
+  }
+
+  for (var i = 1; i < fLen; i++) {
+    if(tops[i] < 0){
+      wr.style.background = backs[i+1];
+    }
+  }
 }
 
 function detectWave(){
-  var about = _('#triggerAbout'),
+  let about = _('#triggerAbout'),
       wave = _('#wavewrap'),
       center = window.innerHeight/2,
       triggerWrap = _('.projects'),
@@ -245,7 +272,7 @@ function detectWave(){
 }
 
 document.onkeydown = function(e){
-  var wr = _('#popPhone');
+  let wr = _('#popPhone');
   e = e || window.event;
   if (e.keyCode == '27') {
    phonePop('close');

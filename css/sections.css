@@ -1,8 +1,6 @@
 .layout1_wr{
   background: cadetblue
 }
-
-
 #logoCoverWrap{
   position: fixed;
   top: 0;
@@ -21,16 +19,41 @@
   background-size: contain;
 }
 #mainprojects{
+  position: relative;
   margin-top: 100vh;
-  background: red;
+  -webkit-transition: all 1.5s ease-out;
+  -moz-transition: all 1.5s ease-out;
+  -ms-transition: all 1.5s ease-out;
+  -o-transition: all 1.5s ease-out;
+  transition: all 1.5s ease-out;
 }
 #mainprojects>article{
+  position: relative;
   width:100vw;
   margin: 0 auto;
   border: 1px solid red;
 }
+/* flag */
+#mainprojects>article>.flag{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 200px;
+  background: purple;
+}
 
 
+
+
+/* linea centro */
+#lineacentro{
+  position: fixed;
+  width: 100vw;
+  height: 2px;
+  background: red;
+  top: calc(50% - 1px);
+  z-index: 100000;
+}
 /* DESKTOP */
 @media screen and (min-width: 800px) {
   #mainprojects>article{
