@@ -1,0 +1,39 @@
+.layout1_wr{
+  background: cadetblue
+}
+
+
+#logoCoverWrap{
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  justify-content: center;
+  align-items: center;
+}
+#logoCoverWrap >div{
+  width: 50%;
+  min-width: 400px;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+#mainprojects{
+  margin-top: 100vh;
+  background: red;
+}
+#mainprojects>article{
+  width:100vw;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+
+/* DESKTOP */
+@media screen and (min-width: 800px) {
+  #mainprojects>article{
+    width:80vw;
+  }
+}

@@ -152,22 +152,31 @@ function aboutThisPop(c){
   var wr = _('#abouthis'),
       trigger = _('#triggerAbout'),
       about = trigger.children[0],
-      close = trigger.children[1];
+      close = trigger.children[1],
+      closeMob = _('.close');
   if(c === 'open'){
     wr.style.display = "block";
     about.style.display = "none";
     close.style.display = "block";
     setTimeout(function(){
-      wr.style.opacity = "1"
+      wr.style.opacity = "1";
+      closeMob.style.display = "inline-block";
       trigger.setAttribute('onclick', 'aboutThisPop("close")');
+      setTimeout(function(){
+        closeMob.style.opacity = "1"
+      },600);
     },600);
   } else {
     wr.style.opacity = "0"
     about.style.display = "block";
     close.style.display = "none";
     setTimeout(function(){
+      closeMob.style.display = "none";
       wr.style.display = "none"
       trigger.setAttribute('onclick', 'aboutThisPop("open")');
+      setTimeout(function(){
+        closeMob.style.opacity = "0"
+      },600);
     },600);
   }
 }
@@ -203,7 +212,24 @@ window.onorientationchange = function(){
     aboutthis.style.display = "block"
   }
 }
-window.onscroll = function(){
+
+function hideCoverLogo(){
+  var trigger = _('#mainprojects').getBoundingClientRect().top,
+      wr = _('#logoCoverWrap');
+  if(trigger < -10){
+    wr.classList.remove('showDisplayFlex');
+    wr.classList.add('hideDisplay');
+  } else {
+    wr.classList.remove('hideDisplay');
+    wr.classList.add('showDisplayFlex');
+  }
+}
+
+function changeBackground(){
+  console.log("Change back");
+}
+
+function detectWave(){
   var about = _('#triggerAbout'),
       wave = _('#wavewrap'),
       center = window.innerHeight/2,
@@ -217,6 +243,7 @@ window.onscroll = function(){
     wave.style.bottom = "-120px"
   }
 }
+
 document.onkeydown = function(e){
   var wr = _('#popPhone');
   e = e || window.event;

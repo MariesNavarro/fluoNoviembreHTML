@@ -36,10 +36,16 @@ body {
   font-family: "CircularBook", sans-serif;
   color: #fff;
   background: #000;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  /* Navegadores */
+  /* About This Project */
+  /* Showreel */
+  /* Loading */
+  /* popPhone */
+  /* popPhone */ }
   body nav {
     position: fixed;
-    z-index: 9000; }
+    z-index: 4500; }
   body #mobileinner {
     width: 100vw;
     height: 100vh;
@@ -85,6 +91,7 @@ body {
             content: "Close";
             position: absolute;
             opacity: 0.4;
+            z-index: -2;
             -webkit-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
             -moz-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
             -ms-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
@@ -98,11 +105,11 @@ body {
           body #mobileinner div a p i::after {
             color: #37e6ef;
             left: -4px;
-            top: -5px; }
+            top: -2px; }
           body #mobileinner div a p i::before {
             color: #e337fc;
             left: 3px;
-            top: 5px; }
+            top: 0px; }
           body #mobileinner div a p span {
             display: block;
             width: 100%;
@@ -253,7 +260,8 @@ body {
           display: inline-block;
           position: absolute;
           content: "About this project";
-          opacity: 0.4;
+          opacity: 0.5;
+          z-index: -2;
           -webkit-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
           -moz-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
           -ms-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
@@ -276,6 +284,7 @@ body {
           position: absolute;
           content: "Close";
           opacity: 0.4;
+          z-index: -2;
           -webkit-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
           -moz-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
           -ms-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
@@ -307,6 +316,7 @@ body {
         top: -2px;
         left: -2px;
         opacity: 0;
+        z-index: -2;
         -webkit-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
         -moz-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
         -ms-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
@@ -324,7 +334,7 @@ body {
         top: 2px;
         left: 5px; }
       body nav#bottom ul li:hover::before, body nav#bottom ul li:hover::after, body nav#top ul li:hover::before, body nav#top ul li:hover::after {
-        opacity: 0.6; }
+        opacity: 0.4; }
       body nav#bottom ul li.menuLi::before, body nav#bottom ul li.menuLi::after, body nav#top ul li.menuLi::before, body nav#top ul li.menuLi::after {
         content: "Menu"; }
       body nav#bottom ul li.showLi::before, body nav#bottom ul li.showLi::after, body nav#top ul li.showLi::before, body nav#top ul li.showLi::after {
@@ -347,6 +357,39 @@ body {
     -ms-transition: opacity 0.5s ease-out;
     -o-transition: opacity 0.5s ease-out;
     transition: opacity 0.5s ease-out; }
+    body #abouthis .close {
+      position: relative;
+      display: inline-block;
+      margin: 40px auto 20px auto;
+      opacity: 0;
+      -webkit-transition: opacity 0.5s ease-out;
+      -moz-transition: opacity 0.5s ease-out;
+      -ms-transition: opacity 0.5s ease-out;
+      -o-transition: opacity 0.5s ease-out;
+      transition: opacity 0.5s ease-out; }
+    body #abouthis .close::after, body #abouthis .close::before {
+      position: absolute;
+      content: "Close";
+      opacity: 0.3;
+      z-index: -2;
+      -webkit-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+      -moz-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+      -ms-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+      -o-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+      animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+      -webkit-transition: opacity 0.5s ease-out;
+      -moz-transition: opacity 0.5s ease-out;
+      -ms-transition: opacity 0.5s ease-out;
+      -o-transition: opacity 0.5s ease-out;
+      transition: opacity 0.5s ease-out; }
+    body #abouthis .close::after {
+      top: 3px;
+      left: 3px;
+      color: #37e6ef; }
+    body #abouthis .close::before {
+      top: -3px;
+      left: -3px;
+      color: #e337fc; }
     body #abouthis #wavethis {
       position: absolute;
       bottom: 0;
@@ -363,7 +406,7 @@ body {
       position: relative;
       text-align: left;
       width: 80%;
-      margin: 90px auto 0 auto;
+      margin: 10px auto 0 auto;
       -webkit-flex-direction: column;
       -moz-flex-direction: column;
       -ms-flex-direction: column;
@@ -453,12 +496,14 @@ body {
       display: block;
       line-height: 40px;
       height: 40px;
-      text-align: center; }
+      text-align: center;
+      z-index: 2; }
     body #showreel a::before, body #showreel a::after {
       position: absolute;
       content: "Close";
       font-style: italic;
       opacity: 0;
+      z-index: 1;
       -webkit-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
       -moz-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
       -ms-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
@@ -728,8 +773,7 @@ body {
                 padding: 0; }
         body .projects article a div.imgProject {
           background-position: center !important;
-          background-size: cover !important;
-          background: blue; }
+          background-size: cover !important; }
         body .projects article a div.imgProject:hover {
           opacity: 0; }
   body footer {
@@ -801,9 +845,32 @@ body {
 
 /* DESKTOP */
 @media screen and (min-width: 800px) {
+  /* nav */
+  body nav {
+    z-index: 9000; }
+
+  body nav#back {
+    display: block; }
+
+  body nav#top ul li a.aboutLi {
+    width: 200px; }
+
+  body nav#top ul li a.aboutLi::after, body nav#top ul li a.aboutLi::before {
+    width: 200px; }
+
+  body nav#top ul li a div {
+    width: 80px;
+    height: 80px; }
+    body nav#top ul li a div canvas {
+      width: 80px;
+      height: 80px; }
+
   /* Showreel */
   body #abouthis {
     height: 100vh; }
+    body #abouthis .close {
+      color: red;
+      display: none !important; }
     body #abouthis #wavethis {
       display: block; }
     body #abouthis article {
@@ -812,6 +879,7 @@ body {
       height: 80%;
       background: #323334;
       padding: 5%;
+      margin: 90px auto 0 auto;
       overflow: hidden;
       -webkit-flex-direction: row;
       -moz-flex-direction: row;
@@ -829,22 +897,6 @@ body {
         width: 30%; }
     body #abouthis .bts {
       height: 100vh; }
-
-  body nav#back {
-    display: block; }
-
-  body nav#top ul li a.aboutLi {
-    width: 200px; }
-
-  body nav#top ul li a.aboutLi::after, body nav#top ul li a.aboutLi::before {
-    width: 200px; }
-
-  body nav#top ul li a div {
-    width: 80px;
-    height: 80px; }
-    body nav#top ul li a div canvas {
-      width: 80px;
-      height: 80px; }
 
   /* projects */
   body .projects article {
@@ -914,7 +966,7 @@ body {
 /* MAX DESKTOP */
 @media screen and (min-width: 1300px) {
   body {
-    font-size: 22px; }
+    font-size: 20px; }
 
   body .projects article a {
     height: 360px; }
