@@ -137,7 +137,7 @@ fluo.com.mx
       </div>
     </nav>
     <!-- MAIN -->
-    <section class="fullsection layout1_wr" style="height:100vh">
+    <section class="fullsection layout1_wr" style="background:#000;height:100vh">
       <article style="width:90vw; height:100vh;background:purple;margin:0 auto"></article>
     </section>
     <!-- PROYECTOS -->
@@ -297,7 +297,18 @@ fluo.com.mx
         var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";
       }
       window.onscroll = function(){
-        detectWave();
+        detectWaveLayouts();
+        //Si hay botón de "About This Project"
+        removeAboutScroll();
+      }
+      //Si hay botón de "About This Project"
+      window.onorientationchange = function(){
+        let aboutthis = _('#aboutthis');
+        if(window.orientation == 90 || window.orientation == -90){
+          aboutthis.style.display = "none"
+        } else {
+          aboutthis.style.display = "block"
+        }
       }
     </script>
 </body>

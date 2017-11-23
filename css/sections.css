@@ -1,6 +1,14 @@
-.layout1_wr{
-  background: cadetblue
+/* linea centro */
+#lineacentro{
+  position: fixed;
+  width: 100vw;
+  height: 2px;
+  background: red;
+  top: calc(50% - 1px);
+  z-index: 100000;
 }
+
+/* Proyectos */
 #logoCoverWrap{
   position: fixed;
   top: 0;
@@ -33,30 +41,101 @@
   margin: 0 auto;
   border: 1px solid red;
 }
-/* flag */
+/* flags */
 #mainprojects>article>.flag{
   position: absolute;
   top: 0;
   width: 100%;
   height: 200px;
-  background: purple;
+  background: rgba(0,0,0,0);
 }
 
-
-
-
-/* linea centro */
-#lineacentro{
-  position: fixed;
+/* Work */
+.layout1_work > article{
   width: 100vw;
-  height: 2px;
-  background: red;
-  top: calc(50% - 1px);
-  z-index: 100000;
+  box-sizing: border-box;
 }
+.layout1_work > article > a{
+  position: relative;
+  display: block;
+  float: left;
+  width: 100%;
+  height: 280px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #000
+}
+.lastworks > article >a.last{ overflow: hidden; background: #000 }
+.layout1_work > article > a > div, .lastworks > article >a.last > div{
+  position: absolute;
+  box-sizing: border-box;
+}
+/* Covers */
+.layout1_work > article > a > div.cover, .lastworks > article >a.last > div.cover{
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+/* Info Covers */
+.layout1_work > article > a > div.infocover, .lastworks > article >a.last > div.infocover{
+  width: 100%;
+  height: 30px;
+  bottom: 0;
+  background: #323334;
+
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.layout1_work > article > a > div.infocover > p, .lastworks > article >a.last > div.infocover > p{
+  font-size: 0.8rem;
+  color: #fff;
+}
+.videostyle{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* DESKTOP */
 @media screen and (min-width: 800px) {
   #mainprojects>article{
     width:80vw;
+  }
+  /* WORK */
+  .layout1_work > article > a{
+    width: 50%;
+    height: 360px;
+    background: #000
+  }
+  .layout1_work > article > a > div.infocover, .lastworks > article >a.last > div.infocover{
+    bottom: -40px;
+    opacity: 0;
+  }
+  .layout1_work > article > a:hover > div.infocover, .lastworks > article >a.last:hover > div.infocover{
+    bottom: 0;
+    opacity: 1;
   }
 }

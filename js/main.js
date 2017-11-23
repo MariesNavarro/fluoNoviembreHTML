@@ -203,16 +203,99 @@ function overLine(c, e) {
   }
 }
 
-//e
-window.onorientationchange = function(){
-  let aboutthis = _('#aboutthis');
-  if(window.orientation == 90 || window.orientation == -90){
-    aboutthis.style.display = "none"
-  } else {
-    aboutthis.style.display = "block"
+function support(a) {
+  let b = " ";
+  return "probably" == a.canPlayType("video/webm") || "maybe" == a.canPlayType("video/webm") ? b = "webm" : "probably" != a.canPlayType("video/mp4") && "maybe" != a.canPlayType("video/mp4") || (b = "mp4"), b
+}
+
+
+
+function loadVid() {
+  if(!checkBowser){
+    let cover = __('.cover'),
+        xhrVid = [],
+        urlList = [],
+        r = 0;
+    for (let i = 0; i < cover.length; i++) {
+      cover[i].setAttribute('style', ' ');
+      let vid = document.createElement("VIDEO");
+      vid.classList.add('videostyle');
+      vid.setAttribute('preload', 'auto');
+      //ponercover
+      cover[i].appendChild(vid);
+    }
+  let v = __('.videostyle')[0],
+      a, b = support(v);
+      if (" " == b ? a = 0 : "mp4" == b ? a = 1 : "webm" == b && (a = 2), 1 === a) {
+        for (let c = 0; c <= cover.length-1; c++){
+        	urlList.push("assets/vid/work-" + c + ".mp4");
+        }
+        for (var c = 0; c < urlList.length; c++){
+        	xhrVid[c] = new XMLHttpRequest, xhrVid[c].open("GET", urlList[c], !0), xhrVid[c].responseType = "blob", xhrVid[c].send();
+        }
+      }
+      if (2 === a) {
+        for(let c = 0; c <= cover.length-1; c++){
+          urlList.push("assets/vid/work-" + c + ".webm");
+        }
+        for(let c = 0; c < urlList.length; c++) {
+          xhrVid[c] = new XMLHttpRequest;
+          xhrVid[c].open("GET", urlList[c], !0);
+          xhrVid[c].responseType = "blob";
+          xhrVid[c].onload = function (e){
+            // let p = _('#per');
+            if(this.readyState == 4){
+              r+=1;
+              let num = r*(100/cover.length-1);
+              if(r === cover.length){
+                //function render videos
+                //loading
+                vidRender();
+              }
+            }
+          }
+          xhrVid[c].send();
+        }
+    }
   }
 }
 
+function vidRender(){
+  let vtag = __('.videostyle'),
+      a, b = support(vtag[0]);
+  for (var i = 0; i < vtag.length; i++) {
+    let src = document.createElement("SOURCE");
+      if (" " == b ? a = 0 : "mp4" == b ? a = 1 : "webm" == b && (a = 2), 1 === a) {
+        src.setAttribute('src', 'assets/vid/work-'+i+'.mp4');
+        src.setAttribute('type', 'video/mp4');
+      }
+      if (2 === a) {
+        src.setAttribute('src', 'assets/vid/work-'+i+'.webm');
+        src.setAttribute('type', 'video/webm');
+      }
+    vtag[i].appendChild(src);
+  }
+  setOverWork();
+}
+
+function setOverWork(){
+  let v = __('.videostyle');
+  for (var i = 0; i < v.length; i++) {
+    v[i].setAttribute('onmouseover', 'overWork("over", this)');
+    v[i].setAttribute('onmouseout', 'overWork("out", this)');
+  }
+}
+
+function overWork(c, t){
+  if(c === "over"){
+    t.play();
+  } else {
+    t.pause();
+    setTimeout(function(){ t.currentTime = 0; },60);
+  }
+}
+
+//e
 function hideCoverLogo(){
   let trigger = _('#mainprojects').getBoundingClientRect().top,
       wr = _('#logoCoverWrap');
@@ -225,9 +308,6 @@ function hideCoverLogo(){
   }
 }
 
-
-
-
 function changeBackground(){
   let backs = [],
       wr = _('#mainprojects'),
@@ -238,35 +318,39 @@ function changeBackground(){
       tops = [];
       backs.push(cMain);
 
-  for (var i = 0; i < fLen; i++) {
+  for (let i = 0; i < fLen; i++) {
     backs.push(f[i].getAttribute('data-back'));
     tops.push(f[i].getBoundingClientRect().top - c);
   }
-
   if(tops[0] < 0){
     wr.style.background = backs[1];
   }  else {
     wr.style.background = backs[0];
   }
-
-  for (var i = 1; i < fLen; i++) {
-    if(tops[i] < 0){
-      wr.style.background = backs[i+1];
-    }
+  for (let i = 1; i < fLen; i++) {
+    if(tops[i] < 0){ wr.style.background = backs[i+1]; }
   }
 }
 
-function detectWave(){
+function removeAboutScroll(){
   let about = _('#triggerAbout'),
-      wave = _('#wavewrap'),
-      center = window.innerHeight/2,
-      triggerWrap = _('.projects'),
-      trigger = triggerWrap.getBoundingClientRect().top;
-  if(trigger < center){
+      c = window.innerHeight/2,
+      trigger = _('.projects').getBoundingClientRect().top;
+  if(trigger < c){
     about.style.opacity = "0"
-    wave.style.bottom = "0"
   } else {
     about.style.opacity = "1"
+  }
+}
+
+function detectWaveLayouts(){
+  let wave = _('#wavewrap'),
+      c = window.innerHeight/2,
+      triggerWrap = _('.projects'),
+      trigger = triggerWrap.getBoundingClientRect().top;
+  if(trigger < c){
+    wave.style.bottom = "0"
+  } else {
     wave.style.bottom = "-120px"
   }
 }

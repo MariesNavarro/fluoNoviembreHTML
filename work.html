@@ -17,7 +17,7 @@ fluo.com.mx
 	<meta http-equiv="pragma" content="no-cache"/>
 	<meta name="google" content="notranslate"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0000, minimum-scale=1.0000, maximum-scale=1.0000, user-scalable=yes">
-  <title>Fluo Mx | Layout 1</title> <!-- REVISAR -->
+  <title>Fluo Mx | Layout Work</title> <!-- REVISAR -->
   <link rel="canonical" href="index.html" />
   <meta name="description" content=""/> <!-- FALTA -->
   <meta name="keywords" content=" "/> <!-- FALTA -->
@@ -46,7 +46,7 @@ fluo.com.mx
     <p id="size" class="hideDisplay"></p>
     <!-- LOADING -->
     <div id="loading" class="hideDisplay">
-      <p id="percentage">1%</p>
+      <p id="per">1%</p>
     </div>
     <!-- POP PHONE -->
     <div id="popPhone" class="hideDisplay">
@@ -68,10 +68,10 @@ fluo.com.mx
               <div id="logotipoMenu"></div>
             </a>
           </li>
-          <li  id="triggerAbout" onclick="aboutThisPop('open')">
+          <!-- <li  id="triggerAbout" onclick="aboutThisPop('open')">
             <a role="button" class="aboutLi">About this project</a>
             <a role="button" class="closeLi" style="display:none">Close</a>
-          </li>
+          </li> -->
           <li id="triggerMenu" class="menuLi">
             <a role="button">Menu</a>
           </li>
@@ -137,57 +137,65 @@ fluo.com.mx
       </div>
     </nav>
     <!-- MAIN -->
-    <section class="fullsection layout1_wr" style="height:100vh">
-      <article style="width:90vw; height:100vh;background:purple;margin:0 auto"></article>
+    <section class="fullsection layout1_work">
+      <article style="background:#000">
+        <!-- Carátura 1 -->
+        <a href="">
+          <div class="cover" style="background-image:url('img/projects/covers/nombreproyecto1.jpg')"></div>
+          <div class="infocover showDisplayFlex">
+            <p>Título de proyecto 1</p>
+          </div>
+        </a>
+        <a href="">
+          <div class="cover" style="background-image:url('img/projects/covers/nombreproyecto2.jpg')"></div>
+          <div class="infocover showDisplayFlex">
+            <p>Título de proyecto 2</p>
+          </div>
+        </a>
+
+        <a href="">
+          <div class="cover" style="background-image:url('img/projects/covers/nombreproyecto3.jpg')"></div>
+          <div class="infocover showDisplayFlex">
+            <p>Título de proyecto 3</p>
+          </div>
+        </a>
+        <a href="">
+          <div class="cover" style="background-image:url('img/projects/covers/nombreproyecto4.jpg')"></div>
+          <div class="infocover showDisplayFlex">
+            <p>Título de proyecto 4</p>
+          </div>
+        </a>
+
+        <a href="">
+          <div class="cover" style="background-image:url('img/projects/covers/nombreproyecto5.jpg')"></div>
+          <div class="infocover showDisplayFlex">
+            <p>Título de proyecto 5</p>
+          </div>
+        </a>
+        <a href="">
+          <div class="cover" style="background-image:url('img/projects/covers/nombreproyecto6.jpg')"></div>
+          <div class="infocover showDisplayFlex">
+            <p>Título de proyecto 6</p>
+          </div>
+        </a>
+      </article>
     </section>
     <!-- PROYECTOS -->
-    <section class="fullsection projects">
+    <section class="fullsection projects lastworks">
       <article class="showDisplayFlex">
         <!-- PROJ PREV -->
-        <a class="izq" href="#">
-          <!-- INFO -->
-          <div>
-            <div class="info_wr">
-              <span>
-                <h4> Lemon Films </h4>
-                <span class="linea gradientFluo"></span>
-              </span>
-              <p>
-                Asociación sin fines de lucro
-                para fomentar el crecimiento
-                de mujeres y niños de bajos
-                recursos.
-              </p>
-              <span class="navPrev">
-                <p>Anterior</p>
-                <img class="rotIcon" src="img/icons/arrow_footer.svg" height="10">
-              </span>
-            </div>
+        <a class="last" href="">
+          <div class="cover" style="background-image:url('img/projects/covers/nombreproyecto7.jpg')"></div>
+          <div class="infocover showDisplayFlex">
+            <p>Título de proyecto 7</p>
           </div>
-          <!-- IMG -->
-          <div class="imgProject" style="background-image:url('img/projects/covers/lemon.jpg')"></div>
         </a>
         <!-- PROJ NXT -->
-        <a class="der" href="#">
-          <!-- INFO -->
-          <div>
-            <div class="info_wr">
-              <span>
-                <h4> Yot Mx </h4>
-                <span class="linea gradientFluo"></span>
-              </span>
-              <p>
-                Comercializadora de vinos
-                y licores en México.
-              </p>
-              <span class="navNext">
-                <p>Siguiente</p>
-                <img src="img/icons/arrow_footer.svg" height="10">
-              </span>
-            </div>
+        <a class="last" href="">
+          <div class="cover" style="background-image:url('img/projects/covers/nombreproyecto8.jpg')"></div>
+          <div class="infocover showDisplayFlex">
+            <p>Título de proyecto 8</p>
           </div>
-          <!-- IMG -->
-          <div class="imgProject" style="background-image:url('img/projects/covers/enotelia.jpg')"></div>
         </a>
       </article>
     </section>
@@ -223,81 +231,21 @@ fluo.com.mx
         <div id="videoWrap"></div>
     </section>
     <!-- ABOUT THIS -->
-    <section id="abouthis">
-      <span class="bts"></span>
-      <a class="close" role="button" onclick="aboutThisPop('close')">Close</a>
-      <article class="showDisplayFlex">
-        <div class="izq">
-          <h4>
-            Enotelia
-            <span class="pleca gradientFluo"></span>
-          </h4>
-          <p>
-            <b>
-              Comercializadora de vinos y
-              licores en México.
-            </b>
-          </p>
-          <p>
-            Construcción y desarrollo de
-            una marca nueva; intrigante,
-            ambiciosa, conocedora y
-            extrovertida.
-          </p>
-        </div>
-        <div class="der showDisplayFlex">
-          <div>
-            <h5>Objetivos</h5>
-            <p>
-              Creación de una nueva razón social
-              que permita a Enotelia diversificar
-              y desarrollar aún más su importación
-              y comercialización, para incluir otro
-              tipo de bebidas alcohólicas y/o licores,
-              expandiendo su mercado.
-            </p>
-            <p>
-              Posicionar Enotelia como una
-              empresa de calidad, resaltando
-              y celebrando el conocimiento
-              que tiene su público sobre el
-              mundo y las diferentes bebidas
-              que consume, así como las experiencias
-              que se viven para poder degustarlas.
-            </p>
-          </div>
-          <div>
-            <h5>Rol de Fluo</h5>
-            <ul class="showGrid">
-              <li>Naming</li>
-              <li>Estrategia</li>
-              <li>Logotipo</li>
-              <li>Identidad</li>
-              <li>Página web</li>
-              <li>Aplicaciones adicionales</li>
-              <li>Contenidos de redes</li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-          </div>
-        </div>
-        <div id="wavethis">
-            <div></div>
-        </div>
-      </article>
     </section>
     <script src="js/bowser.min.js" charset="utf-8"></script>
     <script src="js/pixi.min.js" charset="utf-8"></script>
     <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
     <script type="text/javascript">
+      window.onload = function(){
+        //El numero entre parentesis es el numero de videos que se van a cargar
+        loadVid();
+      }
       window.onresize = function(){
         var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";
       }
       window.onscroll = function(){
-        detectWave();
+        detectWaveLayouts();
       }
     </script>
 </body>
