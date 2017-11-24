@@ -18,7 +18,8 @@
 
 * a {
   cursor: pointer;
-  text-decoration: none; }
+  text-decoration: none;
+  color: #fff; }
 
 * i {
   font-style: italic; }

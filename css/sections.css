@@ -29,17 +29,18 @@
 #mainprojects{
   position: relative;
   margin-top: 100vh;
-  -webkit-transition: all 1.5s ease-out;
-  -moz-transition: all 1.5s ease-out;
-  -ms-transition: all 1.5s ease-out;
-  -o-transition: all 1.5s ease-out;
-  transition: all 1.5s ease-out;
+  -webkit-transition: background 1.5s ease-out;
+  -moz-transition: background 1.5s ease-out;
+  -ms-transition: background 1.5s ease-out;
+  -o-transition: background 1.5s ease-out;
+  transition: background 1.5s ease-out;
 }
 #mainprojects>article{
   position: relative;
   width:100vw;
   margin: 0 auto;
-  border: 1px solid red;
+  /*border: 1px solid red;*/
+  padding: 5% 0;
 }
 /* flags */
 #mainprojects>article>.flag{
@@ -49,7 +50,82 @@
   height: 200px;
   background: rgba(0,0,0,0);
 }
-
+/* Modulos */
+  /* Contenido 1 */
+  .contenido_1{
+    display: none;
+  }
+  .contenido_1 > a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center
+  }
+  .contenido_1 > a >p{
+    padding-bottom: 16px;
+    opacity: 0.7
+  }
+  .contenido_1 > a >p:hover{
+    opacity: 0.9;
+  }
+  .contenido_1 > a >div{
+    width: 70%;
+    margin: 0 auto
+  }
+  /* Contenido 2 */
+  .contenido_2{  }
+  .contenido_2 >.column_1{
+    display: none;
+    width: 50%;
+    margin-right: 10%;
+    border: 1px solid green;
+  }
+  .contenido_2 >.column_1>img{ width: 100%; }
+  .contenido_2 >.column_2{
+    border: 1px solid blue;
+    width: 70%;
+    margin: 0 auto;
+    -webkit-flex-direction: column-reverse;
+    -moz-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    -o-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    -ms-justify-content: flex-end;
+    -o-justify-content: flex-end;
+    justify-content: flex-end;
+  }
+  .contenido_2 >.column_2> div >h4{ padding: 22px 0 }
+  .contenido_2 >.column_2> div >i{
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+    padding: 22px 0;
+  }
+  .contenido_2 >.column_2> div >span.fix{
+    display: block;
+    width: 100%;
+    height: 20px;
+  }
+  /* Contenido 3 */
+  .contenido_3{
+    display: none;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+  }
+  .contenido_3 > .column_1{
+    width: 20%;
+    border: 1px solid green;
+  }
+  .contenido_3 > .column_2{
+    width: 80%;
+    border: 1px solid blue;
+  }
+  .contenido_3 > div > img { width: 100% }
 /* Work */
 .layout1_work > article{
   width: 100vw;
@@ -124,6 +200,26 @@
   #mainprojects>article{
     width:80vw;
   }
+  /* MODULOS */
+    /* CONTENIDO 1 */
+    .contenido_1{ display: block; }
+    /* CONTENIDO 2 */
+    .contenido_2 >.column_1{ display: block; }
+    .contenido_2 >.column_2{
+      width: 25%;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      -o-flex-direction: column;
+      flex-direction: column;
+    }
+    /* CONTENIDO 3 */
+    .contenido_3{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+    }
   /* WORK */
   .layout1_work > article > a{
     width: 50%;
