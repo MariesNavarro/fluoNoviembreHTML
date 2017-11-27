@@ -148,7 +148,7 @@ fluo.com.mx
           <a role="button">
             <img class="rotIcon" src="img/icons/arrow.svg" height="15">
           </a>
-          <p> Título de Foto </p>
+          <p id="descriptionSliderMobile"> Título de Foto </p>
           <a role="button">
             <img src="img/icons/arrow.svg" height="15">
           </a>
@@ -177,7 +177,7 @@ fluo.com.mx
           <a role="button">
             <img class="rotIcon" src="img/icons/arrow.svg" height="15">
           </a>
-          <p> Título de Foto </p>
+          <p id="descriptionSliderDesktop"> Título de Foto </p>
           <a role="button">
             <img src="img/icons/arrow.svg" height="15">
           </a>
@@ -337,6 +337,10 @@ fluo.com.mx
     <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
     <script type="text/javascript">
+      var stringSliderMobile = "img/projects/the_king_and_co/archive/poster-";
+      window.onload = function(){
+        detectswipe('swipe_slider', swipeSliderMobile);
+      }
       window.onresize = function(){
         var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";
       }
