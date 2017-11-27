@@ -411,8 +411,10 @@ function swipeSliderMobile(el,d){
 }
 
 function sliderMobile(c){
-  var img = _('#swipe_slider').children[0];
+  var img = _('#swipe_slider').children[0],
+      description = _('#descriptionSliderMobile').children[0];
   img.setAttribute('src', stringSliderMobile+c+'.jpg');
+  description.innerHTML = c;
 }
 
 document.onkeydown = function(e){

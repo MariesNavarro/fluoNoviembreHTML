@@ -145,11 +145,11 @@ fluo.com.mx
         </div>
         <!-- Interfaz -->
         <div class="interfaz_slider showDisplayFlex">
-          <a role="button">
+          <a role="button" onclick="swipeSliderMobile('#swipe_slider', 'next')">
             <img class="rotIcon" src="img/icons/arrow.svg" height="15">
           </a>
-          <p id="descriptionSliderMobile"> Título de Foto </p>
-          <a role="button">
+          <p id="descriptionSliderMobile"> 1/<span>1</span> </p>
+          <a role="button" onclick="swipeSliderMobile('#swipe_slider', 'prev')">
             <img src="img/icons/arrow.svg" height="15">
           </a>
         </div>
@@ -177,7 +177,7 @@ fluo.com.mx
           <a role="button">
             <img class="rotIcon" src="img/icons/arrow.svg" height="15">
           </a>
-          <p id="descriptionSliderDesktop"> Título de Foto </p>
+          <p id="descriptionSliderDesktop"> 1/<span>1</span> </p>
           <a role="button">
             <img src="img/icons/arrow.svg" height="15">
           </a>
@@ -337,7 +337,7 @@ fluo.com.mx
     <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
     <script type="text/javascript">
-      var stringSliderMobile = "img/projects/the_king_and_co/archive/poster-";
+      var stringSliderMobile = "img/projects/the_king_and_co/2017/poster-";
       window.onload = function(){
         detectswipe('swipe_slider', swipeSliderMobile);
       }
