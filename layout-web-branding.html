@@ -1,0 +1,411 @@
+<!--
+Fluo Mx
+v4
+6 de Noviembre
+[FLUO]
+info@fluo.com.mx
+fluo.com.mx
+-->
+<html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="cache-control" content="no-cache"/>
+	<meta http-equiv="pragma" content="no-cache"/>
+	<meta name="google" content="notranslate"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0000, minimum-scale=1.0000, maximum-scale=1.0000, user-scalable=yes">
+  <title>Fluo Mx | Layout Web & Branding</title> <!-- REVISAR -->
+  <link rel="canonical" href="index.html" />
+  <meta name="description" content=""/> <!-- FALTA -->
+  <meta name="keywords" content=" "/> <!-- FALTA -->
+  <meta name="author" content="www.fluo.com.mx">
+  <meta property="og:title" content="Fluo Mx">
+	<meta property="og:site_name" content="Fluo Mx">
+	<meta property="og:url" content=" "> <!-- FALTA -->
+	<meta property="og:type" content="website"> <!-- FALTA -->
+	<meta property="og:image" content="img/media.jpg"> <!-- FALTA -->
+  <meta property="og:description" content=" "> <!-- FALTA -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:creator" content="@fluomx">
+	<meta name="twitter:title" content="Fluo Mx">
+	<meta name="twitter:description" content=" "> <!-- FALTA -->
+	<meta name="twitter:image" content="img/media.jpg"> <!-- FALTA -->
+  <link rel="apple-touch-icon" sizes="180x180" href="css/fav/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="css/fav/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="css/fav/favicon-16x16.png">
+  <link rel="manifest" href="css/fav/manifest.json">
+  <link rel="mask-icon" href="css/fav/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+	<link rel="stylesheet" type="text/css" href="css/master.css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/sections.css" media="all">
+</head>
+<body>
+    <p id="size" class="hideDisplay"></p>
+    <!-- LOADING -->
+    <div id="loading" class="hideDisplay">
+      <p id="percentage">1%</p>
+    </div>
+    <!-- POP PHONE -->
+    <div id="popPhone" class="hideDisplay">
+      <span onclick="phonePop('close')"></span>
+      <a role="button" onclick="phonePop('close')">Close</a>
+      <div class="showDisplayFlex">
+        <p>+1 52 5730-3009</p>
+        <p>Horarios de atención:</p>
+        <p>Lunes - Viernes</p>
+        <p>9:00 a 18:00</p>
+      </div>
+    </div>
+    <!-- NAVIGATION -->
+    <nav id="top">
+        <!-- NAV TOP -->
+        <ul class="showDisplayFlex">
+          <li>
+            <a href="index.html" title="Ir a inicio">
+              <div id="logotipoMenu"></div>
+            </a>
+          </li>
+          <li  id="triggerAbout" onclick="aboutThisPop('open')">
+            <a role="button" class="aboutLi">About this project</a>
+            <a role="button" class="closeLi" style="display:none">Close</a>
+          </li>
+          <li id="triggerMenu" class="menuLi">
+            <a role="button">Menu</a>
+          </li>
+        </ul>
+    </nav>
+    <nav id="bottom">
+      <!-- NAV BOTTOM -->
+      <ul class="showDisplayFlex">
+        <li id="triggerReel" class="showLi">
+          <a role="button">Showreel</a>
+        </li>
+        <li class="contactLi">
+          <a role="button">About/ <br> Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <nav id="back">
+      <a href="#loading" data-scroll onmouseover="overLine('over', '#lineBackTo')" onmouseout="overLine('out', '#lineBackTo')">
+        <span>Back to top</span>
+      </a>
+      <div>
+        <span id="lineBackTo" class="scaleDownLine"></span>
+      </div>
+    </nav>
+    <!-- NAV DESKTOP -->
+    <nav id="desktopinnner" class="showDisplayFlex">
+      <!-- LINK 1 MENU DESKTOP  -->
+      <a href="" title="Ir a Work">
+        <p>
+          Work
+          <span></span>
+        </p>
+      </a>
+      <!-- LINK 2 MENU DESKTOP  -->
+      <a href="" title="Ir a Services">
+        <p>
+          Services
+          <span></span>
+        </p>
+      </a>
+      <!-- Se pueden agregar más -->
+    </nav>
+    <!-- NAV MOBILE -->
+    <nav id="mobileinner">
+      <div class="showDisplayFlex">
+        <a role="button" onclick="mainMenuMob('close')">
+          <p>
+            <i>Close</i>
+          </p>
+        </a>
+        <a href="#" role="button">
+          <p>
+            Work
+            <span></span>
+          </p>
+        </a>
+        <a href="#" role="button">
+          <p>
+            Services
+            <span></span>
+          </p>
+        </a>
+      </div>
+    </nav>
+    <!-- COVER LOGO -->
+    <section id="logoCoverWrap" class="showDisplayFlex" style="background:#45122d;">
+        <div style="background-image:url('img/projects/enotelia/logotipo.svg')"></div>
+    </section>
+    <!-- MAIN -->
+    <section id="mainprojects" class="fullsection layout2_wr" style="background:#45122d" data-back="#45122d">
+      <!-- CONTENIDO 1 -->
+      <article class="contenido_1">
+        <a href="#" target="blank" rel="noopener noreferrer">
+          <!-- <p>www.enotelia.org</p> -->
+          <div>
+            <!-- Vimeo Desktop -->
+            <img src="img/projects/enotelia/papeleria_1.png" style="width:100%">
+          </div>
+        </a>
+      </article>
+      <!-- CONTENIDO 2 -->
+      <article class="contenido_2 showDisplayFlex">
+        <div class="flag" data-back="#45122d"></div>
+
+        <div class="column_1">
+          <!-- ipadMock -->
+          <img src="img/projects/enotelia/paleria_2.png" alt="Web Contentment Desarrollado por Fluo Mx">
+        </div>
+
+        <div class="column_2 showDisplayFlex">
+          <!-- Vimeo Mobile -->
+          <img src="img/projects/enotelia/papeleria_3.png" style="width:100%">
+          <div>
+            <h4> Fundación para el bienestar espiritual. </h4>
+            <i>
+              "At the deepest core of human
+              wellness is a sense  of profund contentment
+              and uncovering it for yourself is your birthright."
+            </i>
+            <span class="fix"></span>
+          </div>
+        </div>
+      </article>
+      <!-- WEB -->
+      <!-- CONTENIDO 1 -->
+      <article class="contenido_1">
+        <a href="#" target="blank" rel="noopener noreferrer">
+          <p>www.enotelia.com</p>
+          <div>
+            <!-- Vimeo Desktop -->
+            <img src="img/projects/enotelia/imac.png" style="width:100%">
+          </div>
+        </a>
+      </article>
+      <!-- CONTENIDO 2 -->
+      <article class="contenido_2 showDisplayFlex">
+        <div class="flag" data-back="#45122d"></div>
+
+        <div class="column_1">
+          <!-- ipadMock -->
+          <img src="img/projects/enotelia/ipad.png" alt="Web Contentment Desarrollado por Fluo Mx">
+        </div>
+
+        <div class="column_2 showDisplayFlex">
+          <!-- Vimeo Mobile -->
+          <img src="img/projects/enotelia/iphone.png" style="width:100%">
+          <div>
+            <h4> Fundación para el bienestar espiritual. </h4>
+            <i>
+              "At the deepest core of human
+              wellness is a sense  of profund contentment
+              and uncovering it for yourself is your birthright."
+            </i>
+            <span class="fix"></span>
+          </div>
+        </div>
+      </article>
+      <!-- CONTENIDO 3 -->
+      <article class="contenido_3">
+        <div class="flag" data-back="#45122d"></div>
+        <div class="column_1">
+          <!-- iphoneMock -->
+          <img src="img/projects/enotelia/iphone.png" alt="Web Contentment Desarrollado por Fluo Mx">
+        </div>
+        <div class="column_2">
+          <!-- macbookMock -->
+          <img src="img/projects/enotelia/macbook.png" alt="Web Contentment Desarrollado por Fluo Mx">
+        </div>
+      </article>
+      <!-- CONTENIDO 1 -->
+      <article class="contenido_1">
+        <a href="#" target="blank" rel="noopener noreferrer">
+          <!-- <p>www.enotelia.com</p> -->
+          <div>
+            <!-- Vimeo Desktop -->
+            <img src="img/projects/enotelia/slider.png" style="width:100%">
+          </div>
+        </a>
+      </article>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="fullsection projects">
+      <article class="showDisplayFlex">
+        <!-- PROJ PREV -->
+        <a class="izq" href="#">
+          <!-- INFO -->
+          <div>
+            <div class="info_wr">
+              <span>
+                <h4> Lemon Films </h4>
+                <span class="linea gradientFluo"></span>
+              </span>
+              <p>
+                Asociación sin fines de lucro
+                para fomentar el crecimiento
+                de mujeres y niños de bajos
+                recursos.
+              </p>
+              <span class="navPrev">
+                <p>Anterior</p>
+                <img class="rotIcon" src="img/icons/arrow_footer.svg" height="10">
+              </span>
+            </div>
+          </div>
+          <!-- IMG -->
+          <div class="imgProject" style="background-image:url('img/projects/covers/lemon.jpg')"></div>
+        </a>
+        <!-- PROJ NXT -->
+        <a class="der" href="#">
+          <!-- INFO -->
+          <div>
+            <div class="info_wr">
+              <span>
+                <h4> Yot Mx </h4>
+                <span class="linea gradientFluo"></span>
+              </span>
+              <p>
+                Comercializadora de vinos
+                y licores en México.
+              </p>
+              <span class="navNext">
+                <p>Siguiente</p>
+                <img src="img/icons/arrow_footer.svg" height="10">
+              </span>
+            </div>
+          </div>
+          <!-- IMG -->
+          <div class="imgProject" style="background-image:url('img/projects/covers/enotelia.jpg')"></div>
+        </a>
+      </article>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+      <div id="wavewrap">
+        <div class="wave"></div>
+      </div>
+      <article>
+          <div class="showDisplayFlex">
+            <ul class="showDisplayFlex">
+              <li><a href="" title="Ir a Facebook" target="blank" rel="noopener noreferrer">Facebook</a></li>
+              <li><a href="https://www.instagram.com/fluomx/" title="Ir a Instagram" target="blank" rel="noopener noreferrer">Instagram</a></li>
+              <li><a href="https://www.behance.net/fluo_" title="Ir a Behance" target="blank" rel="noopener noreferrer">Behance</a></li>
+              <li><a href="https://vimeo.com/user48807238" title="Ir a Vimeo" target="blank" rel="noopener noreferrer">Vimeo</a></li>
+              <li><a href="#" title="Enviar Mail" target="blank" rel="noopener noreferrer">Mail</a></li>
+            </ul>
+            <ul class="showDisplayFlex">
+              <li><p>All Rights Reserved FluoMx© 2017</p></li>
+              <li><p>Coded by FluoMx</p></li>
+            </ul>
+          </div>
+          <ul class="showDisplayFlex">
+            <li><a id="telefonofluo" target="blank" rel="noopener noreferrer">5730-3009</a></li>
+            <li><a href="mailto:info@fluo.com.mx?Subject=Contacto%20desde%20web" title="Ir a" target="blank" rel="noopener noreferrer">info@fluo.com.mx</a></li>
+          </ul>
+      </article>
+    </footer>
+    <!-- POP REEL -->
+    <section id="showreel">
+      <span onclick="popReel('close')"></span>
+        <a role="button" onclick="popReel('close')"> Close </a>
+        <div id="videoWrap"></div>
+    </section>
+    <!-- ABOUT THIS -->
+    <section id="abouthis">
+      <span class="bts"></span>
+      <a class="close" role="button" onclick="aboutThisPop('close')">Close</a>
+      <article class="showDisplayFlex">
+        <div class="izq">
+          <h4>
+            Enotelia
+            <span class="pleca gradientFluo"></span>
+          </h4>
+          <p>
+            <b>
+              Comercializadora de vinos y
+              licores en México.
+            </b>
+          </p>
+          <p>
+            Construcción y desarrollo de
+            una marca nueva; intrigante,
+            ambiciosa, conocedora y
+            extrovertida.
+          </p>
+        </div>
+        <div class="der showDisplayFlex">
+          <div>
+            <h5>Objetivos</h5>
+            <p>
+              Creación de una nueva razón social
+              que permita a Enotelia diversificar
+              y desarrollar aún más su importación
+              y comercialización, para incluir otro
+              tipo de bebidas alcohólicas y/o licores,
+              expandiendo su mercado.
+            </p>
+            <p>
+              Posicionar Enotelia como una
+              empresa de calidad, resaltando
+              y celebrando el conocimiento
+              que tiene su público sobre el
+              mundo y las diferentes bebidas
+              que consume, así como las experiencias
+              que se viven para poder degustarlas.
+            </p>
+          </div>
+          <div>
+            <h5>Rol de Fluo</h5>
+            <ul class="showGrid">
+              <li>Naming</li>
+              <li>Estrategia</li>
+              <li>Logotipo</li>
+              <li>Identidad</li>
+              <li>Página web</li>
+              <li>Aplicaciones adicionales</li>
+              <li>Contenidos de redes</li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+        <div id="wavethis">
+            <div></div>
+        </div>
+      </article>
+    </section>
+    <div id="lineacentro"></div>
+    <script src="js/bowser.min.js" charset="utf-8"></script>
+    <script src="js/pixi.min.js" charset="utf-8"></script>
+    <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
+    <script src="js/main.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      window.onresize = function(){
+        var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";
+      }
+      window.onscroll = function(){
+        detectWaveLayouts();
+        hideCoverLogo();
+        changeBackground();
+        //Si hay botón de "About This Project"
+        removeAboutScroll();
+      }
+      //Si hay botón de "About This Project"
+      window.onorientationchange = function(){
+        let aboutthis = _('#aboutthis');
+        if(window.orientation == 90 || window.orientation == -90){
+          aboutthis.style.display = "none"
+        } else {
+          aboutthis.style.display = "block"
+        }
+      }
+    </script>
+</body>
+</html>
