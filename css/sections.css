@@ -235,3 +235,14 @@
     opacity: 1;
   }
 }
+/* Loading */
+#per{
+  width: 60px;
+  line-height: 40px;
+  text-align: center;
+  position: absolute;
+  display: block;
+  /*border: 1px solid red;*/
+  left: calc(50% - -30px);
+  top: calc(50% - 20px);
+}

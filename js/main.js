@@ -243,13 +243,17 @@ function loadVid() {
           xhrVid[c].open("GET", urlList[c], !0);
           xhrVid[c].responseType = "blob";
           xhrVid[c].onload = function (e){
-            // let p = _('#per');
+            let p = _('#per');
+            let wr = _('#loading');
             if(this.readyState == 4){
               r+=1;
-              let num = r*(100/cover.length-1);
+              let num = Math.round(r*(100/cover.length-1));
+              console.log(num);
+              p.innerHTML = num + "%";
               if(r === cover.length){
                 //function render videos
                 //loading
+                wr.style.display = "none";
                 vidRender();
               }
             }
