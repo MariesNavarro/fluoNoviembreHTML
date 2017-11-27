@@ -17,7 +17,7 @@ fluo.com.mx
 	<meta http-equiv="pragma" content="no-cache"/>
 	<meta name="google" content="notranslate"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0000, minimum-scale=1.0000, maximum-scale=1.0000, user-scalable=yes">
-  <title>Fluo Mx | Layout Web</title> <!-- REVISAR -->
+  <title>Fluo Mx | Layout 1</title> <!-- REVISAR -->
   <link rel="canonical" href="index.html" />
   <meta name="description" content=""/> <!-- FALTA -->
   <meta name="keywords" content=" "/> <!-- FALTA -->
@@ -136,55 +136,41 @@ fluo.com.mx
         </a>
       </div>
     </nav>
-    <!-- COVER LOGO -->
-    <section id="logoCoverWrap" class="showDisplayFlex" style="background:#0985B3;">
-        <div style="background-image:url('img/projects/contentment/imac.png')"></div>
-    </section>
     <!-- MAIN -->
-    <section id="mainprojects" class="fullsection layout2_wr" style="background:#0985B3" data-back="#0985B3">
-      <!-- CONTENIDO 1 -->
-      <article class="layout_1">
-        <a href="#" target="blank" rel="noopener noreferrer">
-          <p>www.contentment.org</p>
-          <div>
-            <!-- Vimeo Desktop -->
-            <img src="img/projects/contentment/coverVideoDesktop.png" style="width:100%">
-          </div>
-        </a>
-      </article>
-      <!-- CONTENIDO 2 -->
-      <article class="layout_2 showDisplayFlex">
-        <div class="flag" data-back="#2596A5"></div>
-
-        <div class="column_1">
-          <!-- ipadMock -->
-          <img src="img/projects/contentment/ipad.png" alt="Web Contentment Desarrollado por Fluo Mx">
-        </div>
-
-        <div class="column_2 showDisplayFlex">
-          <!-- Vimeo Mobile -->
-          <img src="img/projects/contentment/coverVideoMobile.png" style="width:100%">
-          <div>
-            <h4> Fundación para el bienestar espiritual. </h4>
-            <i>
-              "At the deepest core of human
-              wellness is a sense  of profund contentment
-              and uncovering it for yourself is your birthright."
-            </i>
-            <span class="fix"></span>
-          </div>
+    <section class="fullsection layout1_wr" style="background:#000">
+      <!-- CONTENIDO SLIDER MOBILE  6 -->
+      <article class="contenido_slider_mobile" style="margin:120px auto">
+        <div class="full_slider">
+          <img src="img/projects/enotelia/slider-1.jpg" alt="">
         </div>
       </article>
-      <!-- CONTENIDO 3 -->
-      <article class="layout_3">
-        <div class="flag" data-back="#3EA698"></div>
-        <div class="column_1">
-          <!-- iphoneMock -->
-          <img src="img/projects/contentment/iphone.png" alt="Web Contentment Desarrollado por Fluo Mx">
-        </div>
-        <div class="column_2">
-          <!-- macbookMock -->
-          <img src="img/projects/contentment/macbook.png" alt="Web Contentment Desarrollado por Fluo Mx">
+      <!-- CONTENIDO SLIDER DESKTOP 6 -->
+      <article class="contenido_slider_desk" style="margin:120px auto">
+        <ul class="showDisplayFlex">
+          <li>
+            <div class="sideImg" style="background-image:url('img/projects/enotelia/slider-5.jpg')"></div>
+            <div class="mainImg" style="background-image:url('img/projects/enotelia/slider-6.jpg')"></div>
+            <div class="sideImg" style="background-image:url('img/projects/enotelia/slider-7.jpg')"></div>
+          </li>
+          <li>
+            <div class="sideImg" style="background-image:url('img/projects/enotelia/slider-1.jpg')"></div>
+            <div class="mainImg" style="background-image:url('img/projects/enotelia/slider-2.jpg')"></div>
+            <div class="sideImg" style="background-image:url('img/projects/enotelia/slider-3.jpg')"></div>
+          </li>
+          <li>
+            <div class="sideImg" style="background-image:url('img/projects/enotelia/slider-4.jpg')"></div>
+            <div class="mainImg" style="background-image:url('img/projects/enotelia/slider-5.jpg')"></div>
+            <div class="sideImg" style="background-image:url('img/projects/enotelia/slider-6.jpg')"></div>
+          </li>
+        </ul>
+        <div class="showDisplayFlex">
+          <a role="button">
+            <img class="rotIcon" src="img/icons/arrow_footer.svg" height="15">
+          </a>
+          <p> Título de Foto </p>
+          <a role="button">
+            <img src="img/icons/arrow_footer.svg" height="15">
+          </a>
         </div>
       </article>
     </section>
@@ -336,7 +322,6 @@ fluo.com.mx
         </div>
       </article>
     </section>
-    <div id="lineacentro"></div>
     <script src="js/bowser.min.js" charset="utf-8"></script>
     <script src="js/pixi.min.js" charset="utf-8"></script>
     <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
@@ -347,8 +332,6 @@ fluo.com.mx
       }
       window.onscroll = function(){
         detectWaveLayouts();
-        hideCoverLogo();
-        changeBackground();
         //Si hay botón de "About This Project"
         removeAboutScroll();
       }
