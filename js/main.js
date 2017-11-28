@@ -335,6 +335,18 @@ function changeBackground(){
   }
 }
 
+function bugArrowSlider(){
+  var wr = _('.bugArrows').getBoundingClientRect().bottom,
+      wh = window.innerHeight,
+      check = wr - wh,
+      ifce = _('#interfazDesktop');
+  if(check < 0){
+    ifce.style.opacity = "1";
+  } else {
+    ifce.style.opacity = "0";
+  }
+}
+
 function removeAboutScroll(){
   let about = _('#triggerAbout'),
       c = window.innerHeight/2,

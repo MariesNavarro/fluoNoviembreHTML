@@ -52,9 +52,6 @@
 }
 /* Modulos */
   /* Layout 1 */
-  .layout_1{
-    display: none;
-  }
   .layout_1 > a{
     display: block;
     width: 100%;
@@ -107,19 +104,18 @@
   }
   /* Layout 3 */
   .layout_3{
-    display: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
     -webkit-flex-direction: row;
     -moz-flex-direction: row;
     -ms-flex-direction: row;
     -o-flex-direction: row;
     flex-direction: row;
   }
-  .layout_3 > .column_1{
-    width: 20%;
-  }
-  .layout_3 > .column_2{
-    width: 80%;
-  }
+  .layout_3 > .column_1{ width: 20% }
+  .layout_3 > .column_2{ width: 80% }
   .layout_3 > div > img { width: 100% }
 
   /* Layout Slider Mobile */
@@ -230,6 +226,13 @@
   .layout_slider_desk > .interfaz_slider > a:hover,
   .layout_slider_mobile > .interfaz_slider > a:hover
   { opacity: 0.5; }
+  /* Flag for bug arrow */
+  .bugArrows{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+  }
 /* Work */
 .layout1_work > article{
   width: 100vw;
@@ -305,9 +308,8 @@
     width:80vw;
   }
   /* MODULOS */
-    /* CONTENIDO 1 */
-    .layout_1{ display: block; }
-    /* CONTENIDO 2 */
+    /* LAYOUT 1 */
+    /* LAYOUT 2 */
     .layout_2 >.column_1{ display: block; }
     .layout_2 >.column_2{
       width: 25%;
@@ -317,14 +319,7 @@
       -o-flex-direction: column;
       flex-direction: column;
     }
-    /* CONTENIDO 3 */
-    .layout_3{
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-    }
-    /* CONTENIDO SLIDER */
+    /* LAYOUT SLIDER */
     .layout_slider_desk{ display: block }
     .layout_slider_mobile{ display: none }
     .layout_slider_desk > .interfaz_slider, .layout_slider_mobile > .interfaz_slider{ width: 100%; }
@@ -343,15 +338,4 @@
     bottom: 0;
     opacity: 1;
   }
-}
-/* Loading */
-#per{
-  width: 60px;
-  line-height: 40px;
-  text-align: center;
-  position: absolute;
-  display: block;
-  /*border: 1px solid red;*/
-  left: calc(50% - -30px);
-  top: calc(50% - 20px);
 }

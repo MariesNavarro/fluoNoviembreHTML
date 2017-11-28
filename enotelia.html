@@ -231,7 +231,6 @@ fluo.com.mx
       </article>
       <!-- CONTENIDO SLIDER DESKTOP 6 -->
       <article class="layout_slider_desk">
-        <div class="flag" data-back="#887280"></div>
         <ul class="showDisplayFlex">
           <li>
             <div class="sideImgHide slideIndex" style="background-image:url('img/projects/enotelia/slider-6.jpg')"></div>
@@ -249,7 +248,7 @@ fluo.com.mx
             <div class="sideImgHide slideIndex" style="background-image:url('img/projects/enotelia/slider-3.jpg')"></div>
           </li>
         </ul>
-        <div class="interfaz_slider showDisplayFlex">
+        <div id="interfazDesktop" class="interfaz_slider showDisplayFlex transition" style="opacity: 0">
           <a class="eventSlider" role="button" onclick="swipeSliderDesktop('prev')">
             <img class="rotIcon" src="img/icons/arrow.svg" height="15">
           </a>
@@ -258,6 +257,7 @@ fluo.com.mx
             <img src="img/icons/arrow.svg" height="15">
           </a>
         </div>
+        <div class="bugArrows"></div>
       </article>
     </section>
     <!-- PROYECTOS -->
@@ -423,6 +423,7 @@ fluo.com.mx
         var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";
       }
       window.onscroll = function(){
+        bugArrowSlider();
         detectWaveLayouts();
         hideCoverLogo();
         changeBackground();
