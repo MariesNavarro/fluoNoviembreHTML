@@ -52,6 +52,7 @@
 }
 /* Modulos */
   /* Layout 1.1 */
+  .layout_1_1{ display: none }
   .layout_1_1 > a{
     display: block;
     width: 100%;
@@ -70,59 +71,115 @@
     margin: 0 auto
   }
   /* Layout 1.2 */
-  .layout_1 > a{
+  .layout_1_2 > a{
     display: block;
     width: 100%;
     height: 100%;
     text-align: center
   }
-  .layout_1 > a >p{
+  .layout_1_2 > a >p{
     padding-bottom: 16px;
     opacity: 0.7
   }
-  .layout_1 > a >p:hover{
+  .layout_1_2 > a >p:hover{
     opacity: 0.9;
   }
-  .layout_1 > a >div{
-    width: 70%;
+  .layout_1_2 > a >div{
+    width: 100%;
     margin: 0 auto
   }
-
-
-
-  /* Layout 2 */
-  .layout_2 >.column_1{
-    display: block;
+  /* Layout 2_1 */
+  .layout_2_1 >.column_1{
+    display: none;
     width: 50%;
     margin-right: 10%;
   }
-  .layout_2 >.column_1>img{ width: 100%; }
-  .layout_2 >.column_2{
-    width: 25%;
+  .layout_2_1 >.column_1>img{ width: 100%; }
+  .layout_2_1 >.column_2{
+    width: 100%;
+    margin: 0 auto;
+    -webkit-flex-direction: column-reverse;
+    -moz-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    -o-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    -ms-justify-content: flex-end;
+    -o-justify-content: flex-end;
+    justify-content: flex-end;
+  }
+  .layout_2_1 >.column_2> div >h4{
+     padding: 22px 0;
+     text-align: center;
+   }
+  .layout_2_1 >.column_2> div >i{
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+    padding: 22px 0;
+  }
+  .layout_2_1 >.column_2> div >span.fix{
+    display: block;
+    width: 100%;
+    height: 20px;
+  }
+  /* Layout 2_2 */
+  .layout_2_2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
     -webkit-flex-direction: column;
     -moz-flex-direction: column;
     -ms-flex-direction: column;
     -o-flex-direction: column;
     flex-direction: column;
   }
-  .layout_2 >.column_2> div >h4{ padding: 22px 0 }
-  .layout_2 >.column_2> div >i{
+  .layout_2_2 >.column_1{
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+  .layout_2_2 >.column_1>img{ width: 100%; }
+  .layout_2_2 >.column_2{
+    width: 70%;
+    margin: 0 auto;
+    -webkit-flex-direction: column-reverse;
+    -moz-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    -o-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    -ms-justify-content: flex-end;
+    -o-justify-content: flex-end;
+    justify-content: flex-end;
+  }
+  .layout_2_2 >.column_2> div >h4{
+    padding: 22px 0;
+    text-align: center;
+  }
+  .layout_2_2 >.column_2> div >i{
+    display: block;
+    width: 60%;
+    margin: 0 auto;
     font-size: 0.9rem;
     letter-spacing: 0.3px;
     line-height: 1.2;
     padding: 22px 0;
   }
-  .layout_2 >.column_2> div >span.fix{
+  .layout_2_2 >.column_2> div >span.fix{
     display: block;
     width: 100%;
     height: 20px;
   }
   /* Layout 3 */
   .layout_3{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+    display: none;
     -webkit-flex-direction: row;
     -moz-flex-direction: row;
     -ms-flex-direction: row;
@@ -320,6 +377,47 @@
 @media screen and (min-width: 800px) {
     #mainprojects>article{
       width:80vw;
+    }
+    /* LAYOUTS */
+    .layout_1_1{ display: block }
+    .layout_1_2 > a > div { width: 70% }
+    .layout_2_1 >.column_1{ display: block; }
+    .layout_2_1 >.column_2{
+      width: 25%;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      -o-flex-direction: column;
+      flex-direction: column;
+    }
+    .layout_2_1 >.column_2> div >h4{ text-align: left }
+    .layout_2_1 >.column_2> div >i{ width: 100% }
+    .layout_2_2 {
+      -webkit-flex-direction: row;
+      -moz-flex-direction: row;
+      -ms-flex-direction: row;
+      -o-flex-direction: row;
+      flex-direction: row;
+    }
+    .layout_2_2 >.column_1{
+      width: 50%;
+      margin-right: 10%;
+    }
+    .layout_2_2 >.column_2{
+      width: 25%;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      -o-flex-direction: column;
+      flex-direction: column;
+    }
+    .layout_2_2 >.column_2> div >h4{ text-align: left }
+    .layout_2_2 >.column_2> div >i{ width: 100% }
+    .layout_3{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
     }
     /* LAYOUT SLIDER */
     .layout_slider_desk{ display: block }
