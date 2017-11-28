@@ -50,6 +50,20 @@
   height: 200px;
   background: rgba(0,0,0,0);
 }
+/* Index */
+#layout1_index{
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+}
+#layout1_index> article{
+  /* Con margen */
+  /*width: 90vw;
+  height: calc(100vh - 180px);
+  margin: 90px auto;*/
+  width: 100vw;
+  height: 100vh;
+}
 /* Modulos */
   /* Layout 1.1 */
   .layout_1_1{ display: none }
