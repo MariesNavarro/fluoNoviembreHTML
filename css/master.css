@@ -891,13 +891,15 @@ body {
       flex-direction: row;
       justify-content: flex-start;
       align-items: flex-start; }
-      body #abouthis article .izq {
-        width: 25%;
-        margin-right: 15%;
-        font-size: 1.9rem;
-        font-size: 1.1rem; }
       body #abouthis article .der {
         width: 30%; }
+      body #abouthis article .izq {
+        width: 25%;
+        margin-right: 15%; }
+        body #abouthis article .izq h4 {
+          font-size: 1.9rem; }
+        body #abouthis article .izq p {
+          font-size: 1.1rem; }
     body #abouthis .bts {
       height: 100vh; }
 
@@ -1151,11 +1153,11 @@ body {
   100% {
     margin-left: -1600px; } }
 .transition {
-  -webkit-transition: all 0.4s ease-out;
-  -moz-transition: all 0.4s ease-out;
-  -ms-transition: all 0.4s ease-out;
-  -o-transition: all 0.4s ease-out;
-  transition: all 0.4s ease-out; }
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out; }
 
 .hideDisplay {
   display: none; }

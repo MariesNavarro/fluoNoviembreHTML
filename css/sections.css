@@ -304,6 +304,71 @@
     width: 100%;
     height: 100px;
   }
+  /* Pop Slider */
+  #popSlider{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 9000;
+    display: none;
+  }
+  #popSlider > p{
+    position: relative;
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+    padding: 10px 0;
+  }
+  #popSlider > p > a{ position: relative }
+  #popSlider > p > a::before, #popSlider > p > a::after{
+    position: absolute;
+    content: 'Close';
+    opacity: 0;
+    z-index: -10;
+    -webkit-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+    -moz-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+    -ms-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+    -o-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+    animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
+    -webkit-transition: opacity 0.5s ease-out;
+    -moz-transition: opacity 0.5s ease-out;
+    -ms-transition: opacity 0.5s ease-out;
+    -o-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out;
+  }
+  #popSlider > p > a::before{
+    color: #e337fc;
+    top: 2px;
+    left: 5px;
+  }
+  #popSlider > p > a::after{
+    color: #37e6ef;
+    top: -2px;
+    left: -5px;
+  }
+  #popSlider > p > a:hover::before, #popSlider > p > a:hover::after{
+    opacity: 0.4;
+  }
+  #popSlider > div{
+    text-align: center;
+    height: calc(95% - 100px);
+    margin: 0 auto;
+  }
+  #popSlider > div > p{
+    position: absolute;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    margin: 25% auto;
+  }
+  #popSlider > div > img{
+    height: 100%;
+    margin: 0 auto;
+  }
 /* Work */
 .layout1_work > article{
   width: 100vw;

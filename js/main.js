@@ -137,7 +137,7 @@ function phonePop(c){
 checkForDevice();
 
 function popReel(c){
-  var wr = _('#showreel');
+  let wr = _('#showreel');
   if(c === 'open'){
     console.log("OPEEEEN");
     wr.style.display  = "block"
@@ -145,6 +145,16 @@ function popReel(c){
   } else {
     wr.style.opacity  = "0"
     setTimeout(function(){ wr.style.display  = "none" },600);
+  }
+}
+
+
+function popSliderWr(c, t){
+  let wr = _('#popSlider');
+  if(c === 'open'){
+    wr.style.display = "block";
+  } else {
+    wr.style.display = "none";
   }
 }
 
@@ -441,6 +451,7 @@ function swipeSliderDesktop(c){
   }
 }
 
+
 function initSlider(c, d){
    let mtrx = [[6,7,1,7,1,2,1,2,3],
               [7,1,2,1,2,3,2,3,4],
@@ -453,10 +464,12 @@ function initSlider(c, d){
        slidesScale = __('.sideImgHide'),
        e = __('.eventSlider'),
        wr = _('.layout_slider_desk>ul'),
+       cumain = _('#currentMain'),
        curr = mtrx[c],
        desc = _('#descriptionSliderDesktop>span');
        desc.innerHTML = c+1;
    wr.classList.add('transition');
+   cumain.setAttribute('data-img', stringSliderMobile+curr[4]+'.jpg');
    if(d === 'next'){
      wr.style.left = "-200%";
      removeEvent();
