@@ -74,6 +74,66 @@ function loadingLogo(){
   }
 }
 
+
+function support(a) {
+  let b = " ";
+  return "probably" == a.canPlayType("video/webm") || "maybe" == a.canPlayType("video/webm") ? b = "webm" : "probably" != a.canPlayType("video/mp4") && "maybe" != a.canPlayType("video/mp4") || (b = "mp4"), b
+}
+
+function loadVid() {
+  if(!checkBowser){
+    let cover = __('.cover'),
+        xhrVid = [],
+        urlList = [],
+        r = 0;
+    for (let i = 0; i < cover.length; i++) {
+      cover[i].setAttribute('style', ' ');
+      let vid = document.createElement("VIDEO");
+      vid.classList.add('videostyle');
+      vid.setAttribute('preload', 'auto');
+      //ponercover
+      cover[i].appendChild(vid);
+    }
+  let v = __('.videostyle')[0],
+      a, b = support(v);
+      if (" " == b ? a = 0 : "mp4" == b ? a = 1 : "webm" == b && (a = 2), 1 === a) {
+        for (let c = 0; c <= cover.length-1; c++){
+        	urlList.push("assets/vid/work-" + c + ".mp4");
+        }
+        for (var c = 0; c < urlList.length; c++){
+        	xhrVid[c] = new XMLHttpRequest, xhrVid[c].open("GET", urlList[c], !0), xhrVid[c].responseType = "blob", xhrVid[c].send();
+        }
+      }
+      if (2 === a) {
+        for(let c = 0; c <= cover.length-1; c++){
+          urlList.push("assets/vid/work-" + c + ".webm");
+        }
+        for(let c = 0; c < urlList.length; c++) {
+          xhrVid[c] = new XMLHttpRequest;
+          xhrVid[c].open("GET", urlList[c], !0);
+          xhrVid[c].responseType = "blob";
+          xhrVid[c].onload = function (e){
+            let p = _('#per');
+            let wr = _('#loading');
+            if(this.readyState == 4){
+              r+=1;
+              let num = Math.round(r*(100/cover.length-1));
+              console.log(num);
+              p.innerHTML = num + "%";
+              if(r === cover.length){
+                //function render videos
+                //loading
+                wr.style.display = "none";
+                vidRender();
+              }
+            }
+          }
+          xhrVid[c].send();
+        }
+    }
+  }
+}
+
 function checkForDevice(){
   var ph = _('#telefonofluo'),
       mn = _('#triggerMenu'),
@@ -170,7 +230,7 @@ function popSliderWr(c, t){
 }
 
 function aboutThisPop(c){
-  var wr = _('#abouthis'),
+  let wr = _('#abouthis'),
       trigger = _('#triggerAbout'),
       about = trigger.children[0],
       close = trigger.children[1],
@@ -199,89 +259,6 @@ function aboutThisPop(c){
         closeMob.style.opacity = "0"
       },600);
     },600);
-  }
-}
-
-function overLine(c, e) {
-  var e = _(e);
-  switch (c) {
-  case "over":
-    e.classList.remove("scaleDownLine");
-    e.classList.add("scaleUpLine");
-  break;
-  case "out":
-    e.classList.remove("scaleUpLine");
-    e.classList.add("scaleDownLine");
-  break;
-  case "overW":
-    e.classList.remove("scaleDownLineW");
-    e.classList.add("scaleUpLineW");
-  break;
-  case "outW":
-    e.classList.remove("scaleUpLineW");
-    e.classList.add("scaleDownLineW");
-  break;
-  }
-}
-
-function support(a) {
-  let b = " ";
-  return "probably" == a.canPlayType("video/webm") || "maybe" == a.canPlayType("video/webm") ? b = "webm" : "probably" != a.canPlayType("video/mp4") && "maybe" != a.canPlayType("video/mp4") || (b = "mp4"), b
-}
-
-
-
-function loadVid() {
-  if(!checkBowser){
-    let cover = __('.cover'),
-        xhrVid = [],
-        urlList = [],
-        r = 0;
-    for (let i = 0; i < cover.length; i++) {
-      cover[i].setAttribute('style', ' ');
-      let vid = document.createElement("VIDEO");
-      vid.classList.add('videostyle');
-      vid.setAttribute('preload', 'auto');
-      //ponercover
-      cover[i].appendChild(vid);
-    }
-  let v = __('.videostyle')[0],
-      a, b = support(v);
-      if (" " == b ? a = 0 : "mp4" == b ? a = 1 : "webm" == b && (a = 2), 1 === a) {
-        for (let c = 0; c <= cover.length-1; c++){
-        	urlList.push("assets/vid/work-" + c + ".mp4");
-        }
-        for (var c = 0; c < urlList.length; c++){
-        	xhrVid[c] = new XMLHttpRequest, xhrVid[c].open("GET", urlList[c], !0), xhrVid[c].responseType = "blob", xhrVid[c].send();
-        }
-      }
-      if (2 === a) {
-        for(let c = 0; c <= cover.length-1; c++){
-          urlList.push("assets/vid/work-" + c + ".webm");
-        }
-        for(let c = 0; c < urlList.length; c++) {
-          xhrVid[c] = new XMLHttpRequest;
-          xhrVid[c].open("GET", urlList[c], !0);
-          xhrVid[c].responseType = "blob";
-          xhrVid[c].onload = function (e){
-            let p = _('#per');
-            let wr = _('#loading');
-            if(this.readyState == 4){
-              r+=1;
-              let num = Math.round(r*(100/cover.length-1));
-              console.log(num);
-              p.innerHTML = num + "%";
-              if(r === cover.length){
-                //function render videos
-                //loading
-                wr.style.display = "none";
-                vidRender();
-              }
-            }
-          }
-          xhrVid[c].send();
-        }
-    }
   }
 }
 
@@ -317,6 +294,29 @@ function overWork(c, t){
   } else {
     t.pause();
     setTimeout(function(){ t.currentTime = 0; },60);
+  }
+}
+
+
+function overLine(c) {
+  let e = _('#lineBackTo');
+  switch (c) {
+  case "over":
+    e.classList.remove("scaleDownLine");
+    e.classList.add("scaleUpLine");
+  break;
+  case "out":
+    e.classList.remove("scaleUpLine");
+    e.classList.add("scaleDownLine");
+  break;
+  case "overW":
+    e.classList.remove("scaleDownLineW");
+    e.classList.add("scaleUpLineW");
+  break;
+  case "outW":
+    e.classList.remove("scaleUpLineW");
+    e.classList.add("scaleDownLineW");
+  break;
   }
 }
 
