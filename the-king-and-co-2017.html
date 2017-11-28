@@ -158,19 +158,19 @@ fluo.com.mx
       <article class="layout_slider_desk" style="margin:120px auto; width: 80vw">
         <ul class="showDisplayFlex">
           <li>
-            <div class="sideImgHide slideIndex" style="background-image:url('img/projects/the_king_and_co/2017/poster-6.jpg')"></div>
-            <div class="mainImg slideIndex" style="background-image:url('img/projects/the_king_and_co/2017/poster-7.jpg')"></div>
-            <div class="sideImgHide slideIndex" style="background-image:url('img/projects/the_king_and_co/2017/poster-1.jpg')"></div>
+            <div class="sideImgHide slideIndex"></div>
+            <div class="mainImg slideIndex"></div>
+            <div class="sideImgHide slideIndex"></div>
           </li>
           <li>
-            <div class="sideImg slideIndex" style="background-image:url('img/projects/the_king_and_co/2017/poster-7.jpg')" onclick="swipeSliderDesktop('prev')"></div>
-            <div class="mainImg slideIndex" style="background-image:url('img/projects/the_king_and_co/2017/poster-1.jpg')"></div>
-            <div class="sideImg slideIndex" style="background-image:url('img/projects/the_king_and_co/2017/poster-2.jpg')" onclick="swipeSliderDesktop('next')"></div>
+            <div class="sideImg slideIndex" onclick="swipeSliderDesktop('prev')"></div>
+            <div id="currentMain" class="mainImg slideIndex" onclick="popSliderWr('open', this)"></div>
+            <div class="sideImg slideIndex" onclick="swipeSliderDesktop('next')"></div>
           </li>
           <li>
-            <div class="sideImgHide slideIndex" style="background-image:url('img/projects/the_king_and_co/2017/poster-1.jpg')"></div>
-            <div class="mainImg slideIndex" style="background-image:url('img/projects/the_king_and_co/2017/poster-2.jpg')"></div>
-            <div class="sideImgHide slideIndex" style="background-image:url('img/projects/the_king_and_co/2017/poster-3.jpg')"></div>
+            <div class="sideImgHide slideIndex"></div>
+            <div class="mainImg slideIndex"></div>
+            <div class="sideImgHide slideIndex"></div>
           </li>
         </ul>
         <div class="interfaz_slider showDisplayFlex">
@@ -260,6 +260,14 @@ fluo.com.mx
           </ul>
       </article>
     </footer>
+    <!-- POP SLIDER -->
+    <section id="popSlider">
+      <p><a role="button" onclick="popSliderWr('close', this)">Close</a></p>
+      <div>
+        <p> Loading... </p>
+        <img data-hola="hola">
+      </div>
+    </section>
     <!-- POP REEL -->
     <section id="showreel">
       <span onclick="popReel('close')"></span>

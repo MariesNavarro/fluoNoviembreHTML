@@ -233,19 +233,19 @@ fluo.com.mx
       <article class="layout_slider_desk">
         <ul class="showDisplayFlex">
           <li>
-            <div class="sideImgHide slideIndex" ></div>
-            <div class="mainImg slideIndex" ></div>
-            <div class="sideImgHide slideIndex" ></div>
+            <div class="sideImgHide slideIndex"></div>
+            <div class="mainImg slideIndex"></div>
+            <div class="sideImgHide slideIndex"></div>
           </li>
           <li>
             <div class="sideImg slideIndex"  onclick="swipeSliderDesktop('prev')"></div>
-            <div id="currentMain" class="mainImg slideIndex" data-img="img/projects/enotelia/slider-1.jpg" onclick="popSliderWr('open', this)"></div>
+            <div id="currentMain" class="mainImg slideIndex" onclick="popSliderWr('open', this)"></div>
             <div class="sideImg slideIndex"  onclick="swipeSliderDesktop('next')"></div>
           </li>
           <li>
-            <div class="sideImgHide slideIndex" ></div>
-            <div class="mainImg slideIndex" ></div>
-            <div class="sideImgHide slideIndex" ></div>
+            <div class="sideImgHide slideIndex"></div>
+            <div class="mainImg slideIndex"></div>
+            <div class="sideImgHide slideIndex"></div>
           </li>
         </ul>
         <div id="interfazDesktop" class="interfaz_slider showDisplayFlex transition" style="opacity: 0">
@@ -338,10 +338,10 @@ fluo.com.mx
     </footer>
     <!-- POP SLIDER -->
     <section id="popSlider">
-      <p><a role="button">Close</a></p>
+      <p><a role="button" onclick="popSliderWr('close', this)">Close</a></p>
       <div>
         <p> Loading... </p>
-        <img src="img/projects/the_king_and_co/2017/poster-1.jpg">
+        <img data-hola="hola">
       </div>
     </section>
     <!-- POP REEL -->

@@ -313,7 +313,13 @@
     left: 0;
     background: rgba(0,0,0,0.92);
     z-index: 9000;
+    opacity: 0;
     display: none;
+    -webkit-transition: opacity 0.5s ease-out;
+    -moz-transition: opacity 0.5s ease-out;
+    -ms-transition: opacity 0.5s ease-out;
+    -o-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out;
   }
   #popSlider > p{
     position: relative;
@@ -354,7 +360,7 @@
   }
   #popSlider > div{
     text-align: center;
-    height: calc(95% - 100px);
+    height: calc(85% - 100px);
     margin: 0 auto;
   }
   #popSlider > div > p{

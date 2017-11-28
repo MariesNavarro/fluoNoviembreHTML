@@ -139,7 +139,6 @@ checkForDevice();
 function popReel(c){
   let wr = _('#showreel');
   if(c === 'open'){
-    console.log("OPEEEEN");
     wr.style.display  = "block"
     setTimeout(function(){ wr.style.opacity  = "1" },600);
   } else {
@@ -150,11 +149,23 @@ function popReel(c){
 
 
 function popSliderWr(c, t){
-  let wr = _('#popSlider');
+  let wr = _('#popSlider'),
+      img = wr.children[1].children[1],
+      src = t.getAttribute('data-img'),
+      tx = wr.children[1].children[0];
   if(c === 'open'){
+    img.onload = function(){
+      tx.style.opacity = "0";
+    }
+    img.setAttribute('src', src);
     wr.style.display = "block";
+    setTimeout(function(){ wr.style.opacity = "1"; },600);
   } else {
-    wr.style.display = "none";
+    wr.style.opacity = "0";
+    setTimeout(function(){
+      wr.style.display = "none";
+      tx.style.opacity = "1";
+    },600);
   }
 }
 
