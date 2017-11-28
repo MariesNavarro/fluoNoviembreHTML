@@ -190,8 +190,16 @@
   }
   .layout_slider_desk > ul> li> div{ cursor: pointer }
   .layout_slider_desk > ul> li> div:hover{ opacity: 0.8 }
-  .layout_slider_desk > ul> li> .sideImg{ width: 25%; }
-  .layout_slider_desk > ul> li> .mainImg{ width: 40%; }
+  .layout_slider_desk > ul> li> .sideImg{ width: 25% }
+  .layout_slider_desk > ul> li> .sideImgHide {
+    width: 30%;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+  .layout_slider_desk > ul> li> .mainImg{ width: 40% }
   /* Interfaz Slider */
   .layout_slider_desk > .interfaz_slider, .layout_slider_mobile > .interfaz_slider{
     width: 90%;

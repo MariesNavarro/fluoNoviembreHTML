@@ -226,7 +226,7 @@ fluo.com.mx
           <a role="button" onclick="swipeSliderMobile('#swipe_slider', 'next')">
             <img class="rotIcon" src="img/icons/arrow.svg" height="15">
           </a>
-          <p id="descriptionSliderMobile"> 1/<span>1</span> </p>
+          <p id="descriptionSliderMobile"> <span>1</span>/7 </p>
           <a role="button" onclick="swipeSliderMobile('#swipe_slider', 'prev')">
             <img src="img/icons/arrow.svg" height="15">
           </a>
@@ -237,27 +237,27 @@ fluo.com.mx
         <div class="flag" data-back="#887280"></div>
         <ul class="showDisplayFlex">
           <li>
-            <div class="sideImg" style="background-image:url('img/projects/enotelia/slider-6.jpg')"></div>
-            <div class="mainImg" style="background-image:url('img/projects/enotelia/slider-7.jpg')"></div>
-            <div class="sideImg" style="background-image:url('img/projects/enotelia/slider-1.jpg')"></div>
+            <div class="sideImgHide slideIndex" style="background-image:url('img/projects/enotelia/slider-6.jpg')"></div>
+            <div class="mainImg slideIndex" style="background-image:url('img/projects/enotelia/slider-7.jpg')"></div>
+            <div class="sideImgHide slideIndex" style="background-image:url('img/projects/enotelia/slider-1.jpg')"></div>
           </li>
           <li>
-            <div class="sideImg" style="background-image:url('img/projects/enotelia/slider-7.jpg')"></div>
-            <div class="mainImg" style="background-image:url('img/projects/enotelia/slider-1.jpg')"></div>
-            <div class="sideImg" style="background-image:url('img/projects/enotelia/slider-2.jpg')"></div>
+            <div class="sideImg slideIndex" style="background-image:url('img/projects/enotelia/slider-7.jpg')" onclick="swipeSliderDesktop('prev')"></div>
+            <div class="mainImg slideIndex" style="background-image:url('img/projects/enotelia/slider-1.jpg')"></div>
+            <div class="sideImg slideIndex" style="background-image:url('img/projects/enotelia/slider-2.jpg')" onclick="swipeSliderDesktop('next')"></div>
           </li>
           <li>
-            <div class="sideImg" style="background-image:url('img/projects/enotelia/slider-1.jpg')"></div>
-            <div class="mainImg" style="background-image:url('img/projects/enotelia/slider-2.jpg')"></div>
-            <div class="sideImg" style="background-image:url('img/projects/enotelia/slider-3.jpg')"></div>
+            <div class="sideImgHide slideIndex" style="background-image:url('img/projects/enotelia/slider-1.jpg')"></div>
+            <div class="mainImg slideIndex" style="background-image:url('img/projects/enotelia/slider-2.jpg')"></div>
+            <div class="sideImgHide slideIndex" style="background-image:url('img/projects/enotelia/slider-3.jpg')"></div>
           </li>
         </ul>
         <div class="interfaz_slider showDisplayFlex">
-          <a role="button">
+          <a class="eventSlider" role="button" onclick="swipeSliderDesktop('prev')">
             <img class="rotIcon" src="img/icons/arrow.svg" height="15">
           </a>
-          <p id="descriptionSliderDesktop"> 1/<span>1</span> </p>
-          <a role="button">
+          <p id="descriptionSliderDesktop"> <span>1</span>/7 </p>
+          <a class="eventSlider" role="button" onclick="swipeSliderDesktop('next')">
             <img src="img/icons/arrow.svg" height="15">
           </a>
         </div>
@@ -412,6 +412,7 @@ fluo.com.mx
         </div>
       </article>
     </section>
+    <div id="lineacentro"></div>
     <script src="js/bowser.min.js" charset="utf-8"></script>
     <script src="js/pixi.min.js" charset="utf-8"></script>
     <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
@@ -420,6 +421,7 @@ fluo.com.mx
       var stringSliderMobile = "img/projects/enotelia/slider-";
       window.onload = function(){
         detectswipe('swipe_slider', swipeSliderMobile);
+        initSlider(0);
       }
       window.onresize = function(){
         var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";

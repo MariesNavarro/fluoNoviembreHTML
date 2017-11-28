@@ -321,7 +321,6 @@ function changeBackground(){
       fLen = f.length,
       tops = [];
       backs.push(cMain);
-
   for (let i = 0; i < fLen; i++) {
     backs.push(f[i].getAttribute('data-back'));
     tops.push(f[i].getBoundingClientRect().top - c);
@@ -415,6 +414,78 @@ function sliderMobile(c){
       description = _('#descriptionSliderMobile').children[0];
   img.setAttribute('src', stringSliderMobile+c+'.jpg');
   description.innerHTML = c;
+}
+
+let c_slider_d = 0;
+function swipeSliderDesktop(c){
+  if(c === 'next'){
+    c_slider_d++;
+    if(c_slider_d > 6) c_slider_d = 0;
+    initSlider(c_slider_d, 'next');
+  } else {
+    c_slider_d--;
+    if(c_slider_d < 0) c_slider_d = 6;
+    initSlider(c_slider_d, 'prev');
+  }
+}
+
+function initSlider(c, d){
+   let mtrx = [[6,7,1,7,1,2,1,2,3],
+              [7,1,2,1,2,3,2,3,4],
+              [1,2,3,2,3,4,3,4,5],
+              [2,3,4,3,4,5,4,5,6],
+              [3,4,5,4,5,6,5,6,7],
+              [4,5,6,5,6,7,6,7,1],
+              [5,6,7,6,7,1,7,1,2]],
+       slides = __('.slideIndex'),
+       slidesScale = __('.sideImgHide'),
+       e = __('.eventSlider'),
+       wr = _('.layout_slider_desk>ul'),
+       curr = mtrx[c],
+       desc = _('#descriptionSliderDesktop>span');
+       desc.innerHTML = c+1;
+   wr.classList.add('transition');
+   if(d === 'next'){
+     wr.style.left = "-200%";
+     removeEvent();
+     setTimeout(function(){
+       for (var i = 0; i <  slidesScale.length; i++) {
+          slidesScale[i].style.width = "25%";
+       }
+     },400);
+   } else if(d === 'prev') {
+     removeEvent();
+     wr.style.left = "0";
+     setTimeout(function(){
+       for (var i = 0; i <  slidesScale.length; i++) {
+          slidesScale[i].style.width = "25%";
+       }
+     },400);
+   } else {
+     wr.style.left = "-100%";
+   }
+
+   setTimeout(function(){
+     wr.classList.remove('transition');
+     wr.style.left = "-100%";
+     for (let i = 0; i < slides.length; i++) {
+       slides[i].style.backgroundImage = "url("+stringSliderMobile+curr[i]+".jpg)";
+     }
+     for (var i = 0; i <  slidesScale.length; i++) {
+        slidesScale[i].style.width = "30%";
+     }
+     addEvent();
+   },600);
+
+   function removeEvent(){
+     for (var i = 0; i < e.length; i++) {
+       e[i].setAttribute('onclick', ' ');
+     }
+   }
+   function addEvent(){
+     e[0].setAttribute('onclick', 'swipeSliderDesktop("prev")');
+     e[1].setAttribute('onclick', 'swipeSliderDesktop("next")');
+   }
 }
 
 document.onkeydown = function(e){
