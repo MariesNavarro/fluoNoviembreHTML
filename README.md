@@ -1,2 +1,2 @@
 # fluoNoviembreHTML
-Desarrollo (SASS)
+Desarrollo web
