@@ -262,6 +262,13 @@ fluo.com.mx
         <p>9:00 a 18:00</p>
       </div>
     </div>
+    <!-- POP LANDSCAPE -->
+    <section id="landscape">
+      <div>
+        <p>Por favor voltea tu pantalla</p>
+        <img src="img/icons/norot.svg" height="50" width="50">
+      </div>
+    </section>
     <!-- POP SLIDER -->
     <section id="popSlider">
       <p><a role="button" onclick="popSliderWr('close', this)">Close</a></p>
@@ -362,11 +369,14 @@ fluo.com.mx
       }
       //Si hay botón de "About This Project"
       window.onorientationchange = function(){
-        let aboutthis = _('#aboutthis');
+        let aboutthis = _('#aboutthis'),
+            landscape = _('#landscape');
         if(window.orientation == 90 || window.orientation == -90){
-          aboutthis.style.display = "none"
+          landscape.style.display = "block";
+          aboutthis.style.display = "none";
         } else {
-          aboutthis.style.display = "block"
+          landscape.style.display = "none";
+          aboutthis.style.display = "block";
         }
       }
     </script>

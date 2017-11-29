@@ -43,6 +43,7 @@ body {
   /* Showreel */
   /* Loading */
   /* popPhone */
+  /* popPhone */
   /* popPhone */ }
   body nav {
     position: fixed;
@@ -584,6 +585,21 @@ body {
       display: block;
       width: 7px;
       height: 100vh; }
+  body #landscape {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    text-align: center;
+    z-index: 9500;
+    display: none; }
+    body #landscape p {
+      position: relative;
+      display: block;
+      text-align: center;
+      margin: 100px auto 30px auto; }
   body #popPhone {
     position: fixed;
     top: 0;

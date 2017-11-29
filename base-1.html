@@ -207,6 +207,13 @@ fluo.com.mx
           </ul>
       </article>
     </footer>
+    <!-- POP LANDSCAPE -->
+    <section id="landscape">
+      <div>
+        <p>Por favor voltea tu pantalla</p>
+        <img src="img/icons/norot.svg" height="50" width="50">
+      </div>
+    </section>
     <!-- POP PHONE -->
     <div id="popPhone" class="hideDisplay">
       <span onclick="phonePop('close')"></span>
@@ -300,15 +307,16 @@ fluo.com.mx
       }
       window.onscroll = function(){
         detectWaveLayouts();
-        //Si hay botón de "About This Project"
         removeAboutScroll();
       }
-      //Si hay botón de "About This Project"
       window.onorientationchange = function(){
-        let aboutthis = _('#aboutthis');
+        let aboutthis = _('#aboutthis'),
+            landscape = _('#landscape');
         if(window.orientation == 90 || window.orientation == -90){
+          landscape.style.display = "block";
           aboutthis.style.display = "none"
         } else {
+          landscape.style.display = "none";
           aboutthis.style.display = "block"
         }
       }
