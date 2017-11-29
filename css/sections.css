@@ -335,12 +335,23 @@
     -o-transition: opacity 0.5s ease-out;
     transition: opacity 0.5s ease-out;
   }
+  #popSlider> span{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /*background: rgba(0,0,0,0.5);*/
+    background: green;
+  }
   #popSlider > p{
     position: relative;
     display: block;
     margin: 30px auto;
     text-align: center;
     padding: 10px 0;
+    z-index: 8900
   }
   #popSlider > p > a{ position: relative }
   #popSlider > p > a::before, #popSlider > p > a::after{
@@ -373,9 +384,12 @@
     opacity: 0.4;
   }
   #popSlider > div{
+    position: absolute;
     text-align: center;
     height: calc(85% - 100px);
     margin: 0 auto;
+    z-index: 91000
+    border: 1px solid red
   }
   #popSlider > div > p{
     position: absolute;

@@ -245,14 +245,12 @@ function mainMenuDes(c){
 function phonePop(c){
   var wr = _('#popPhone');
   if(c === "open"){
-    wr.classList.remove("hideDisplay");
-    wr.classList.add("showDisplayFlex");
-    wr.style.opacity = "1"
+    wr.style.display = "block";
+    setTimeout(function(){ wr.style.opacity = "1"; },600);
   } else{
     wr.style.opacity = "0"
     setTimeout(function(){
-      wr.classList.remove("showDisplayFlex");
-      wr.classList.add("hideDisplay");
+      wr.style.display = "none";
     },600);
   }
 }
@@ -272,9 +270,9 @@ function popReel(c){
 
 function popSliderWr(c, t){
   let wr = _('#popSlider'),
-      img = wr.children[1].children[1],
+      img = wr.children[2].children[1],
       src = t.getAttribute('data-img'),
-      tx = wr.children[1].children[0];
+      tx = wr.children[2].children[0];
   if(c === 'open'){
     img.onload = function(){
       tx.style.opacity = "0";
@@ -323,10 +321,6 @@ function aboutThisPop(c){
     },600);
   }
 }
-
-
-
-
 
 
 function overLine(c) {
@@ -556,10 +550,13 @@ function initSlider(c, d){
 }
 
 document.onkeydown = function(e){
-  let wr = _('#popPhone');
+  let pop = __('.popIndex');
   e = e || window.event;
   if (e.keyCode == '27') {
-   phonePop('close');
+   for (var i = 0; i < pop.length; i++) {
+     pop[i].style.display = "none"
+   };
+   aboutThisPop('close');
   }
 }
 smoothScroll.init();

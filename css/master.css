@@ -585,35 +585,30 @@ body {
       height: 7px; }
   body #popPhone {
     position: fixed;
+    top: 0;
     width: 100vw;
     height: 100vh;
     z-index: 8000;
-    -webkit-flex-direction: column;
-    -moz-flex-direction: column;
-    -ms-flex-direction: column;
-    -o-flex-direction: column;
-    flex-direction: column;
-    -webkit-justify-content: center;
-    -moz-justify-content: center;
-    -ms-justify-content: center;
-    -o-justify-content: center;
-    justify-content: center;
-    -webkit-align-items: center;
-    -moz-align-items: center;
-    -ms-align-items: center;
-    -o-align-items: center;
-    align-items: center;
+    display: none;
     -webkit-transition: opacity 0.5s ease-out;
     -moz-transition: opacity 0.5s ease-out;
     -ms-transition: opacity 0.5s ease-out;
     -o-transition: opacity 0.5s ease-out;
     transition: opacity 0.5s ease-out; }
     body #popPhone a {
-      position: relative;
+      position: absolute;
       display: block;
-      margin: 15px auto; }
+      margin: 15px auto;
+      text-align: center;
+      width: 150px;
+      line-height: 30px;
+      z-index: 8100;
+      top: calc(30% - 15px);
+      left: calc(50% - 75px); }
     body #popPhone a::after, body #popPhone a::before {
       position: absolute;
+      text-align: center;
+      width: 150px;
       left: -2px;
       top: -2px;
       color: #e337fc;
@@ -644,6 +639,9 @@ body {
       height: 100%;
       background: rgba(0, 0, 0, 0.7); }
     body #popPhone div {
+      position: absolute;
+      left: calc(50% - 150px);
+      top: calc(50% - 150px);
       width: 300px;
       height: 220px;
       background: #000;
