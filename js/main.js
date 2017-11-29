@@ -153,7 +153,8 @@ function support(a) {
 
 function loadVid() {
   if(!checkBowser){
-    let cover = __('.cover'),
+    let wr = _('#loading'),
+        cover = __('.cover'),
         xhrVid = [],
         urlList = [],
         line = _('#loading').children[2],
@@ -183,6 +184,8 @@ function loadVid() {
               line.style.height = num+'%';
               if(r === cover.length){
                 vidRender();
+                wr.style.opacity = "0";
+                setTimeout(function(){ wr.style.display = "none"; },600);
               }
             }
           }
@@ -204,6 +207,8 @@ function loadVid() {
               line.style.height = num+'%';
               if(r === cover.length){
                 vidRender();
+                wr.style.opacity = "0";
+                setTimeout(function(){ wr.style.display = "none"; },600);
               }
             }
           }
