@@ -340,8 +340,6 @@ body {
         opacity: 0.4; }
       body nav#bottom ul li.menuLi::before, body nav#bottom ul li.menuLi::after, body nav#top ul li.menuLi::before, body nav#top ul li.menuLi::after {
         content: "Menu"; }
-      body nav#bottom ul li.showLi::before, body nav#bottom ul li.showLi::after, body nav#top ul li.showLi::before, body nav#top ul li.showLi::after {
-        content: "Showreel"; }
       body nav#bottom ul li.contactLi::before, body nav#bottom ul li.contactLi::after, body nav#top ul li.contactLi::before, body nav#top ul li.contactLi::after {
         content: "About/ \a Contact"; }
   body #abouthis {
@@ -482,7 +480,7 @@ body {
     top: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 8000;
+    z-index: 10000;
     opacity: 0;
     display: none;
     -webkit-transition: opacity 0.5s ease-out;
@@ -568,21 +566,24 @@ body {
     -moz-transition: opacity 0.5s ease-out;
     -ms-transition: opacity 0.5s ease-out;
     -o-transition: opacity 0.5s ease-out;
-    transition: opacity 0.5s ease-out; }
+    transition: opacity 0.5s ease-out;
+    display: none; }
+    body #loading p {
+      text-align: center; }
     body #loading #fluoDeg {
-      width: 130px;
-      height: 130px;
-      margin: 20px auto; }
+      width: 120px;
+      height: 120px;
+      margin: 30% auto 40px auto; }
       body #loading #fluoDeg canvas {
         width: 100%;
         height: 100%; }
     body #loading span {
       position: absolute;
-      bottom: 0;
-      left: 0;
+      top: 0;
+      right: 0;
       display: block;
-      width: 100vw;
-      height: 7px; }
+      width: 7px;
+      height: 100vh; }
   body #popPhone {
     position: fixed;
     top: 0;
@@ -866,6 +867,9 @@ body {
 
   body nav#back {
     display: block; }
+
+  body nav#back ul li.showLi::before, ul li.showLi::after {
+    content: "Showreel"; }
 
   body nav#top ul li a.aboutLi {
     width: 200px; }
@@ -1226,6 +1230,13 @@ body {
   background: -moz-linear-gradient(left, #e337fc 2%, #5cabfc 50%, #37e6ef 100%);
   background: -webkit-linear-gradient(left, #e337fc 2%, #5cabfc 50%, #37e6ef 100%);
   background: linear-gradient(to right, #e337fc 2%, #5cabfc 50%, #37e6ef 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e337fc', endColorstr='#37e6ef',GradientType=1 ); }
+
+.gradientFluoTop {
+  background: #e337fc;
+  background: -moz-linear-gradient(bottom, #e337fc 2%, #5cabfc 50%, #37e6ef 100%);
+  background: -webkit-linear-gradient(bottom, #e337fc 2%, #5cabfc 50%, #37e6ef 100%);
+  background: linear-gradient(to bottom, #e337fc 2%, #5cabfc 50%, #37e6ef 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e337fc', endColorstr='#37e6ef',GradientType=1 ); }
 
 /*# sourceMappingURL=master.css.map */

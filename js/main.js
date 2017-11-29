@@ -45,7 +45,7 @@ function loadingLogo(){
     var framesLoading = [];
     var frames = [];
     var framesHover = [];
-    for (var i = 0; i < 89; i++) {
+    for (var i = 0; i < 66; i++) {
         framesLoading.push(PIXI.Texture.fromFrame('fluoLoading_' + i + '.png'));
     }
     for (var i = 0; i < 237; i++) {
@@ -199,26 +199,27 @@ function overWork(c, t){
 function checkForDevice(){
   var ph = _('#telefonofluo'),
       mn = _('#triggerMenu'),
-      reel = _('#triggerReel'),
+      reelD = _('#triggerReel'),
+      reelM = reelD.children[0],
       d = _('#desktopinnner');
   if(checkBowser){
-    console.log("Mobile");
+
     d.classList.remove('showDisplayFlex');
     d.classList.add('hideDisplay');
     mn.setAttribute('onclick', 'mainMenuMob("open")');
     ph.setAttribute('href', 'tel:57303009');
-    reel.setAttribute('href', 'https://vimeo.com/175730619');
-    reel.setAttribute('target', '_blank');
-    reel.setAttribute('rel', 'noopener noreferrer');
+    reelM.setAttribute('href', 'https://vimeo.com/175730619');
+    reelM.setAttribute('target', '_blank');
+    reelM.setAttribute('rel', 'noopener noreferrer');
   } else {
-    console.log("Desktop");
+
     d.setAttribute('onmouseover', 'mainMenuDes("over")');
     d.setAttribute('onmouseout', 'mainMenuDes("out")');
     mn.setAttribute('onmouseover', 'mainMenuDes("over")');
     mn.setAttribute('onmouseout', 'mainMenuDes("out")');
     ph.setAttribute('onclick', 'phonePop("open")');
     ph.setAttribute('title', 'Ver teléfono y horarios');
-    reel.setAttribute('onclick', 'popReel("open")');
+    reelD.setAttribute('onclick', 'popReel("open")');
   }
 }
 
