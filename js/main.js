@@ -270,9 +270,9 @@ function popReel(c){
 
 function popSliderWr(c, t){
   let wr = _('#popSlider'),
-      img = wr.children[2].children[1],
+      img = wr.children[1].children[1],
       src = t.getAttribute('data-img'),
-      tx = wr.children[2].children[0];
+      tx = wr.children[1].children[0];
   if(c === 'open'){
     img.onload = function(){
       tx.style.opacity = "0";

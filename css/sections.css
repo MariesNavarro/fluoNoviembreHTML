@@ -384,12 +384,10 @@
     opacity: 0.4;
   }
   #popSlider > div{
-    position: absolute;
+    position: relative;
     text-align: center;
     height: calc(85% - 100px);
     margin: 0 auto;
-    z-index: 91000
-    border: 1px solid red
   }
   #popSlider > div > p{
     position: absolute;
