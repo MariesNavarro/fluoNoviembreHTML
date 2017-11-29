@@ -24,8 +24,11 @@ function loadingHover(){
 }
 
 function loadingLogo(){
-  var app, apphover,
+  var app, apphover, apploading,
+      loadingPixi = _('#fluoDeg'),
       logotipo = _('#logotipoMenu');
+  apploading = new PIXI.Application(160, 160,{antialias: false, transparent: true, resolution: 1});
+  loadingPixi.appendChild(apploading.view);
   app = new PIXI.Application(100, 100,{antialias: false, transparent: true, resolution: 1});
   logotipo.appendChild(app.view);
   apphover = new PIXI.Application(100, 100,{antialias: false, transparent: true, resolution: 1});
@@ -36,29 +39,42 @@ function loadingLogo(){
   .add('img/pixi/logotipo_3.json')
   .add('img/pixi/hoverlogo_1.json')
   .add('img/pixi/hoverLogo_2.json')
+  .add('img/pixi/logoLoading.json')
   .load(onAssetsLoaded);
   function onAssetsLoaded(){
+    var framesLoading = [];
     var frames = [];
     var framesHover = [];
+    for (var i = 0; i < 89; i++) {
+        framesLoading.push(PIXI.Texture.fromFrame('fluoLoading_' + i + '.png'));
+    }
     for (var i = 0; i < 237; i++) {
         frames.push(PIXI.Texture.fromFrame('fluo_' + i + '.png'));
     }
     for (var i = 0; i < 134; i++) {
         framesHover.push(PIXI.Texture.fromFrame('fluoHover_' + i + '.png'));
     }
+    var aniLoad = new PIXI.extras.AnimatedSprite(framesLoading);
     var anim = new PIXI.extras.AnimatedSprite(frames);
     var animH = new PIXI.extras.AnimatedSprite(framesHover);
+    aniLoad.width = apploading.renderer.width;
+		aniLoad.height = apploading.renderer.height;
+    aniLoad.animationSpeed = 0.56;
+    aniLoad.play();
+
     anim.width = app.renderer.width;
 		anim.height = app.renderer.height;
     animH.width = app.renderer.width;
 		animH.height = app.renderer.height;
     anim.animationSpeed = 0.56;
     anim.play();
+
     animH.alpha = 0;
     animH.animationSpeed = 0.56;
     animH.interactive = true;
     animH.loop = false;
     animH.play();
+
     animH.mouseover = function(mouseData) {
       this.alpha = 1;
       setTimeout(function(){ anim.alpha = 0; },1600)
@@ -69,6 +85,7 @@ function loadingLogo(){
       anim.alpha = 1;
       this.stop();
     }
+    apploading.stage.addChild(aniLoad);
     app.stage.addChild(anim);
     apphover.stage.addChild(animH);
   }
@@ -108,17 +125,10 @@ function loadVid() {
           xhrVid[c].open("GET", urlList[c], !0);
           xhrVid[c].responseType = "blob";
           xhrVid[c].onload = function (e){
-            let p = _('#per');
-            let wr = _('#loading');
             if(this.readyState == 4){
               r+=1;
               let num = Math.round(r*(100/cover.length-1));
-              console.log(num);
-              p.innerHTML = num + "%";
               if(r === cover.length){
-                //function render videos
-                //loading
-                // wr.style.display = "none";
                 vidRender();
               }
             }
@@ -135,17 +145,10 @@ function loadVid() {
           xhrVid[c].open("GET", urlList[c], !0);
           xhrVid[c].responseType = "blob";
           xhrVid[c].onload = function (e){
-            let p = _('#per');
-            let wr = _('#loading');
             if(this.readyState == 4){
               r+=1;
               let num = Math.round(r*(100/cover.length-1));
-              console.log(num);
-              p.innerHTML = num + "%";
               if(r === cover.length){
-                //function render videos
-                //loading
-                // wr.style.display = "none";
                 vidRender();
               }
             }
