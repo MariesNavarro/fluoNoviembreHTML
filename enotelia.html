@@ -45,8 +45,8 @@ fluo.com.mx
 <body>
     <p id="size" class="hideDisplay"></p>
     <!-- LOADING -->
-    <div id="loading" class="hideDisplay">
-      <div id="fluoDeg"></div>
+    <div id="loading">
+      <div id="fluoDeg" style="background-image:url('img/loading-cover.png')"></div>
       <p id="per">Almost there...</p>
       <span class="gradientFluoTop transit"></span>
     </div>
@@ -433,6 +433,7 @@ fluo.com.mx
     <script src="js/main.js" charset="utf-8"></script>
     <script type="text/javascript">
       var stringSliderMobile = "img/projects/enotelia/slider-";
+      loadPosters(stringSliderMobile, posterProjects);
       window.onload = function(){
         detectswipe('swipe_slider', swipeSliderMobile);
         initSlider(0);

@@ -212,9 +212,11 @@
   .layout_slider_mobile > .full_slider{
     width: 100%;
     padding: 10% 0;
+    text-align: center;
   }
   .full_slider > img {
-    width: 100%;
+    width: 60%;
+    margin: 0 auto;
   }
   /* Layout Slider Desktop */
   .layout_slider_desk{

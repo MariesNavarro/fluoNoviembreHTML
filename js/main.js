@@ -42,6 +42,7 @@ function loadingLogo(){
   .add('img/pixi/logoLoading.json')
   .load(onAssetsLoaded);
   function onAssetsLoaded(){
+    loadingPixi.setAttribute('style', ' ');
     var framesLoading = [];
     var frames = [];
     var framesHover = [];
@@ -91,6 +92,57 @@ function loadingLogo(){
   }
 }
 
+function loadingPhr(c){
+  let per = _('#per');
+  if(c > 20 && c < 40){
+    per.innerHTML = "Almost 2..."
+  } else if (c > 40 && c < 60) {
+    per.innerHTML = "Almost 3..."
+  } else if (c > 60 && c < 80){
+    per.innerHTML = "Almost 4..."
+  } else if (c > 80){
+    per.innerHTML = "Almost 5..."
+  }
+}
+
+
+function loadPosters(s, fun){
+  let xhr = [],
+      url = [],
+      c = 0,
+      num;
+  for (let i = 1; i < 8; i++) {
+    url.push(s+i+'.jpg');
+  }
+  for (let i = 0; i < url.length; i++) {
+    xhr[i] = new XMLHttpRequest;
+    xhr[i].open("GET", url[i], true);
+    xhr[i].responseType = "blob";
+    xhr[i].onload = function(e){
+      if(this.readyState === 4){
+        c++;
+        num = Math.round((c*(100/7)));
+        loadingPhr(num);
+        if(c === 7){
+          fun();
+        }
+      }
+    }
+    xhr[i].send();
+  }
+}
+
+function posterSection(){
+  let wr = _('#loading');
+  wr.style.opacity = "0";
+  setTimeout(function(){ wr.style.display = "none"; },600);
+}
+
+function posterProjects(){
+  let wr = _('#loading');
+  wr.style.opacity = "0";
+  setTimeout(function(){ wr.style.display = "none"; },600);
+}
 
 function support(a) {
   let b = " ";
@@ -108,9 +160,6 @@ function loadVid() {
       let vid = document.createElement("VIDEO");
       vid.classList.add('videostyle');
       vid.setAttribute('preload', 'auto');
-      // vid.setAttribute('controls' , ' ');
-      // vid.setAttribute('autoplay' , ' ');
-      //ponercover
       cover[i].appendChild(vid);
     }
 
