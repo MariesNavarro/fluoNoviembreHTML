@@ -118,7 +118,7 @@ function loadVid() {
               if(r === cover.length){
                 //function render videos
                 //loading
-                wr.style.display = "none";
+                // wr.style.display = "none";
                 vidRender();
               }
             }
@@ -145,7 +145,7 @@ function loadVid() {
               if(r === cover.length){
                 //function render videos
                 //loading
-                wr.style.display = "none";
+                // wr.style.display = "none";
                 vidRender();
               }
             }
