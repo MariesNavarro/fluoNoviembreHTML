@@ -586,7 +586,7 @@ body {
       right: 0;
       display: block;
       width: 7px;
-      height: 100vh; }
+      height: 0; }
   body #landscape {
     position: fixed;
     top: 0;

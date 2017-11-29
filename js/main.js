@@ -110,6 +110,7 @@ function loadPosters(s, fun){
   let xhr = [],
       url = [],
       c = 0,
+      line = _('#loading').children[2],
       num;
   for (let i = 1; i < 8; i++) {
     url.push(s+i+'.jpg');
@@ -122,6 +123,7 @@ function loadPosters(s, fun){
       if(this.readyState === 4){
         c++;
         num = Math.round((c*(100/7)));
+        line.style.height = num+"%";
         loadingPhr(num);
         if(c === 7){
           fun();
@@ -154,6 +156,7 @@ function loadVid() {
     let cover = __('.cover'),
         xhrVid = [],
         urlList = [],
+        line = _('#loading').children[2],
         r = 0;
     for (let i = 0; i < cover.length; i++) {
       cover[i].setAttribute('style', ' ');
@@ -176,7 +179,8 @@ function loadVid() {
           xhrVid[c].onload = function (e){
             if(this.readyState == 4){
               r+=1;
-              let num = Math.round(r*(100/cover.length-1));
+              let num = Math.round(r*(108/cover.length-1));
+              line.style.height = num+'%';
               if(r === cover.length){
                 vidRender();
               }
@@ -196,7 +200,8 @@ function loadVid() {
           xhrVid[c].onload = function (e){
             if(this.readyState == 4){
               r+=1;
-              let num = Math.round(r*(100/cover.length-1));
+              let num = Math.round(r*(108/cover.length-1));
+              line.style.height = num+'%';
               if(r === cover.length){
                 vidRender();
               }
@@ -205,8 +210,45 @@ function loadVid() {
           xhrVid[c].send();
         }
     }
+  } else {
+    let wr = _('#loading'),
+        cvMob = __('.cover'),
+        line = _('#loading').children[2],
+        num,
+        len = cvMob.length,
+        c = 0,
+        urlMob = [],
+        xhrMob = [];
+    for (var i = 0; i < cvMob.length; i++) {
+      urlMob.push(cvMob[i].getAttribute('data-img'));
+    }
+    for (var i = 0; i < len; i++) {
+      xhrMob[i] = new XMLHttpRequest;
+      xhrMob[i].open("GET", urlMob[i], true);
+      xhrMob[i].responseType = "blob";
+      xhrMob[i].onload = function (e){
+        if(this.readyState === 4){
+          c++;
+          num = Math.round((c*(100/len)));
+          line.style.height = num+"%";
+          loadingPhr(num);
+          if(num > 95) renderWorkMobile();
+        }
+      }
+      xhrMob[i].send();
+    }
+    function renderWorkMobile(){
+      for (var i = 0; i < len; i++) {
+        cvMob[i].style.backgroundImage = "url("+urlMob[i]+")";
+      }
+      wr.style.opacity = "0";
+      setTimeout(function(){ wr.style.display = "none"; },600);
+    }
   }
 }
+
+
+
 
 
 function vidRender(){
