@@ -369,13 +369,10 @@ fluo.com.mx
       }
       //Si hay botón de "About This Project"
       window.onorientationchange = function(){
-        let aboutthis = _('#aboutthis'),
-            landscape = _('#landscape');
+        let landscape = _('#landscape');
         if(window.orientation == 90 || window.orientation == -90){
-          aboutthis.style.display = "none";
           landscape.style.display = "block";
         } else {
-          landscape.style.display = "none";
           aboutthis.style.display = "block";
         }
       }
