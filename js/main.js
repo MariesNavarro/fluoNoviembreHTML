@@ -365,11 +365,14 @@ function popReel(c){
 }
 
 
+//
+
 function popSliderWr(c, t){
   let wr = _('#popSlider'),
       img = wr.children[1].children[1],
       src = t.getAttribute('data-img'),
       tx = wr.children[1].children[0];
+      console.log(src);
   if(c === 'open'){
     img.onload = function(){
       tx.style.opacity = "0";
@@ -565,8 +568,9 @@ function swipeSliderMobile(el,d){
 }
 
 function sliderMobile(c){
-  var img = _('#swipe_slider').children[0],
+  var img = _('#swipe_slider'),
       description = _('#descriptionSliderMobile').children[0];
+  img.setAttribute('data-img', stringSliderMobile+c+'.jpg');
   img.setAttribute('src', stringSliderMobile+c+'.jpg');
   description.innerHTML = c;
 }
