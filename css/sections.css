@@ -107,11 +107,15 @@
     display: none;
     width: 50%;
     margin-right: 10%;
+    border: 1px solid green;
   }
   .layout_2_1 >.column_1>img{ width: 100%; }
   .layout_2_1 >.column_2{
+    position: relative;
+    border: 1px solid green;
     width: 100%;
     margin: 0 auto;
+    top: 0;
     -webkit-flex-direction: column-reverse;
     -moz-flex-direction: column-reverse;
     -ms-flex-direction: column-reverse;
@@ -122,6 +126,11 @@
     -ms-justify-content: flex-end;
     -o-justify-content: flex-end;
     justify-content: flex-end;
+  }
+  .layout_2_1 >.column_2> iframe{
+    width: 100% !important;
+    position: absolute;
+    top: -180px
   }
   .layout_2_1 >.column_2> div >h4{
      padding: 22px 0;
@@ -157,9 +166,11 @@
     display: block;
     width: 100%;
     margin: 0;
+    border: 1px solid green !important;
   }
-  .layout_2_2 >.column_1>img{ width: 100%; }
+  .layout_2_2 >.column_1>img{ width: 100%; border: 1px solid green}
   .layout_2_2 >.column_2{
+    border: 1px solid green !important;
     width: 70%;
     margin: 0 auto;
     -webkit-flex-direction: column-reverse;
@@ -202,7 +213,10 @@
   }
   .layout_3 > .column_1{ width: 20% }
   .layout_3 > .column_2{ width: 80% }
-  .layout_3 > div > img { width: 100% }
+  .layout_3 > div > img {
+    width: 100%;
+        border: 1px solid green;
+  }
   /* Layout Slider Mobile */
   .layout_slider_mobile{
     display: block;
@@ -217,6 +231,7 @@
   .full_slider > img {
     width: 60%;
     margin: 0 auto;
+
   }
   /* Layout Slider Desktop */
   .layout_slider_desk{

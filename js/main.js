@@ -445,6 +445,31 @@ function overLine(c) {
   }
 }
 
+vSizeMocks();
+function vSizeMocks(){
+  let d = _('#vimeoDeskWr'),
+      m = _('#vimeoMobileWr'),
+      offD = d.offsetWidth,
+      offM = m.offsetWidth,
+      dDataW = d.children[0].getAttribute('width'),
+      dDataH = d.children[0].getAttribute('height'),
+      mDataW = m.children[0].getAttribute('width'),
+      mDataH = m.children[0].getAttribute('height');
+
+  console.log(offM);
+  console.log(offD);
+}
+
+// 1. tomar el offsetWidth de wrapper
+// 2. tomar la data de width de iframe
+// 3. tomar la data de height de iframe
+// 4. set new data-ratio datah/dataw
+// 5. tomar la data de ratio
+// 6. poner dataw al iframe del wrapper
+// 7. almacenar la multiplicacion del ancho del wrapper * ratio
+// 8. poner datah al iframe del wrapper
+
+
 //e
 function hideCoverLogo(){
   let trigger = _('#mainprojects').getBoundingClientRect().top,
@@ -661,3 +686,13 @@ document.onkeydown = function(e){
   }
 }
 smoothScroll.init();
+
+
+// 1. tomar el offsetWidth de wrapper
+// 2. tomar la data de width de iframe
+// 3. tomar la data de height de iframe
+// 4. set new data-ratio datah/dataw
+// 5. tomar la data de ratio
+// 6. poner dataw al iframe del wrapper
+// 7. almacenar la multiplicacion del ancho del wrapper * ratio
+// 8. poner datah al iframe del wrapper
