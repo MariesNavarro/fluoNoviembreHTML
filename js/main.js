@@ -445,20 +445,65 @@ function overLine(c) {
   }
 }
 
-vSizeMocks();
-function vSizeMocks(){
-  let d = _('#vimeoDeskWr'),
-      m = _('#vimeoMobileWr'),
-      offD = d.offsetWidth,
-      offM = m.offsetWidth,
-      dDataW = d.children[0].getAttribute('width'),
-      dDataH = d.children[0].getAttribute('height'),
-      mDataW = m.children[0].getAttribute('width'),
-      mDataH = m.children[0].getAttribute('height');
-
-  console.log(offM);
-  console.log(offD);
+function setProfiles(){
+ let p = __('.profile_in');
+ if(checkBowser){
+   p[0].setAttribute('onclick', 'profileMobile("f")');
+   p[1].setAttribute('onclick', 'profileMobile("t")');
+ } else {
+   p[0].setAttribute('onclick', 'profileDesktop("f")');
+   p[1].setAttribute('onclick', 'profileDesktop("t")');
+ }
 }
+
+function profileMobile(c){
+  let wr = _('#profiles_wr'),
+      w = window.innerWidth;
+  if(c === "f"){
+    isOpenF = !isOpenF;
+    wr.style.left = "100vw";
+  } else {
+    isOpenT = !isOpenT;
+    wr.style.left = "-100vw";
+  }
+}
+
+function profileDesktop(c){
+  let wr = _('#profiles_wr'),
+      w = window.innerWidth;
+  if(c === "f"){
+    isOpenF = !isOpenF;
+    wr.style.left = "50vw";
+  } else {
+    isOpenT = !isOpenT;
+    wr.style.left = "-50vw";
+  }
+}
+
+function checkAbout(){
+  let wr = _('#profiles_wr');
+  if(isOpenF){
+    console.log("Open");
+  }
+  if(isOpenT){
+    console.log("Open");
+  }
+}
+
+// vSizeMocks();
+// function vSizeMocks(){
+//   let d = _('#vimeoDeskWr'),
+//       m = _('#vimeoMobileWr'),
+//       offD = d.offsetWidth,
+//       offM = m.offsetWidth,
+//       dDataW = d.children[0].getAttribute('width'),
+//       dDataH = d.children[0].getAttribute('height'),
+//       mDataW = m.children[0].getAttribute('width'),
+//       mDataH = m.children[0].getAttribute('height');
+//
+//   console.log(offM);
+//   console.log(offD);
+// }
 
 // 1. tomar el offsetWidth de wrapper
 // 2. tomar la data de width de iframe
