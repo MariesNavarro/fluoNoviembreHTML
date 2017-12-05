@@ -56,9 +56,29 @@
   font-size: 0.9rem;
   color: #a2a2a2
 }
-
-
-
+.close_des_btn{
+  display: none;
+  position: absolute;
+  left: calc(50% - 20px);
+  top: calc(50% - 20px);
+  opacity: 0;
+  z-index: 5000;
+}
+.close_des_btn:hover{ opacity: 0.5 }
+.close_des_btn>img{
+  -webkit-transition: all 10.5s ease-out;
+  -moz-transition: all 10.5s ease-out;
+  -ms-transition: all 10.5s ease-out;
+  -o-transition: all 10.5s ease-out;
+  transition: all 10.5s ease-out;
+}
+.rotArrow {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
 #profiles_wr{
   position: relative;
   left: 0vw;
@@ -70,13 +90,42 @@
 }
 #profiles_wr > .fabiola{ left: -100% }
 #profiles_wr > .tatiana{ right: -100% }
-
 .profile_info{
   position: absolute;
   width: 100%;
   height: 100%;
   min-height: 400px;
   z-index: 8000;
+  background: #323334;
+}
+.profile_info>div{
+  display: block;
+  width: 90%;
+  height: 60px;
+  margin: 60px auto;
+}
+.profile_info>div>a{
+  display: block;
+  line-height: 60px;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+.profile_info>div>a:hover{ opacity: 0.5 }
+.profile_info>h3{
+  font-size: 2.3rem;
+  width: 70%;
+  margin: 100px auto 60px auto;
+}
+.profile_info>p{
+  width: 70%;
+  line-height: 1.2;
+  margin: 0 auto;
+}
+.profile_info>a{
+  display: block;
+  width: 70%;
+  margin: 60px auto;
+  font-style: italic;
 }
 .profiles_layout{
   position: relative;
@@ -154,6 +203,9 @@
   }
   #profiles_wr > .fabiola{ left: -50% }
   #profiles_wr > .tatiana{ right: -50% }
+  .profile_info>div{
+    display: none;
+  }
   .profiles_layout{
     -webkit-flex-direction: row;
     -moz-flex-direction: row;

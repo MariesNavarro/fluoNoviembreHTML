@@ -169,19 +169,49 @@ fluo.com.mx
       </article>
       <span id="pleca" class="gradientFluo"></span>
       <article id="profiles_wr" style="width:100vw;margin:0 auto">
-        <div class="profile_info fabiola" style="background:red"> </div>
-        <div class="profile_info tatiana" style="background:pink"> </div>
+        <a role="button" class="close_des_btn transition" onmouseover="arrowProfile('over', this)" onmouseout="arrowProfile('out', this)">
+          <img src="img/icons/close_profile.svg" width="40">
+        </a>
+        <div class="profile_info fabiola">
+          <div>
+            <a role="button" style="text-align:right" onclick="profileDesktop('fClose')"> Close </a>
+          </div>
+          <!-- Fabiola Info -->
+          <h3>Fabiola</h3>
+          <p>
+            Diseñadora en medios digitales egresada
+            de CENTRO de diseño, cine y televisión,
+            Fabiola Franyutti se enfoca en programación
+            web, fotografía, video y animación.
+          </p>
+          <a href="https://www.instagram.com/faxypaxy" target="blank" rel="noopener noreferrer">Instagram: @faxypaxy</a>
+        </div>
+
+        <div class="profile_info tatiana">
+          <div>
+            <a role="button" style="text-align:left" onclick="profileDesktop('tClose')"> Close </a>
+          </div>
+          <!-- Tatiana Info -->
+          <h3>Tatina</h3>
+          <p>
+            Diseñadora en medios digitales egresada
+            de CENTRO de diseño, cine y televisión,
+            Fabiola Franyutti se enfoca en programación
+            web, fotografía, video y animación.
+          </p>
+          <a href="https://www.instagram.com/tatinavazest" target="blank" rel="noopener noreferrer">Instagram: @tatinavazest</a>
+        </div>
         <div class="profiles_layout showDisplayFlex">
-          <!-- Fabiola -->
+          <!-- Fabiola Picture -->
           <div style="background-image:url('img/fabiola_fluo.jpg')">
             <div class="profile_in">
               <a class="bt_mob" role="button">
-                <img  src="img/icons/plus.svg" width="40">
+                <img src="img/icons/plus.svg" width="40">
               </a>
               <a class="ig_des" href="https://www.instagram.com/faxypaxy" target="blank" rel="noopener noreferrer">Instagram: @faxypaxy</a>
             </div>
           </div>
-          <!-- Tatiana -->
+          <!-- Tatiana Picture -->
           <div style="background-image:url('img/tatina_fluo.jpg')">
             <div class="profile_in">
               <a class="bt_mob" role="button">
@@ -192,6 +222,7 @@ fluo.com.mx
           </div>
         </div>
       </article>
+      <article style="width:90vw; height:100vh;background:purple;margin:0 auto"></article>
     </section>
     <!-- PROYECTOS -->
     <section class="fullsection projects">
@@ -366,10 +397,10 @@ fluo.com.mx
     <script type="text/javascript">
       let isOpenF = false,
           isOpenT = false;
-
       setProfiles();
       window.onresize = function(){
         let size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";
+        checkAbout();
       }
       window.onscroll = function(){
         detectWaveLayouts();

@@ -2,7 +2,7 @@
 var checkBowser = false;
 if(bowser.mobile || bowser.tablet || /SymbianOS/.test(window.navigator.userAgent)) checkBowser = true;
 
-window.console.log("%cCoded by Mn - http://fluo.com.mx", "color:pink;  font-size: 10px; background:#000; padding:2px;");
+window.console.log("%cCoded by Mn", "color:pink;  font-size: 10px; background:#000; padding:2px;");
     function _(el){return document.querySelector(el); }
     function __(el){return document.querySelectorAll(el); }
     loadingLogo();
@@ -451,8 +451,8 @@ function setProfiles(){
    p[0].setAttribute('onclick', 'profileMobile("f")');
    p[1].setAttribute('onclick', 'profileMobile("t")');
  } else {
-   p[0].setAttribute('onclick', 'profileDesktop("f")');
-   p[1].setAttribute('onclick', 'profileDesktop("t")');
+   p[0].setAttribute('onclick', 'profileDesktop("fOpen")');
+   p[1].setAttribute('onclick', 'profileDesktop("tOpen")');
  }
 }
 
@@ -470,23 +470,83 @@ function profileMobile(c){
 
 function profileDesktop(c){
   let wr = _('#profiles_wr'),
+      bt = _('.close_des_btn'),
+      img = bt.children[0],
+      fadewr = __('.profile_in'),
       w = window.innerWidth;
-  if(c === "f"){
-    isOpenF = !isOpenF;
-    wr.style.left = "50vw";
+
+  switch (c) {
+  case 'fOpen':
+  isOpenF = !isOpenF;
+  fadewr[0].style.opacity = "0";
+  if(w < 650){
+    wr.style.left = "100vw";
   } else {
-    isOpenT = !isOpenT;
+    wr.style.left = "50vw";
+    bt.setAttribute('onclick', 'profileDesktop("fClose")');
+    bt.style.left = "calc(0% - 20px)";
+    bt.style.display = "block";
+    setTimeout(function(){
+      bt.style.opacity = "1";
+    },600);
+  }
+  break;
+  case 'tOpen':
+  isOpenT = !isOpenT;
+  fadewr[1].style.opacity = "0";
+  if(w < 650){
+    wr.style.left = "-100vw";
+  } else {
     wr.style.left = "-50vw";
+    bt.setAttribute('onclick', 'profileDesktop("tClose")');
+    bt.style.left = "calc(100% - 20px)";
+    img.classList.add('rotIcon');
+    bt.style.display = "block";
+    setTimeout(function(){
+      bt.style.opacity = "1";
+    },600);
+  }
+  break;
+  case 'fClose':
+    isOpenF = !isOpenF;
+    fadewr[0].style.opacity = "1";
+    bt.style.display = "none";
+    bt.style.opacity = "0";
+    wr.style.left = "0";
+  break;
+  case 'tClose':
+    isOpenT = !isOpenT;
+    fadewr[1].style.opacity = "1";
+    bt.style.display = "none";
+    bt.style.opacity = "0";
+    wr.style.left = "0";
+  break;
   }
 }
 
+function arrowProfile(c, t){
+ if(c === "over"){
+   t.classList.add('rotArrow');
+ } else {
+   t.classList.remove('rotArrow');
+ }
+}
+
+
 function checkAbout(){
-  let wr = _('#profiles_wr');
-  if(isOpenF){
-    console.log("Open");
+  let wr = _('#profiles_wr'),
+      w = window.innerWidth;
+  if(w < 650 && isOpenF){
+    wr.style.left = "100vw";
   }
-  if(isOpenT){
-    console.log("Open");
+  if(w > 650 && isOpenF){
+    wr.style.left = "50vw";
+  }
+  if(w < 650 && isOpenT){
+    wr.style.left = "-100vw";
+  }
+  if(w > 650 && isOpenT){
+    wr.style.left = "-50vw";
   }
 }
 
