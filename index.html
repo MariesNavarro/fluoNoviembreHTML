@@ -45,7 +45,7 @@ fluo.com.mx
 <body>
     <p id="size" class="hideDisplay"></p>
     <!-- LOADING -->
-    <div id="loading" class="">
+    <div id="loading" class="hideDisplay">
       <div id="fluoDeg" style="background-image:url('img/loading-cover.png')"></div>
       <p id="per">Almost there 1...</p>
       <span class="gradientFluoTop transit"></span>
@@ -121,7 +121,12 @@ fluo.com.mx
     <div id="telefonofluo" style="display:none"></div>
     <!-- MAIN -->
     <section id="layout1_index" class="fullsection">
-      <article style="background:purple"></article>
+      <article style="background:#000"></article>
+      <a id="spacebutton" role="button">
+        <span class="gradientFluo"></span>
+        <p>Hit the space bar</p>
+
+      </a>
     </section>
     <!-- POP LANDSCAPE -->
     <section id="landscape">
@@ -140,16 +145,16 @@ fluo.com.mx
     <script src="js/pixi.min.js" charset="utf-8"></script>
     <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
+    <script src="js/index.js" charset="utf-8"></script>
     <script type="text/javascript">
+      let bspc = _('#spacebutton>span');
       window.onresize = function(){
         var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";
-      }
+      };
       window.onscroll = function(){
         detectWaveLayouts();
-        //Si hay botón de "About This Project"
         removeAboutScroll();
-      }
-      //Si hay botón de "About This Project"
+      };
       window.onorientationchange = function(){
         let aboutthis = _('#aboutthis'),
             landscape = _('#landscape');
@@ -160,7 +165,31 @@ fluo.com.mx
           landscape.style.display = "none";
           aboutthis.style.display = "block";
         }
-      }
+      };
+      let k32 = 0;
+      window.onkeydown = function(e) {
+          e = e || window.event;
+          if (e.keyCode == '32') {
+            k32 +=(1/20)*100;
+            if(k32 < 100){
+              bspc.style.width = k32+"%";
+            } else {
+              bspc.style.width = "100%";
+            }
+            if(k32 === 100) changeHome();
+          }
+      };
+      window.onkeyup = function(e) {
+          if (e.keyCode == '32') {
+            if(k32 < 100){
+              k32 = 0;
+              bspc.style.width = k32+"%";
+            } else {
+              k32 = 0;
+              bspc.style.width = "100%";
+            }
+          }
+      };
     </script>
 </body>
 </html>

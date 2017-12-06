@@ -1,5 +1,5 @@
 "use strict";
-var checkBowser = false;
+let checkBowser = false;
 if(bowser.mobile || bowser.tablet || /SymbianOS/.test(window.navigator.userAgent)) checkBowser = true;
 
 window.console.log("%cCoded by Mn", "color:pink;  font-size: 10px; background:#000; padding:2px;");
@@ -24,7 +24,7 @@ function loadingHover(){
 }
 
 function loadingLogo(){
-  var app, apphover, apploading,
+  let app, apphover, apploading,
       loadingPixi = _('#fluoDeg'),
       logotipo = _('#logotipoMenu');
   apploading = new PIXI.Application(160, 160,{antialias: false, transparent: true, resolution: 1});
@@ -390,8 +390,9 @@ function popSliderWr(c, t){
 }
 
 function aboutThisPop(c){
-  let wr = _('#abouthis'),
-      trigger = _('#triggerAbout'),
+  let wr = _('#abouthis');
+  if(wr === null) return;
+  let trigger = _('#triggerAbout'),
       about = trigger.children[0],
       close = trigger.children[1],
       closeMob = _('.close');
@@ -790,6 +791,16 @@ document.onkeydown = function(e){
    aboutThisPop('close');
   }
 }
+
+
+
+
+
+
+function changeHome(){
+  console.log("Change home");
+}
+
 smoothScroll.init();
 
 
