@@ -1,4 +1,4 @@
-Blob [] blobs = new Blob[10];
+Blob [] blobs = new Blob[1];
 
 void setup() {
   background(51);

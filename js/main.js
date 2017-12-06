@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 let checkBowser = false;
 if(bowser.mobile || bowser.tablet || /SymbianOS/.test(window.navigator.userAgent)) checkBowser = true;
 
@@ -792,18 +792,6 @@ document.onkeydown = function(e){
   }
 }
 
-
-
-
-
-
-function changeHome(){
-  console.log("Change home");
-}
-
-smoothScroll.init();
-
-
 // 1. tomar el offsetWidth de wrapper
 // 2. tomar la data de width de iframe
 // 3. tomar la data de height de iframe
@@ -812,3 +800,69 @@ smoothScroll.init();
 // 6. poner dataw al iframe del wrapper
 // 7. almacenar la multiplicacion del ancho del wrapper * ratio
 // 8. poner datah al iframe del wrapper
+
+var bl;
+function setup() {
+  pixelDensity(2);
+  let cv,
+      p = _('#layout1_index>article'),
+      w = p.getBoundingClientRect().width,
+      h = p.getBoundingClientRect().height;
+  cv = createCanvas(w, h);
+  cv.class("p5_cv");
+  cv.background('#000');
+  bl = new Blob(random(width), random(height));
+  cv.parent(p);
+}
+
+
+function draw() {
+  for (let x = 0; x < width; x++) {
+    for (let y = 0; y < height; y++) {
+      let i = x + y * width;
+      let sum = 0;
+      //por cada Blob
+      // let d = dist(x,y,bl.pos.x,bl.pos.y);
+      // sum += 200 * bl.r/d;
+      // pixels[i] = color(sum,0,sum);
+    } //y
+  } //x
+  bl.update();
+}
+
+function Blob(x,y){
+  this.pos = createVector(x,y);
+  this.vel = p5.Vector.random2D();
+  this.vel.mult(random(2,5));
+  this.r = 40;
+
+  this.update = function(){
+    this.pos.add(this.vel);
+    if(this.pos.x > width || this.pos.x < 0){
+      this.vel.x *= -1;
+    }
+    if(this.pos.y > height || this.pos.y < 0){
+      this.vel.y *= -1;
+    }
+    noStroke();
+    stroke(255,0,255);
+    // point(this.pos.x, this.pos.y);
+    ellipse(this.pos.x, this.pos.y, this.r, this.r);
+  }
+}
+
+function windowResized() {
+  let p = _('#layout1_index>article'),
+      w = p.getBoundingClientRect().width,
+      h = p.getBoundingClientRect().height;
+      resizeCanvas(w,h);
+}
+
+
+function changeHome(){
+  console.log("Change home");
+}
+
+
+
+smoothScroll.init();

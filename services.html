@@ -17,7 +17,7 @@ fluo.com.mx
 	<meta http-equiv="pragma" content="no-cache"/>
 	<meta name="google" content="notranslate"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0000, minimum-scale=1.0000, maximum-scale=1.0000, user-scalable=yes">
-  <title>Fluo Mx | Layout Noviembre</title> <!-- REVISAR -->
+  <title>Fluo Mx | Services</title> <!-- REVISAR -->
   <link rel="canonical" href="index.html" />
   <meta name="description" content=""/> <!-- FALTA -->
   <meta name="keywords" content=" "/> <!-- FALTA -->
@@ -144,13 +144,11 @@ fluo.com.mx
     <script src="js/bowser.min.js" charset="utf-8"></script>
     <script src="js/pixi.min.js" charset="utf-8"></script>
     <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
-    <script src="js/p5.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
     <script type="text/javascript">
       let bspc = _('#spacebutton>span');
       window.onresize = function(){
         var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";
-        // resizep5();
       };
       window.onorientationchange = function(){
         let aboutthis = _('#aboutthis'),
@@ -162,30 +160,6 @@ fluo.com.mx
           landscape.style.display = "none";
           aboutthis.style.display = "block";
         }
-      };
-      let k32 = 0;
-      window.onkeydown = function(e) {
-          e = e || window.event;
-          if (e.keyCode == '32') {
-            k32 +=(1/20)*100;
-            if(k32 < 100){
-              bspc.style.width = k32+"%";
-            } else {
-              bspc.style.width = "100%";
-            }
-            if(k32 === 100) changeHome();
-          }
-      };
-      window.onkeyup = function(e) {
-          if (e.keyCode == '32') {
-            if(k32 < 100){
-              k32 = 0;
-              bspc.style.width = k32+"%";
-            } else {
-              k32 = 0;
-              bspc.style.width = "100%";
-            }
-          }
       };
     </script>
 </body>
