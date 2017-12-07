@@ -252,10 +252,6 @@ function loadVid() {
   }
 }
 
-
-
-
-
 function vidRender(){
   let vtag = __('.videostyle'),
       a, b = support(vtag[0]);
@@ -364,15 +360,11 @@ function popReel(c){
   }
 }
 
-
-//
-
 function popSliderWr(c, t){
   let wr = _('#popSlider'),
       img = wr.children[1].children[1],
       src = t.getAttribute('data-img'),
       tx = wr.children[1].children[0];
-      console.log(src);
   if(c === 'open'){
     img.onload = function(){
       tx.style.opacity = "0";
@@ -864,10 +856,113 @@ function changeHome(){
 }
 
 
-
-/* Services */
-function getFlagV(){
-  var f = __('.flagV')[0].getBoundingClientRect();
-  console.log(f);
+/*  */
+function loadServices(){
+ if(!checkBowser){
+ 	let s = __('.step'),
+      xhrVid = [],
+      urlList = [];
+ 	for(let i =0; i < s.length; i++){
+ 		let v = document.createElement("VIDEO");
+ 		v.setAttribute('preload', 'auto');
+ 		v.setAttribute('loop', ' ');
+ 		v.setAttribute('autoplay', ' ');
+    s[i].appendChild(v);
+ 	}
+  let v = _('.step>video'),
+      r = 0,
+      a, b = support(v);
+    if (" " == b ? a = 0 : "mp4" == b ? a = 1 : "webm" == b && (a = 2), 1 === a) {
+      for (let c = 0; c <= s.length-1; c++){
+      	urlList.push("assets/services/" + c+ ".mp4");
+      }
+      for (var c = 0; c < urlList.length; c++){
+      	xhrVid[c] = new XMLHttpRequest;
+        xhrVid[c].open("GET", urlList[c], !0);
+        xhrVid[c].responseType = "blob";
+        xhrVid[c].onload = function (e){
+          if(this.readyState == 4){
+            r+=1;
+            // let num = Math.round(r*(108/cover.length-1));
+            if(r === s.length){
+              console.log("Llamar funcion saf");
+              renderServices();
+            }
+          }
+        }
+        xhrVid[c].send();
+      }
+    }//if
+    if (2 === a) {
+      for(let c = 0; c <= s.length-1; c++){
+        urlList.push("assets/services/"+ c+ ".webm");
+      }
+      for(let c = 0; c < urlList.length; c++) {
+        xhrVid[c] = new XMLHttpRequest;
+        xhrVid[c].open("GET", urlList[c], !0);
+        xhrVid[c].responseType = "blob";
+        xhrVid[c].onload = function (e){
+        if(this.readyState == 4){
+          r+=1;
+          // let num = Math.round(r*(108/cover.length-1));
+          if(r === s.length){
+            console.log("Llamar funcion fire");
+            renderServices();
+          }
+        }
+      }
+      xhrVid[c].send();
+    }
+  } //if
+ } //bowser
+ //Movil
 }
+
+function renderServices(){
+  let v  = __('.step>video'),
+      a, b = support(v[0]);
+  for (var i = 0; i < v.length; i++) {
+    let s = document.createElement("SOURCE");
+    if (" " == b ? a = 0 : "mp4" == b ? a = 1 : "webm" == b && (a = 2), 1 === a) {
+      s.setAttribute('src', 'assets/services/'+i+'.mp4');
+      s.setAttribute('type', 'video/mp4');
+    }
+    if (2 === a) {
+      s.setAttribute('src', 'assets/services/'+i+'.webm');
+      s.setAttribute('type', 'video/webm');
+    }
+    v[i].appendChild(s);
+  }
+}
+
+
+
+function getFlagV(){
+  // var f = __('.flagV')[0].getBoundingClientRect().x;
+  // console.log(f);
+}
+
+
+
+
+
+
+// function aniSteps(){
+//       let st1, st2,
+//           wr1 = __('.step')[0];
+//       st1 = new PIXI.Application(420, 420,{antialias: false, transparent: true, resolution: 1});
+//       wr1.appendChild(st1.view);
+//       PIXI.loader
+//       .add('img/services/0.json')
+//       .load(onStepsLoad);
+//       function onStepsLoad(){
+//         let f1 = [];
+//         console.log("Step 1 Loaded");
+//       }
+// } aniSteps();
+// for (var i = 0; i < 66; i++) {
+//     framesLoading.push(PIXI.Texture.fromFrame('fluoLoading_' + i + '.png'));
+// }
+
+
 smoothScroll.init();

@@ -45,7 +45,7 @@ fluo.com.mx
 <body>
     <p id="size" class="hideDisplay"></p>
     <!-- LOADING -->
-    <div id="loading" class="hideDisplay">
+    <div id="loading" class="">
       <div id="fluoDeg" style="background-image:url('img/loading-cover.png')"></div>
       <p id="per">Almost there 1...</p>
       <span class="gradientFluoTop transit"></span>
@@ -122,16 +122,27 @@ fluo.com.mx
     <!-- MAIN -->
     <section id="layout1_services" class="fullsection">
       <!-- ANIMATION -->
-      <div id="ani" style="background-image:url('img/prueba/center.png')">
-
+      <div id="steps_wr">
+        <ul>
+          <li class="step"></li>
+          <li class="step"></li>
+          <li class="step"></li>
+          <li class="step"></li>
+          <li class="step"></li>
+          <li class="step"></li>
+          <li class="step"></li>
+          <li class="step"></li>
+        </ul>
       </div>
       <!-- WRAPPER -->
       <div id="wrapper" class="showDisplayFlex">
         <span class="gradientFluo"></span>
         <!-- INTRO 1 -->
-        <div style="background-image:url('img/prueba/01.png')"></div>
+        <div style="background-image:url('img/prueba/01.png'); opacity:0.1"></div>
         <!-- INTRO 2 -->
-        <div style="background-image:url('img/prueba/02.png')"></div>
+        <div style="background-image:url('img/prueba/02.png')">
+          <div class="flagV"></div>
+        </div>
         <!-- PASO 1 -->
         <div>
             <div class="flagV"></div>
@@ -176,7 +187,6 @@ fluo.com.mx
         </div>
         <!-- PASO 8 DUDAS -->
         <div style="border:1px solid green">
-          <div class="flagV"></div>
         </div>
         <!-- BOTON -->
         <div style="background-image:url('img/prueba/03.png')"></div>
@@ -197,10 +207,15 @@ fluo.com.mx
     </section>
     <script src="js/bowser.min.js" charset="utf-8"></script>
     <script src="js/pixi.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/jquery.easing.1.3.js" charset="utf-8"></script>
+    <script src="js/jquery.mousewheel.min.js" charset="utf-8"></script>
     <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
     <script type="text/javascript">
+      let sx = _('#layout1_services');
       let bspc = _('#spacebutton>span');
+      loadServices();
       window.onresize = function(){
         var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";
       };
@@ -215,13 +230,19 @@ fluo.com.mx
           aboutthis.style.display = "block";
         }
       };
-
-
-      window.onscroll = function(){
-        // getFlagV();
-        console.log("Hola!!!!")
-      }
-
+      $(document).ready(function() {
+        $('html, body').mousewheel(function(e, delta) {
+          if( Math.abs(e.deltaX) ) {
+            sx.style.overflowX = "hidden";
+            return
+          } else {
+            sx.style.overflowX = "scroll";
+            sx.scrollLeft -= (e.deltaY * 3);
+            getFlagV();
+          }
+          e.preventDefault();
+        });
+      });
     </script>
 </body>
 </html>
