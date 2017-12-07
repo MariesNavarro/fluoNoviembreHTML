@@ -865,4 +865,9 @@ function changeHome(){
 
 
 
+/* Services */
+function getFlagV(){
+  var f = __('.flagV')[0].getBoundingClientRect();
+  console.log(f);
+}
 smoothScroll.init();

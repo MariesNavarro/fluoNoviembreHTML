@@ -834,3 +834,67 @@
   z-index: 200;
   /*border: 1px solid red;*/
 }
+
+
+/* Services */
+#layout1_services{
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  overflow-x: scroll;
+}
+#layout1_services>#ani{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: #323334;
+}
+#layout1_services>#wrapper{
+  position: absolute;
+  width: 1100vw;
+  height: 100vh;
+}
+#layout1_services>#wrapper>div{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+/* Flag */
+
+#layout1_services>#wrapper>div>.flagV{
+  position: absolute;
+  width: 100px;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: red;
+}
+#layout1_services>#wrapper>div>h4{
+  position: absolute;
+  bottom: 106px;
+  background: #323334;
+  display: block;
+  /*border: 1px solid red;*/
+  padding: 20px ;
+}
+#layout1_services>#wrapper>div>p{
+  position: absolute;
+  bottom: 60px;
+  padding: 20px;
+}
+#layout1_services>#wrapper>span{
+  display: block;
+  position: absolute;
+  left: 210vw;
+  bottom: 133px;
+  width: 600vw;
+  height: 4px;
+}
