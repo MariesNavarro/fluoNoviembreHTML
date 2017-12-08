@@ -860,6 +860,7 @@ function changeHome(){
 function loadServices(){
  if(!checkBowser){
  	let s = __('.step'),
+      wr = _('#loading'),
       xhrVid = [],
       urlList = [];
  	for(let i =0; i < s.length; i++){
@@ -883,16 +884,20 @@ function loadServices(){
         xhrVid[c].onload = function (e){
           if(this.readyState == 4){
             r+=1;
-            // let num = Math.round(r*(108/cover.length-1));
+            let num = Math.round(r*(108/s.length-1));
+            loadingPhr(num);
             if(r === s.length){
-              console.log("Llamar funcion saf");
               renderServices();
+              setTimeout(function(){
+                wr.style.opacity = "0";
+                setTimeout(function(){ wr.style.display = "none" },600);
+              },1000);
             }
           }
         }
         xhrVid[c].send();
       }
-    }//if
+    }
     if (2 === a) {
       for(let c = 0; c <= s.length-1; c++){
         urlList.push("assets/services/"+ c+ ".webm");
@@ -904,16 +909,20 @@ function loadServices(){
         xhrVid[c].onload = function (e){
         if(this.readyState == 4){
           r+=1;
-          // let num = Math.round(r*(108/cover.length-1));
+          let num = Math.round(r*(108/s.length-1));
+          loadingPhr(num);
           if(r === s.length){
-            console.log("Llamar funcion fire");
             renderServices();
+            setTimeout(function(){
+              wr.style.opacity = "0";
+              setTimeout(function(){ wr.style.display = "none" },600);
+            },1000);
           }
         }
       }
       xhrVid[c].send();
     }
-  } //if
+  }
  } //bowser
  //Movil
 }
@@ -938,31 +947,159 @@ function renderServices(){
 
 
 function getFlagV(){
-  // var f = __('.flagV')[0].getBoundingClientRect().x;
-  // console.log(f);
+  var f = __('.flagV'),
+      x = [],
+      ct = (window.innerWidth/2)+100;
+
+  for(let i = 0; i < f.length; i++){
+    x.push(f[i].getBoundingClientRect().x - ct);
+  }
+  if(x[0] < 0 && x[1] > 0) indexStep(0);
+  if(x[1] < 0 && x[2] > 0) indexStep(1);  //diagnostio
+  if(x[2] < 0 && x[3] > 0) indexStep(2); //brief
+  if(x[3] < 0 && x[4] > 0) indexStep(3); //concepto
+  if(x[4] < 0 && x[5] > 0) indexStep(4); //prototipo
+  if(x[5] < 0 && x[6] > 0) indexStep(5); //ajustes
+  if(x[6] < 0 && x[7] > 0) indexStep(6); //implementacion
+  if(x[7] < 0) indexStep(7); //dudas
+}
+
+let fSc1 = false, fSc2 = false,
+    fSc3 = false, fSc4 = false,
+    fSc5 = false, fSc6 = false,
+    fSc7 = false, fSc8 = false;
+
+function indexStep(c){
+  var s = __('.step');
+  switch (c) {
+    case 0:
+      fSc2 = false;
+      fSc3 = false;
+      fSc4 = false;
+      fSc5 = false;
+      fSc6 = false;
+      fSc7 = false;
+      fSc8 = false;
+      if(!fSc1){
+        console.log("1: Introduccion");
+        changeStep(c);
+      }
+      fSc1 = true;
+    break;
+    case 1:
+      fSc1 = false;
+      fSc3 = false;
+      fSc4 = false;
+      fSc5 = false;
+      fSc6 = false;
+      fSc7 = false;
+      fSc8 = false;
+      if(!fSc2){
+        console.log("2: Diagnositco");
+        changeStep(c);
+      }
+      fSc2 = true;
+    break;
+    case 2:
+      fSc1 = false;
+      fSc2 = false;
+      fSc4 = false;
+      fSc5 = false;
+      fSc6 = false;
+      fSc7 = false;
+      fSc8 = false;
+      if(!fSc3){
+        console.log("3: Brief");
+        changeStep(c);
+      }
+      fSc3 = true;
+    break;
+    case 3:
+      fSc1 = false;
+      fSc2 = false;
+      fSc3 = false;
+      fSc5 = false;
+      fSc6 = false;
+      fSc7 = false;
+      fSc8 = false;
+      if(!fSc4){
+        console.log("4: Concepto");
+        changeStep(c);
+      }
+      fSc4 = true;
+    break;
+    case 4:
+      fSc1 = false;
+      fSc2 = false;
+      fSc3 = false;
+      fSc4 = false;
+      fSc6 = false;
+      fSc7 = false;
+      fSc8 = false;
+      if(!fSc5){
+        console.log("5: Prototipo");
+        changeStep(c);
+      }
+      fSc5 = true;
+    break;
+    case 5:
+      fSc1 = false;
+      fSc2 = false;
+      fSc3 = false;
+      fSc4 = false;
+      fSc5 = false;
+      fSc7 = false;
+      fSc8 = false;
+      if(!fSc6){
+        console.log("6: Ajustes");
+        changeStep(c);
+      }
+      fSc6 = true;
+    break;
+    case 6:
+      fSc1 = false;
+      fSc2 = false;
+      fSc3 = false;
+      fSc4 = false;
+      fSc5 = false;
+      fSc6 = false;
+      fSc8 = false;
+      if(!fSc7){
+        console.log("7: Implementacion");
+        changeStep(c);
+      }
+      fSc7 = true;
+    break;
+    case 7:
+      fSc1 = false;
+      fSc2 = false;
+      fSc3 = false;
+      fSc4 = false;
+      fSc5 = false;
+      fSc6 = false;
+      fSc7 = false;
+      if(!fSc8){
+        console.log("¿Dudas?");
+        changeStep(c);
+      }
+      fSc8 = true;
+    break;
+  }
 }
 
 
 
+function changeStep(c){
+  var s = __('.step');
+  for (let i = 0; i < s.length; i++) {
+    s[i].style.opacity = "0";
+    s[c].classList.add('transition');
+  }
+  setTimeout(function(){
+    s[c].style.opacity = "1";
+  },600);
+}
 
-
-
-// function aniSteps(){
-//       let st1, st2,
-//           wr1 = __('.step')[0];
-//       st1 = new PIXI.Application(420, 420,{antialias: false, transparent: true, resolution: 1});
-//       wr1.appendChild(st1.view);
-//       PIXI.loader
-//       .add('img/services/0.json')
-//       .load(onStepsLoad);
-//       function onStepsLoad(){
-//         let f1 = [];
-//         console.log("Step 1 Loaded");
-//       }
-// } aniSteps();
-// for (var i = 0; i < 66; i++) {
-//     framesLoading.push(PIXI.Texture.fromFrame('fluoLoading_' + i + '.png'));
-// }
 
 
 smoothScroll.init();

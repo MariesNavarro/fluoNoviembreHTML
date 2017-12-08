@@ -124,28 +124,26 @@ fluo.com.mx
       <!-- ANIMATION -->
       <div id="steps_wr">
         <ul>
-          <li class="step"></li>
-          <li class="step"></li>
-          <li class="step"></li>
-          <li class="step"></li>
-          <li class="step"></li>
-          <li class="step"></li>
-          <li class="step"></li>
-          <li class="step"></li>
+          <li class="step showOpacity"></li>
+          <li class="step hideOpacity"></li>
+          <li class="step hideOpacity"></li>
+          <li class="step hideOpacity"></li>
+          <li class="step hideOpacity"></li>
+          <li class="step hideOpacity"></li>
+          <li class="step hideOpacity"></li>
+          <li class="step hideOpacity"></li>
         </ul>
       </div>
       <!-- WRAPPER -->
       <div id="wrapper" class="showDisplayFlex">
         <span class="gradientFluo"></span>
         <!-- INTRO 1 -->
-        <div style="background-image:url('img/prueba/01.png'); opacity:0.1"></div>
+        <div style="background-image:url('img/prueba/01.png')"></div>
         <!-- INTRO 2 -->
-        <div style="background-image:url('img/prueba/02.png')">
-          <div class="flagV"></div>
-        </div>
+        <div style="background-image:url('img/prueba/02.png')"></div>
         <!-- PASO 1 -->
         <div>
-            <div class="flagV"></div>
+            <div class="flagV" style="left:calc(50% - 200px)"></div>
             <h4>Introducción</h4>
             <p>Tomamos un café y nos cuentas de qué se trata tu marca.</p>
         </div>
@@ -187,6 +185,7 @@ fluo.com.mx
         </div>
         <!-- PASO 8 DUDAS -->
         <div style="border:1px solid green">
+          <div class="flagV"></div>
         </div>
         <!-- BOTON -->
         <div style="background-image:url('img/prueba/03.png')"></div>
@@ -205,6 +204,13 @@ fluo.com.mx
         <a role="button" onclick="popReel('close')"> Close </a>
         <div id="videoWrap"></div>
     </section>
+
+
+
+    <span id="lineadePruebaCentro"></span>
+
+
+
     <script src="js/bowser.min.js" charset="utf-8"></script>
     <script src="js/pixi.min.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -237,7 +243,7 @@ fluo.com.mx
             return
           } else {
             sx.style.overflowX = "scroll";
-            sx.scrollLeft -= (e.deltaY * 3);
+            sx.scrollLeft -= (e.deltaY * 2);
             getFlagV();
           }
           e.preventDefault();
