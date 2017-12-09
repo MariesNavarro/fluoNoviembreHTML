@@ -1,0 +1,8 @@
+.main
+  - (1..10).each do |i|
+    .row
+      - (1..20).each do |x|
+        %div.item{:class=>"row#{i}-col#{x}"}
+.credits
+  %a{:href => "https://codepen.io/marko-zub/", :target=>'_blank'}
+    My other codepens    

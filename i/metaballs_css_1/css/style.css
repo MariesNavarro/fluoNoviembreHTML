@@ -6,144 +6,92 @@ html {
   box-sizing: inherit;
 }
 
-html,
 body {
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
+  background: #000;
 }
 
-body {
-  padding: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-}
+
 
 .Stage {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
   background: #121212;
-  padding: 30px; 
   -webkit-filter: contrast(20); 
-          filter: contrast(20);
-  -ms-flex-item-align: stretch;
-      align-self: stretch;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  overflow: hidden;
+  filter: contrast(20);
 }
 
 .Bubble {
   border-radius: 50%;
-  display: inline-block;
-  background: white;
   -webkit-filter: blur(15px);
-          filter: blur(15px);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  filter: blur(15px);
 }
+
+/*
+Colores: 
+  #7c83ff (Azul centro)
+  #ff7fff (Rosa Centro)
+  #7CFFFF (Cyan Blanco)
+  #9AFFFF (Cyan)
+*/
+
+/*
+Combinacion 1 Cyan / Magenta
+  #7CFFFF
+  #FF7FFF
+*/
+
+/*
+F
+Combinacion 2 Cyan / Amarillo
+  #7CFFFF
+  #FFFF7F
+*/
+
+/*
+L
+Combinacion 2 Magenta / Amarillo
+  #FFFF7F
+  #FF7FFF
+*/
 
 .Bubble:nth-child(1) {
   width: 100px;
-  background-color: red;
+  background: #FFFF7F;
   height: 100px;
-  -webkit-animation: one 5000ms cubic-bezier(0.680, -0.550, 0.265, 1.550) alternate-reverse infinite;
-          animation: one 5000ms cubic-bezier(0.680, -0.550, 0.265, 1.550) alternate-reverse infinite;
+  animation: one 5000ms cubic-bezier(0.680, -0.550, 0.265, 1.550) alternate-reverse infinite;
 }
 
 
 .Bubble:nth-child(2) {
   width: 200px;
   height: 200px;
-  
-  background-color: yellow;
-  -webkit-animation: two 8000ms cubic-bezier(0.680, -0.550, 0.265, 1.550) alternate-reverse infinite;
-          animation: two 8000ms cubic-bezier(0.680, -0.550, 0.265, 1.550) alternate-reverse infinite;
+  background: #FF7FFF;
+  animation: two 8000ms cubic-bezier(0.680, -0.550, 0.265, 1.550) alternate-reverse infinite;
 }
 
 .Bubble:nth-child(3) {
-  background-color: blue;
+  background: #FF7FFF;
+   border: 20px solid #000; 
   width: 140px;
   height: 140px;
-  -webkit-animation: three 10000ms cubic-bezier(0.680, -0.550, 0.265, 1.550) alternate-reverse infinite;
-          animation: three 10000ms cubic-bezier(0.680, -0.550, 0.265, 1.550) alternate-reverse infinite;
+  animation: three 10000ms cubic-bezier(0.680, -0.550, 0.265, 1.550) alternate-reverse infinite;
 }
 
 .Bubble:nth-child(4) {
-  background-color: blue;
+  background: #FFFF7F;
   width: 60px;
   height: 60px;
-  -webkit-animation: one 20000ms cubic-bezier(0.680, -0.550, 0.265, 1.550) alternate-reverse infinite;
-          animation: one 20000ms cubic-bezier(0.680, -0.550, 0.265, 1.550) alternate-reverse infinite;
+  animation: one 20000ms cubic-bezier(0.680, -0.550, 0.265, 1.550) alternate-reverse infinite;
   position: relative;
-  left: -300px;
 }
 
 .Bubble:nth-child(5) {
-  background-color: red;
+  background: #FFFF7F;
   width: 80px;
   height: 80px;
-  -webkit-animation: two 6000ms cubic-bezier(0.680, -0.550, 0.265, 1.550) alternate-reverse infinite;
-          animation: two 6000ms cubic-bezier(0.680, -0.550, 0.265, 1.550) alternate-reverse infinite;
+  animation: two 6000ms cubic-bezier(0.680, -0.550, 0.265, 1.550) alternate-reverse infinite;
   position: relative;
-  left: -300px;
-}
-
-@-webkit-keyframes one {
-  0% { -webkit-transform: translate(20px, 50px) scale(0.7); transform: translate(20px, 50px) scale(0.7) }
-  30% { -webkit-transform: translate(100px, 80px) scale(1.1); transform: translate(100px, 80px) scale(1.1) }
-  60% { -webkit-transform: translate(200px, 200px) scale(1.8); transform: translate(200px, 200px) scale(1.8) }
-  100% { -webkit-transform: translate(50px, 10px) scale(0.8); transform: translate(50px, 10px) scale(0.8) }
-}
-
-@keyframes one {
-  0% { -webkit-transform: translate(20px, 50px) scale(0.7); transform: translate(20px, 50px) scale(0.7) }
-  30% { -webkit-transform: translate(100px, 80px) scale(1.1); transform: translate(100px, 80px) scale(1.1) }
-  60% { -webkit-transform: translate(200px, 200px) scale(1.8); transform: translate(200px, 200px) scale(1.8) }
-  100% { -webkit-transform: translate(50px, 10px) scale(0.8); transform: translate(50px, 10px) scale(0.8) }
-}
-
-@-webkit-keyframes two {
-  0% { -webkit-transform: translate(100px, 200px) scale(1); transform: translate(100px, 200px) scale(1); }
-  20% { -webkit-transform: translate(20px, 120px) scale(1.8); transform: translate(20px, 120px) scale(1.8); }
-  70% { -webkit-transform: translate(80px, 20px) scale(1.2); transform: translate(80px, 20px) scale(1.2); }
-  100% { -webkit-transform: translate(150px, 160px) scale(0.4); transform: translate(150px, 160px) scale(0.4); }
-}
-
-@keyframes two {
-  0% { -webkit-transform: translate(100px, 200px) scale(1); transform: translate(100px, 200px) scale(1); }
-  20% { -webkit-transform: translate(20px, 120px) scale(1.8); transform: translate(20px, 120px) scale(1.8); }
-  70% { -webkit-transform: translate(80px, 20px) scale(1.2); transform: translate(80px, 20px) scale(1.2); }
-  100% { -webkit-transform: translate(150px, 160px) scale(0.4); transform: translate(150px, 160px) scale(0.4); }
-}
-
-@-webkit-keyframes three {
-  0% { -webkit-transform: translate(-60px, 20px) scale(1.4); transform: translate(-60px, 20px) scale(1.4) }
-  20% { -webkit-transform: translate(-200px, 0px) scale(1.2); transform: translate(-200px, 0px) scale(1.2) }
-  70% { -webkit-transform: translate(-120px, -80px) scale(0.7); transform: translate(-120px, -80px) scale(0.7) }
-  100% { -webkit-transform: translate(0, 60px) scale(1); transform: translate(0, 60px) scale(1) }
-}
-
-@keyframes three {
-  0% { -webkit-transform: translate(-60px, 20px) scale(1.4); transform: translate(-60px, 20px) scale(1.4) }
-  20% { -webkit-transform: translate(-200px, 0px) scale(1.2); transform: translate(-200px, 0px) scale(1.2) }
-  70% { -webkit-transform: translate(-120px, -80px) scale(0.7); transform: translate(-120px, -80px) scale(0.7) }
-  100% { -webkit-transform: translate(0, 60px) scale(1); transform: translate(0, 60px) scale(1) }
 }

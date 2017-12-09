@@ -270,6 +270,17 @@ function vidRender(){
   setOverWork();
 }
 
+function sh(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+}
 
 function setOverWork(){
   let v = __('.videostyle');
@@ -793,70 +804,93 @@ document.onkeydown = function(e){
 // 7. almacenar la multiplicacion del ancho del wrapper * ratio
 // 8. poner datah al iframe del wrapper
 
-var bl;
-function setup() {
-  pixelDensity(2);
-  let cv,
-      p = _('#layout1_index>article'),
-      w = p.getBoundingClientRect().width,
-      h = p.getBoundingClientRect().height;
-  cv = createCanvas(w, h);
-  cv.class("p5_cv");
-  cv.background('#000');
-  bl = new Blob(random(width), random(height));
-  cv.parent(p);
-}
-
-
-function draw() {
-  for (let x = 0; x < width; x++) {
-    for (let y = 0; y < height; y++) {
-      let i = x + y * width;
-      let sum = 0;
-      //por cada Blob
-      // let d = dist(x,y,bl.pos.x,bl.pos.y);
-      // sum += 200 * bl.r/d;
-      // pixels[i] = color(sum,0,sum);
-    } //y
-  } //x
-  bl.update();
-}
-
-function Blob(x,y){
-  this.pos = createVector(x,y);
-  this.vel = p5.Vector.random2D();
-  this.vel.mult(random(2,5));
-  this.r = 40;
-
-  this.update = function(){
-    this.pos.add(this.vel);
-    if(this.pos.x > width || this.pos.x < 0){
-      this.vel.x *= -1;
-    }
-    if(this.pos.y > height || this.pos.y < 0){
-      this.vel.y *= -1;
-    }
-    noStroke();
-    stroke(255,0,255);
-    // point(this.pos.x, this.pos.y);
-    ellipse(this.pos.x, this.pos.y, this.r, this.r);
-  }
-}
-
-function windowResized() {
-  let p = _('#layout1_index>article'),
-      w = p.getBoundingClientRect().width,
-      h = p.getBoundingClientRect().height;
-      resizeCanvas(w,h);
-}
-
 
 function changeHome(){
   console.log("Change home");
 }
 
+function changeHomeValues(c ,k){
+  switch (c) {
+    case 1:
+      metaballsColor(k);
+    break;
+    case 2:
+    break;
+    case 3:
+    break;
+  }
+}
 
-/*  */
+/*http://bouncejs.com/*/
+/*https://codepen.io/rachsmith/pen/fBoiD*/
+/* p1 */
+// function setInteraction(){
+//   let s = _('.metaballs>.stage');
+//   s.setAttribute('onmousedown', 'addMetaball(event, 1)');
+// }
+
+
+function setMetaballs(){
+  let wr = _('.metaballs'),
+      col = ['cM1', 'cS1'],
+      scl = ['sc1','sc2','sc3'],
+      x, y;
+  for (var i = 0; i < 15; i++) {
+    let b = document.createElement('SPAN');
+    x = Math.floor(Math.random() * (72 - 38 + 1)) + 38;
+    y = Math.floor(Math.random() * (57 - 20 + 1)) + 20;
+    b.style.left = x+"vw";
+    b.style.top = y+"vh";
+    col = sh(col);
+    let newcol = col;
+    b.classList.add(newcol[0]);
+    b.classList.add('ball');
+    scl = sh(scl);
+    let newscl = scl;
+    b.classList.add(newscl[0]);
+    b.setAttribute('onclick', 'removeMetaball(this)');
+    wr.appendChild(b);
+  }
+  animationWigle();
+}
+function removeMetaball(t){
+  let wr = _('.metaballs');
+  wr.removeChild(t);
+}
+
+
+function metaballsColor(c){
+  let b = __('.ball');
+  if(c === "f"){
+    console.log(b);
+  } else if (c === "l") {
+    console.log(b);
+  } else {
+    console.log(b);
+  }
+}
+
+function animationWigle(){
+  let b = __('.ball');
+  for (var i = 0; i < b.length; i++) {
+    b[i].classList.remove();
+  }
+  // console.log(b);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* s */
 function loadServices(){
  if(!checkBowser){
  	let s = __('.step'),
@@ -943,8 +977,6 @@ function renderServices(){
     v[i].appendChild(s);
   }
 }
-
-
 
 function getFlagV(){
   var f = __('.flagV'),
@@ -1099,7 +1131,3 @@ function changeStep(c){
     s[c].style.opacity = "1";
   },600);
 }
-
-
-
-smoothScroll.init();

@@ -121,11 +121,12 @@ fluo.com.mx
     <div id="telefonofluo" style="display:none"></div>
     <!-- MAIN -->
     <section id="layout1_index" class="fullsection">
-      <article></article>
-      <a id="spacebutton" role="button">
+      <article class="metaballs">
+          <div class="stage"></div>
+      </article>
+      <a id="spacebutton" role="button" style="display:none">
         <span class="gradientFluo"></span>
         <p>Hit the space bar</p>
-
       </a>
     </section>
     <!-- POP LANDSCAPE -->
@@ -143,14 +144,14 @@ fluo.com.mx
     </section>
     <script src="js/bowser.min.js" charset="utf-8"></script>
     <script src="js/pixi.min.js" charset="utf-8"></script>
-    <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
-    <script src="js/p5.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
+    <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
     <script type="text/javascript">
+      let home = 1;
       let bspc = _('#spacebutton>span');
+      setMetaballs();
       window.onresize = function(){
         var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";
-        // resizep5();
       };
       window.onorientationchange = function(){
         let aboutthis = _('#aboutthis'),
@@ -166,6 +167,10 @@ fluo.com.mx
       let k32 = 0;
       window.onkeydown = function(e) {
           e = e || window.event;
+          if(e.keyCode === 70) changeHomeValues(home, "f");
+          if(e.keyCode === 76) changeHomeValues(home, "l");
+          if(e.keyCode === 85) changeHomeValues(home, "u");
+
           if (e.keyCode == '32') {
             k32 +=(1/20)*100;
             if(k32 < 100){
@@ -187,6 +192,7 @@ fluo.com.mx
             }
           }
       };
+      smoothScroll.init();
     </script>
 </body>
 </html>
