@@ -342,7 +342,7 @@ body {
       body nav#bottom ul li.menuLi::before, body nav#bottom ul li.menuLi::after, body nav#top ul li.menuLi::before, body nav#top ul li.menuLi::after {
         content: "Menu"; }
       body nav#bottom ul li.contactLi::before, body nav#bottom ul li.contactLi::after, body nav#top ul li.contactLi::before, body nav#top ul li.contactLi::after {
-        content: "About/ \a Contact"; }
+        content: "Estudio"; }
   body #abouthis {
     position: fixed;
     width: 100vw;
@@ -887,7 +887,7 @@ body {
     display: block; }
 
   body nav#back ul li.showLi::before, ul li.showLi::after {
-    content: "Showreel"; }
+    content: "Reel"; }
 
   body nav#top ul li a.aboutLi {
     width: 200px; }
@@ -1242,6 +1242,18 @@ body {
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   transform: rotate(180deg); }
+
+  .rotIcon90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform-origin: 25% 25%;
+    -ms-transform-origin: 25% 25%;
+    -o-transform-origin: 25% 25%;
+    transform-origin: 25% 25%;
+   }
 
 .gradientFluo {
   background: #e337fc;

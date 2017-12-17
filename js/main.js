@@ -981,7 +981,8 @@ function renderServices(){
 function getFlagV(){
   var f = __('.flagV'),
       x = [],
-      ct = (window.innerWidth/2)+100;
+      ct = (window.innerWidth/2)+100,
+      pstp = _('#instruccion');
 
   for(let i = 0; i < f.length; i++){
     x.push(f[i].getBoundingClientRect().x - ct);
@@ -1001,8 +1002,12 @@ let fSc1 = false, fSc2 = false,
     fSc5 = false, fSc6 = false,
     fSc7 = false, fSc8 = false;
 
+
+
 function indexStep(c){
-  var s = __('.step');
+  var s = __('.step'),
+      pstp = _('#instruccion');
+
   switch (c) {
     case 0:
       fSc2 = false;
@@ -1014,6 +1019,7 @@ function indexStep(c){
       fSc8 = false;
       if(!fSc1){
         console.log("1: Introduccion");
+        changeIcon(c);
         changeStep(c);
       }
       fSc1 = true;
@@ -1028,6 +1034,7 @@ function indexStep(c){
       fSc8 = false;
       if(!fSc2){
         console.log("2: Diagnositco");
+        changeIcon(c);
         changeStep(c);
       }
       fSc2 = true;
@@ -1042,6 +1049,7 @@ function indexStep(c){
       fSc8 = false;
       if(!fSc3){
         console.log("3: Brief");
+        changeIcon(c);
         changeStep(c);
       }
       fSc3 = true;
@@ -1056,6 +1064,7 @@ function indexStep(c){
       fSc8 = false;
       if(!fSc4){
         console.log("4: Concepto");
+        changeIcon(c);
         changeStep(c);
       }
       fSc4 = true;
@@ -1070,6 +1079,7 @@ function indexStep(c){
       fSc8 = false;
       if(!fSc5){
         console.log("5: Prototipo");
+        changeIcon(c);
         changeStep(c);
       }
       fSc5 = true;
@@ -1084,6 +1094,7 @@ function indexStep(c){
       fSc8 = false;
       if(!fSc6){
         console.log("6: Ajustes");
+        changeIcon(c);
         changeStep(c);
       }
       fSc6 = true;
@@ -1098,6 +1109,7 @@ function indexStep(c){
       fSc8 = false;
       if(!fSc7){
         console.log("7: Implementacion");
+        changeIcon(c);
         changeStep(c);
       }
       fSc7 = true;
@@ -1119,15 +1131,43 @@ function indexStep(c){
   }
 }
 
+function changeIcon(c){
+  let istp = __('#iconosteps>img');
 
+  for (var i = 0; i < istp.length; i++) {
+    istp[i].style.opacity = "0.5";
+  }
+  istp[c].style.opacity = "1";
+}
 
 function changeStep(c){
-  var s = __('.step');
+  var s = __('.step'),
+      p = __('#instruccion>span'),
+      wristp = _('#iconosteps'),
+      wrimp = _('#implementacion'),
+      wrfn = _('#final');
+
   for (let i = 0; i < s.length; i++) {
     s[i].style.opacity = "0";
     s[c].classList.add('transition');
+    p[i].style.opacity = "0";
+    p[c].classList.add('transition');
   }
+
   setTimeout(function(){
-    s[c].style.opacity = "1";
+    s[c].style.opacity = 1;
+    p[c].style.opacity = 1;
   },600);
+  if(c === 7){
+    wristp.style.opacity = "0";
+    wrfn.style.opacity = "1";
+  } else {
+    wristp.style.opacity = "1";
+    wrfn.style.opacity = "0";
+  }
+  if(c === 6){
+    wrimp.style.opacity = "1";
+  } else {
+    wrimp.style.opacity = "0";
+  }
 }
