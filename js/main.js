@@ -890,6 +890,30 @@ function animationWigle(){
 
 
 /* s */
+let c_services_mobile = 0;
+function servicesMobile(c){
+  let s = __('.sliderwr_services>li');
+  if(c === 'next'){
+    c_services_mobile++;
+    if(c_services_mobile > 7) c_services_mobile = 0;
+    slider(c_services_mobile);
+  } else {
+    c_services_mobile--;
+    if(c_services_mobile < 0) c_services_mobile = 7;
+    slider(c_services_mobile);
+  }
+
+  function slider(n){
+    clear();
+    s[n].style.display = "block";
+  }
+
+  function clear(){
+    for (var i = 0; i < s.length; i++) {
+      s[i].style.display = "none";
+    }
+  }
+}
 function overServices(c, el, t){
   let i = t.children[2].children[0];
   i.setAttribute('src', 'img/services/' + el + c + '.svg');
