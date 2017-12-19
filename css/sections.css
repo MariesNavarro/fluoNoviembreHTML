@@ -1103,7 +1103,11 @@
   height: 100%;
   position: relative;
 }
-
+#servicios>ul>li>img{
+  position: absolute;
+  height: 100%;
+  border: 1px solid red;
+}
 #dudas{
   background: #000;
   overflow: hidden;
