@@ -45,7 +45,7 @@ fluo.com.mx
 <body>
     <p id="size" class="hideDisplay"></p>
     <!-- LOADING -->
-    <div id="loading" class="">
+    <div id="loading" class="hideDisplay">
       <div id="fluoDeg" style="background-image:url('img/loading-cover.png')"></div>
       <p id="per">Almost there 1...</p>
       <span class="gradientFluoTop transit"></span>
@@ -177,11 +177,9 @@ fluo.com.mx
           </div>
           <ul class="showDisplayFlex">
             <li>
-              <p>
-                <i>
+              <p style="font-family:'BaskervilleItalic';">
                   Las marcas, como el universo,
                   están en flujo constante.
-                </i>
               </p>
               <a role="button" class="gradientFluo">
                 Contáctanos
@@ -210,29 +208,54 @@ fluo.com.mx
         <!-- INTRO 2 -->
         <div id="servicios">
           <ul class="showDisplayFlex">
-            <li style="border:1px solid red" >
-              <span class="gradientFluo"></span><span class="gradientFluo"></span>
+            <li onmouseover="overServices('over', 'estrategia-', this)" onmouseout="overServices('out', 'estrategia-', this)">
+              <span class="gradientFluo"></span><span style="bottom:0" class="gradientFluo"></span>
               <div>
                 <img src="img/services/estrategia-out.svg">
               </div>
+              <ul>
+                <li>Investigación</li>
+                <li>Análisis</li>
+                <li>Estrategia creativa</li>
+                <li>Naming</li>
+                <li>Copywriting</li>
+              </ul>
             </li>
-            <li style="border:1px solid yellow">
-              <span class="gradientFluo"></span><span class="gradientFluo"></span>
+            <li onmouseover="overServices('over', 'branding-', this)" onmouseout="overServices('out', 'branding-', this)">
+              <span class="gradientFluo"></span><span style="bottom:0" class="gradientFluo"></span>
               <div>
                 <img src="img/services/branding-out.svg" >
               </div>
+              <ul>
+                <li>Diseño gráfico</li>
+                <li>Diseño editorial</li>
+                <li>Empaque</li>
+                <li>Ilustración</li>
+                <li>Fotografía</li>
+              </ul>
             </li>
-            <li style="border:1px solid green">
-              <span class="gradientFluo"></span><span class="gradientFluo"></span>
+            <li onmouseover="overServices('over', 'web-', this)" onmouseout="overServices('out', 'web-', this)">
+              <span class="gradientFluo"></span><span style="bottom:0" class="gradientFluo"></span>
               <div>
                 <img src="img/services/web-out.svg" >
               </div>
+              <ul>
+                <li>UX</li>
+                <li>UI</li>
+                <li>Desarrollo (front y back end)</li>
+                <li>E-commerce</li>
+              </ul>
             </li>
-            <li style="border:1px solid blue">
-              <span class="gradientFluo"></span><span class="gradientFluo"></span>
+            <li onmouseover="overServices('over', 'motion-', this)" onmouseout="overServices('out', 'motion-', this)">
+              <span class="gradientFluo"></span><span style="bottom:0" class="gradientFluo"></span>
               <div>
                 <img src="img/services/motion-out.svg" >
               </div>
+              <ul>
+                <li>Animación 2D</li>
+                <li>Video (producción, dirección, edición)</li>
+                <li>Video mapping</li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -328,6 +351,167 @@ fluo.com.mx
         </div>
       </div>
     </section>
+    <!-- SERVICES MOBILEDESKTOP -->
+    <section id="layout2_services" class="showDisplayFlex">
+      <!-- Intro -->
+      <ul class="showDisplayFlex">
+        <li>
+          <article class="intro_mobile">
+            <h2>Services</h2>
+            <p style="font-family:'BaskervilleItalic'">
+              Las marcas, como el universo, están en flujo constante.
+            </p>
+            <p>
+              Somos un estudio creativo enfocado en experiencias
+              inmersivas que elevan el potencial visual de cada marca
+              por medio de herramientas digitales y análogas. Cada
+              solución está hecha a la medida de cada proyecto y
+              de cada cliente, mediante un mismo un proceso de
+              trabajo- el cual nos resulta muy divertido!
+              Hacemos conexiones entre usuarios y negocios mediante
+              experiencias interactivas, basadas en la importancia
+              del diseño. Colaboramos con marcas y agencias para
+              crear experiencias de impacto.
+            </p>
+            <a role="button" class="showDisplayFlex">
+              <p>Scroll para explorar</p>
+              <div class="showDisplayFlex">
+                <img src="img/icons/arrow-services-scroll.svg" width="40">
+              </div>
+            </a>
+          </article>
+        </li>
+        <li>
+          <ul class="services_mobile showGrid">
+            <li>
+              <div>
+                <img src="img/services/estrategia-out.svg">
+              </div>
+              <ul>
+                <li>Investigación</li>
+                <li>Análisis</li>
+                <li>Estrategia creativa</li>
+                <li>Naming</li>
+                <li>Copywriting</li>
+              </ul>
+            </li>
+            <li>
+              <div>
+                <img src="img/services/branding-out.svg">
+              </div>
+              <ul>
+                <li>Diseño gráfico</li>
+                <li>Diseño editorial</li>
+                <li>Empaque</li>
+                <li>Ilustración</li>
+                <li>Fotografía</li>
+              </ul>
+            </li>
+            <li>
+              <div>
+                <img src="img/services/web-out.svg">
+              </div>
+              <ul>
+                <li>UX</li>
+                <li>UI</li>
+                <li>Desarrollo (front y back end)</li>
+                <li>E-commerce</li>
+              </ul>
+            </li>
+            <li>
+              <div>
+                <img src="img/services/motion-out.svg">
+              </div>
+              <ul>
+                <li>Animación 2D</li>
+                <li>Video (producción, dirección, edición)</li>
+                <li>Video mapping</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li style="background:#333">
+            <ul class="sliderwr_services">
+              <!-- 1 Aloha -->
+              <li style="display:block">
+                <div class="icons" style="background-image:url('img/services/mobile/i1.svg')"></div>
+                <p>Nos encanta el café!</p>
+                <img src="img/services/0.gif">
+                <div class="info">
+                  <span>1</span>
+                  <div class="stepmobile showDisplayFlex">
+                    <p>Aloha!</p>
+                    <span></span>
+                  </div>
+                </div>
+              </li>
+              <!-- 2 Diagnostico -->
+              <li style="display:none">
+                <div class="icons" style="background-image:url('img/services/mobile/i2.svg')"></div>
+                <p>Esto es gratis!</p>
+                <img src="img/services/1.gif">
+                <div class="info">
+                  <span>2</span>
+                </div>
+              </li>
+              <!-- 3 Brief -->
+              <li style="display:none">
+                <div class="icons" style="background-image:url('img/services/mobile/i3.svg')"></div>
+                <p>Queremos saber todo sobre ti.</p>
+                <img src="img/services/2.gif">
+                <div class="info">
+                  <span>3</span>
+                </div>
+              </li>
+              <!-- 4 Moodboards -->
+              <li style="display:none">
+                <div class="icons" style="background-image:url('img/services/mobile/i4.svg')"></div>
+                <p>Empieza la parte que más nos gusta...</p>
+                <img src="img/services/3.gif">
+                <div class="info">
+                  <span>4</span>
+                </div>
+              </li>
+              <!-- 5 Diseño -->
+              <li style="display:none">
+                <div class="icons" style="background-image:url('img/services/mobile/i5.svg')"></div>
+                <p>El mero mole!</p>
+                <img src="img/services/4.gif">
+                <div class="info">
+                  <span>5</span>
+                </div>
+              </li>
+              <!-- 6 Prototipo -->
+              <li style="display:none">
+                <div class="icons" style="background-image:url('img/services/mobile/i6.svg')"></div>
+                <p style="opacity:0"></p>
+                <img src="img/services/5.gif">
+                <div class="info">
+                  <span>6</span>
+                </div>
+              </li>
+              <!-- 7 Implementacion -->
+              <li style="display:none">
+                <div class="icons" style="background-image:url('img/services/mobile/i7.svg')"></div>
+                <p style="opacity:0"></p>
+                <img src="img/services/6.gif">
+                <div class="info">
+                  <span>7</span>
+                </div>
+              </li>
+              <!-- 8 Marca Viva -->
+              <li style="display:none">
+                <p>Tu marca esta viva.</p>
+                <img src="img/services/7.gif">
+                <div class="info">
+                  <span>8</span>
+                </div
+              </li>
+            </ul>
+        </li>
+        <li style="background:cadetblue"></li>
+      </ul>
+    </section>
     <!-- POP LANDSCAPE -->
     <section id="landscape">
       <div>
@@ -350,7 +534,8 @@ fluo.com.mx
     <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
     <script type="text/javascript">
-      let sx = _('#layout1_services');
+      let sx = _('#layout1_services'),
+          sxm = _('#layout2_services');
       let bspc = _('#spacebutton>span');
       loadServices();
       window.onresize = function(){
@@ -368,13 +553,17 @@ fluo.com.mx
         }
       };
       $(document).ready(function() {
+        console.log(sxm);
         $('html, body').mousewheel(function(e, delta) {
           if( Math.abs(e.deltaX) ) {
             sx.style.overflowX = "hidden";
+            sxm.style.overflowX = "hidden";
             return
           } else {
             sx.style.overflowX = "scroll";
             sx.scrollLeft -= (e.deltaY * 2);
+            sxm.style.overflowX = "scroll";
+            sxm.scrollLeft -= (e.deltaY * 2);
             getFlagV();
           }
           e.preventDefault();

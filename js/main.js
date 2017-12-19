@@ -668,7 +668,6 @@ function detectswipe(el,func) {
   swipe_det.sX = t.screenX;
   swipe_det.sY = t.screenY;
   },false);
-
   ele.addEventListener('touchmove',function(e){
   e.preventDefault();
   var t = e.touches[0];
@@ -875,7 +874,6 @@ function animationWigle(){
   for (var i = 0; i < b.length; i++) {
     b[i].classList.remove();
   }
-  // console.log(b);
 }
 
 
@@ -890,7 +888,13 @@ function animationWigle(){
 
 
 
+
 /* s */
+function overServices(c, el, t){
+  let i = t.children[2].children[0];
+  i.setAttribute('src', 'img/services/' + el + c + '.svg');
+}
+
 function loadServices(){
  if(!checkBowser){
  	let s = __('.step'),

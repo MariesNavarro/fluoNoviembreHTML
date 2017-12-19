@@ -11,6 +11,18 @@
   src: url("fonts/CircularStd-Black.eot?#iefix") format("embedded-opentype"), url("fonts/CircularStd-Black.woff") format("woff"), url("fonts/CircularStd-Black.ttf") format("truetype");
   font-weight: 700;
   font-style: bold; }
+@font-face {
+  font-family: "Baskerville";
+  src: url("fonts/Baskerville-Bold.eot");
+  src: url("fonts/Baskerville-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/Baskerville-Bold.woff") format("woff"), url("fonts/Baskerville-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: bold; }
+@font-face {
+  font-family: "BaskervilleItalic";
+  src: url("fonts/Baskerville-Bold-Italic.eot");
+  src: url("fonts/Baskerville-Bold-Italic.eot?#iefix") format("embedded-opentype"), url("fonts/Baskerville-Bold-Italic.woff") format("woff"), url("fonts/Baskerville-Bold-Italic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: bold; }
 * {
   margin: 0;
   padding: 0;
@@ -963,7 +975,6 @@ body {
       margin-right: 50px; }
       body .projects article a.der .info_wr p {
         text-align: right; }
-
   body footer article div {
     height: 80px;
     -webkit-flex-direction: row;
@@ -985,7 +996,6 @@ body {
       margin-top: 0; }
     body footer article div ul {
       padding: 0; }
-
   body footer article ul {
     -webkit-flex-direction: row;
     -moz-flex-direction: row;
