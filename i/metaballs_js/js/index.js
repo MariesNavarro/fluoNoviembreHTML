@@ -1,23 +1,18 @@
-! function()
-{
-	"use strict";
-	var lava0, lava1;
+
+	let lava0, lava1;
 	// ==== Point constructor ====
-	var Point = function(x, y)
-	{
+	var Point = function(x, y) {
 		this.x = x;
 		this.y = y;
 		this.magnitude = x * x + y * y;
 		this.computed = 0;
 		this.force = 0;
 	}
-	Point.prototype.add = function(p)
-	{
+	Point.prototype.add = function(p) {
 		return new Point(this.x + p.x, this.y + p.y);
 	}
 	// ==== Ball constructor ====
-	var Ball = function(parent)
-	{
+	var Ball = function(parent) {
 		this.vel = new Point(
 			(Math.random() > 0.5 ? 1 : -1) * (0.2 + Math.random() * 0.25), (Math.random() > 0.5 ? 1 : -1) * (0.2 + Math.random() * 1)
 		);
@@ -236,12 +231,11 @@
 		return gradient;
 	}
 	// ==== main loop ====
-	var run = function()
+	var run = function(c1,c2)
 	{
 		requestAnimationFrame(run);
 		ctx.clearRect(0, 0, screen.width, screen.height);
 		lava0.renderMetaballs();
-		lava1.renderMetaballs();
 	}
 	// ---- canvas ----
 	var screen = ge1doot.screen.init("screen", null, true),
@@ -249,8 +243,11 @@
 		pointer = screen.pointer.init();
 	screen.resize();
 	// ---- create LavaLamps ----
-	lava0 = new LavaLamp(screen.width, screen.height, 10, "#ffc821", "#fa0000");
-	lava1 = new LavaLamp(screen.width, screen.height, 10, "#ffc821", "#fa0000");
+	function create(c1, c2){
+		lava0 = new LavaLamp(screen.width, screen.height, 10, c1, c2);
+	}
+	// lava1 = new LavaLamp(screen.width, screen.height, 10, "#ffc821", "#fa0000");
 	// ---- start engine ----
+
+	create('#ffc821', '#fa0000');	
 	run();
-}();

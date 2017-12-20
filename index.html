@@ -122,7 +122,7 @@ fluo.com.mx
     <!-- MAIN -->
     <section id="layout1_index" class="fullsection">
       <article class="metaballs">
-          <div class="stage"></div>
+        <canvas id="screen"></canvas>
       </article>
       <a id="spacebutton" role="button" style="display:none">
         <span class="gradientFluo"></span>
@@ -145,11 +145,13 @@ fluo.com.mx
     <script src="js/bowser.min.js" charset="utf-8"></script>
     <script src="js/pixi.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
+    <script src="js/i.js" charset="utf-8"></script>
     <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
     <script type="text/javascript">
+      //Colores metaballs
       let home = 1;
       let bspc = _('#spacebutton>span');
-      setMetaballs();
+
       window.onresize = function(){
         var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";
       };

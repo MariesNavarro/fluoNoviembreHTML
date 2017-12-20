@@ -1,4 +1,8 @@
-// "use strict";
+let cyan = '#37e6ef';
+let magenta = '#e337fc';
+let purple = '#9568f6';
+
+"use strict";
 let checkBowser = false;
 if(bowser.mobile || bowser.tablet || /SymbianOS/.test(window.navigator.userAgent)) checkBowser = true;
 
@@ -805,88 +809,32 @@ document.onkeydown = function(e){
 
 
 function changeHome(){
-  console.log("Change home");
+  // console.log("Change home");
 }
 
 function changeHomeValues(c ,k){
-  switch (c) {
-    case 1:
-      metaballsColor(k);
+  switch (k) {
+    case 'f':
+      // lv0 = " ";
+      console.log("F");
+      lv0 = new LavaLamp(screen.width, screen.height, 10, cyan, magenta);
     break;
-    case 2:
+    case 'l':
+    // lv0 = " ";
+    console.log("L");
+      lv0 = new LavaLamp(screen.width, screen.height, 10, purple, magenta);
     break;
-    case 3:
+    case 'u':
+      // lv0 = " ";
+      console.log("U");
+      lv0 = new LavaLamp(screen.width, screen.height, 10, purple, cyan);
     break;
   }
 }
 
+/* i ref */
 /*http://bouncejs.com/*/
 /*https://codepen.io/rachsmith/pen/fBoiD*/
-/* p1 */
-// function setInteraction(){
-//   let s = _('.metaballs>.stage');
-//   s.setAttribute('onmousedown', 'addMetaball(event, 1)');
-// }
-
-
-function setMetaballs(){
-  let wr = _('.metaballs'),
-      col = ['cM1', 'cS1'],
-      scl = ['sc1','sc2','sc3'],
-      x, y;
-  for (var i = 0; i < 15; i++) {
-    let b = document.createElement('SPAN');
-    x = Math.floor(Math.random() * (72 - 38 + 1)) + 38;
-    y = Math.floor(Math.random() * (57 - 20 + 1)) + 20;
-    b.style.left = x+"vw";
-    b.style.top = y+"vh";
-    col = sh(col);
-    let newcol = col;
-    b.classList.add(newcol[0]);
-    b.classList.add('ball');
-    scl = sh(scl);
-    let newscl = scl;
-    b.classList.add(newscl[0]);
-    b.setAttribute('onclick', 'removeMetaball(this)');
-    wr.appendChild(b);
-  }
-  animationWigle();
-}
-function removeMetaball(t){
-  let wr = _('.metaballs');
-  wr.removeChild(t);
-}
-
-
-function metaballsColor(c){
-  let b = __('.ball');
-  if(c === "f"){
-    console.log(b);
-  } else if (c === "l") {
-    console.log(b);
-  } else {
-    console.log(b);
-  }
-}
-
-function animationWigle(){
-  let b = __('.ball');
-  for (var i = 0; i < b.length; i++) {
-    b[i].classList.remove();
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* s */
@@ -1016,21 +964,19 @@ function getFlagV(){
     x.push(f[i].getBoundingClientRect().x - ct);
   }
   if(x[0] < 0 && x[1] > 0) indexStep(0);
-  if(x[1] < 0 && x[2] > 0) indexStep(1);  //diagnostio
-  if(x[2] < 0 && x[3] > 0) indexStep(2); //brief
-  if(x[3] < 0 && x[4] > 0) indexStep(3); //concepto
-  if(x[4] < 0 && x[5] > 0) indexStep(4); //prototipo
-  if(x[5] < 0 && x[6] > 0) indexStep(5); //ajustes
-  if(x[6] < 0 && x[7] > 0) indexStep(6); //implementacion
-  if(x[7] < 0) indexStep(7); //dudas
+  if(x[1] < 0 && x[2] > 0) indexStep(1);
+  if(x[2] < 0 && x[3] > 0) indexStep(2);
+  if(x[3] < 0 && x[4] > 0) indexStep(3);
+  if(x[4] < 0 && x[5] > 0) indexStep(4);
+  if(x[5] < 0 && x[6] > 0) indexStep(5);
+  if(x[6] < 0 && x[7] > 0) indexStep(6);
+  if(x[7] < 0) indexStep(7);
 }
 
 let fSc1 = false, fSc2 = false,
     fSc3 = false, fSc4 = false,
     fSc5 = false, fSc6 = false,
     fSc7 = false, fSc8 = false;
-
-
 
 function indexStep(c){
   var s = __('.step'),
