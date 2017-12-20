@@ -941,10 +941,12 @@
   top: 30%;
 }
 #layout2_services>ul>li>.services_mobile>li>ul>li{
+  position: relative;
   padding: 3px 0;
   font-size: 0.8rem;
 }
 #layout2_services>ul>li>.sliderwr_services{
+  position: relative;
   width: 80%;
   height: 80%;
   margin: 10%;
@@ -962,7 +964,6 @@
   margin-left: 4vw;
   width: 92vw;
   height: 50px;
-  z-index: 200;
 }
 #interfaz_slider_services>a{
   width: 50%;
@@ -1031,7 +1032,54 @@
   margin-left: 10px;
   text-align: left;
 }
+#layout2_services>ul>li.services_contact{
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  overflow: hidden;
+}
+#layout2_services>ul>li.services_contact>span{
+  position: absolute;
+  width: 100%;
+  font-family: 'CircularBlack';
+  font-size: 4.2rem;
+  text-transform: uppercase;
+  text-align: right;
+  opacity: 0.3;
+}
+#layout2_services>ul>li.services_contact>div{
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  width: 100vw;
+  height: 50%;
+  margin-top: 35%;
 
+}
+#layout2_services>ul>li.services_contact>div>p{
+  display: block;
+  text-align: center;
+  font-size: 1.3rem;
+  width: 80%;
+}
+#layout2_services>ul>li.services_contact>div>a{
+  width: 280px;
+  margin-top: 5%;
+  padding: 10px;
+  font-family: 'CircularBlack';
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 60px;
+  border: 4px solid #fff;
+}
 #layout1_services{
   width: 100vw;
   height: 100vh;
