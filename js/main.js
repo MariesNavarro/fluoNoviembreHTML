@@ -7,8 +7,8 @@ let checkBowser = false;
 if(bowser.mobile || bowser.tablet || /SymbianOS/.test(window.navigator.userAgent)) checkBowser = true;
 
 window.console.log("%cCoded by Mn", "color:pink;  font-size: 10px; background:#000; padding:2px;");
-    function _(el){return document.querySelector(el); }
-    function __(el){return document.querySelectorAll(el); }
+function _(el){return document.querySelector(el); }
+function __(el){return document.querySelectorAll(el); }
     loadingLogo();
 
 function loadingHover(){
