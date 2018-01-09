@@ -137,9 +137,10 @@ fluo.com.mx
       <article class="layout_1_1">
         <a href="#" target="blank" rel="noopener noreferrer">
           <p>www.contentment.org</p>
-          <div>
+          <div id="v_wr_desk">
             <!-- Vimeo Desktop -->
-            <img src="img/projects/contentment/coverVideoDesktop.png" style="width:100%">
+            <!-- Modificar ID de Video para cambiar 229164241 -->
+            <iframe src="https://player.vimeo.com/video/229164241?api=1&autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen onload="readyVimeo()"></iframe>
           </div>
         </a>
       </article>
@@ -154,7 +155,9 @@ fluo.com.mx
 
         <div class="column_2 showDisplayFlex">
           <!-- Vimeo Mobile -->
-          <img src="img/projects/contentment/coverVideoMobile.png" style="width:100%">
+          <div id="v_wr_mob">
+            <iframe src="https://player.vimeo.com/video/244749297?api=1&autoplay=1&loop=1" width="640" height="1140" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen onload="readyVimeo()"></iframe>
+          </div>
           <div>
             <h4> Fundación para el bienestar espiritual. </h4>
             <i>
@@ -344,6 +347,7 @@ fluo.com.mx
             <div></div>
         </div>
       </article>
+      <p id="test"></p>
     </section>
     <!-- <div id="lineacentro"></div> -->
     <script src="js/bowser.min.js" charset="utf-8"></script>
@@ -352,7 +356,7 @@ fluo.com.mx
     <script src="js/main.js" charset="utf-8"></script>
     <script type="text/javascript">
       window.onresize = function(){
-        var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";
+        vSizeMock("#v_wr_desk");
       }
       window.onscroll = function(){
         detectWaveLayouts();
@@ -371,6 +375,14 @@ fluo.com.mx
           aboutthis.style.display = "block"
         }
       }
+      function readyVimeo(){
+        console.log("Ready");
+      }
+      function loadMockups(){
+        vSizeMock("#v_wr_desk");
+        vSizeMock("#v_wr_mob");
+      }
     </script>
+    <script src="https://player.vimeo.com/api/player.js" async onload="loadMockups()"></script>
 </body>
 </html>
