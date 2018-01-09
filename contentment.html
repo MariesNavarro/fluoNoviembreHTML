@@ -45,9 +45,9 @@ fluo.com.mx
 <body>
     <p id="size" class="hideDisplay"></p>
     <!-- LOADING -->
-    <div id="loading" class="hideDisplay">
+    <div id="loading" class="">
       <div id="fluoDeg" style="background-image:url('img/loading-cover.png')"></div>
-      <p id="per">Almost there 1...</p>
+      <p id="per">Almost there...</p>
       <span class="gradientFluoTop transit"></span>
     </div>
     <!-- NAVIGATION -->
@@ -155,6 +155,7 @@ fluo.com.mx
 
         <div class="column_2 showDisplayFlex">
           <!-- Vimeo Mobile -->
+          <!-- Modificar ID de Video para cambiar 229164241 -->
           <div id="v_wr_mob">
             <iframe src="https://player.vimeo.com/video/244749297?api=1&autoplay=1&loop=1" width="640" height="1140" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen onload="readyVimeo()"></iframe>
           </div>
@@ -355,8 +356,11 @@ fluo.com.mx
     <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
     <script type="text/javascript">
+      var vimeoInit = 0;
+      var vimeoLen = 2;
       window.onresize = function(){
         vSizeMock("#v_wr_desk");
+        vSizeMock("#v_wr_mob");
       }
       window.onscroll = function(){
         detectWaveLayouts();
@@ -376,7 +380,12 @@ fluo.com.mx
         }
       }
       function readyVimeo(){
-        console.log("Ready");
+        let wr = _('#loading');
+          vimeoInit++;
+          if (vimeoInit >= vimeoLen) {
+            wr.style.opacity = "0";
+            setTimeout(function(){ wr.style.display = "none"; },600);
+          }
       }
       function loadMockups(){
         vSizeMock("#v_wr_desk");

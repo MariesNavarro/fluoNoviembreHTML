@@ -382,7 +382,7 @@
     width: 100%;
     margin: 0;
   }
-  .layout_2_2 >.column_1>img{ width: 100%; border: 1px solid green}
+  .layout_2_2 >.column_1>img{ width: 100%;}
   .layout_2_2 >.column_2{
     /* border: 1px solid green !important; */
     width: 70%;

@@ -165,8 +165,10 @@ fluo.com.mx
         <div class="flag" data-back="#971D2F"></div>
         <a href="www.thermahome.mx" target="blank" rel="noopener noreferrer">
           <p>www.thermahome.mx</p>
-          <div id="vimeoDeskWr">
-            <img src="img/projects/thermahome/coverdesktopVimeo.png" style="width:100%">
+          <div id="v_wr_desk">
+            <!-- Vimeo Desktop -->
+            <!-- Modificar ID de Video para cambiar 229164241 -->
+            <iframe src="https://player.vimeo.com/video/245058966?api=1&autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen onload="readyVimeo()"></iframe>
           </div>
         </a>
       </article>
@@ -177,7 +179,9 @@ fluo.com.mx
           <img src="img/projects/thermahome/ipad.png" alt="Web Contentment Desarrollado por Fluo Mx">
         </div>
         <div id="vimeoMobileWr" class="column_2 showDisplayFlex">
-          <img src="img/projects/thermahome/iphone.png" style="width:100%">
+          <div id="v_wr_mob">
+            <iframe src="https://player.vimeo.com/video/245058402?api=1&autoplay=1&loop=1" width="640" height="1140" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen onload="readyVimeo()"></iframe>
+          </div>
           <div>
             <h4> Fundación para el bienestar espiritual. </h4>
             <i>
@@ -438,6 +442,8 @@ fluo.com.mx
     <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
     <script type="text/javascript">
+      var vimeoInit = 0;
+      var vimeoLen = 2;
       var stringSliderMobile = "img/projects/enotelia/slider-";
       loadPosters(stringSliderMobile, posterProjects);
       window.onload = function(){
@@ -445,7 +451,8 @@ fluo.com.mx
         initSlider(0);
       }
       window.onresize = function(){
-        var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";
+        vSizeMock("#v_wr_desk");
+        vSizeMock("#v_wr_mob");
       }
       window.onscroll = function(){
         bugArrowSlider();
@@ -465,6 +472,19 @@ fluo.com.mx
           aboutthis.style.display = "block";
         }
       }
+      function readyVimeo(){
+        let wr = _('#loading');
+          vimeoInit++;
+          if (vimeoInit >= vimeoLen) {
+            wr.style.opacity = "0";
+            setTimeout(function(){ wr.style.display = "none"; },600);
+          }
+      }
+      function loadMockups(){
+        vSizeMock("#v_wr_desk");
+        vSizeMock("#v_wr_mob");
+      }
     </script>
+    <script src="https://player.vimeo.com/api/player.js" async onload="loadMockups()"></script>
 </body>
 </html>
