@@ -540,7 +540,6 @@ function arrowProfile(c, t){
  }
 }
 
-
 function checkAbout(){
   let wr = _('#profiles_wr'),
       w = window.innerWidth;
@@ -557,6 +556,22 @@ function checkAbout(){
     wr.style.left = "-50vw";
   }
 }
+
+function perfilClb(c,id){
+  let menu = _('#clb>div'),
+      wr = _('#clb>#perfil_wr');
+
+  if(c === "open"){
+    if(!checkBowser){
+      menu.style.marginLeft = "-50%";
+    }
+    wr.style.right = "0";
+  } else {
+    menu.style.marginLeft = "0";
+    wr.style.right = "-100%";
+  }
+}
+
 
 
 function vSizeMock(w){
