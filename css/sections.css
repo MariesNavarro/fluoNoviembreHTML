@@ -216,8 +216,24 @@
   height: 460px;
   background-image: url('../img/colaboradores_titulo.svg');
   background-repeat: no-repeat;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
   flex-direction: column;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
   align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
   justify-content: center;
 }
 #clb >div> #intro> #column_1 > p{
@@ -243,6 +259,10 @@
   margin: 5px 0 5px 5px;
   opacity: 0.5;
   align-items: center;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -o-flex-direction: row;
   flex-direction: row;
   -webkit-transition: opacity 0.5s ease-out;
   -moz-transition: opacity 0.5s ease-out;
@@ -364,6 +384,14 @@
 #clb > #perfil_wr>div>#info_wr>#info>#bio{
   margin: 40px auto 40px auto;
 }
+/* Behind */
+#behind{
+  position: relative;
+  width: 100vw;
+  background: #000;
+}
+
+
 @media screen and (min-width: 800px) {
   #clb> div> #intro{
     flex-direction: row;

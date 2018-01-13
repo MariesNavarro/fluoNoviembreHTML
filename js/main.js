@@ -557,11 +557,13 @@ function checkAbout(){
   }
 }
 
-function perfilClb(c,id){
+function perfilClb(c,n,ig,w,p,b,i){
   let menu = _('#clb>div'),
       wr = _('#clb>#perfil_wr');
 
   if(c === "open"){
+    bio(b);
+    fillInfo(n,ig,w,p,b,i);
     if(!checkBowser){
       menu.style.marginLeft = "-50%";
     }
@@ -572,7 +574,26 @@ function perfilClb(c,id){
   }
 }
 
+function fillInfo(n,ig,w,p,b,i){
+  let _n = n, _ig = ig, _w = w, _p = p, _b = b, _i = i;
+  if(_ig === 0){
+    _('#info>#ig').style.display = "none";
+  } else {
+    _('#info>#ig').style.display = "block";
+    _('#info>#ig').setAttribute('href', 'www.instagram.com/' + _ig);
+    _('#info>#ig>span').innerHTML = _ig;
+  }
+  if(_w === 0){
+    _('#info>#wb').style.display = "none";
+  } else {
+    _('#info>#wb').style.display = "block";
+    _('#info>#wb').setAttribute('href', 'www.' + _w);
+    _('#info>#wb>span').innerHTML = _w;
+  }
+  _('#perfil_wr>div>#pic').style.backgroundImage = "url(img/colaboradores/"+_p+")";
+  _('#info>#name').innerHTML = _n;
 
+}
 
 function vSizeMock(w){
   let wr = _(w),
