@@ -539,12 +539,12 @@ body {
       left: -2px;
       color: #e337fc; }
     body #showreel #videoWrap {
-      border: 1px solid blue;
       position: relative;
       width: 80%;
       max-width: 780px;
       height: 435px;
       margin: 150px auto 0 auto; }
+    body #showreel #videoWrap>iframe { width: 100%;}  
     body #showreel span {
       position: absolute;
       top: 0;
