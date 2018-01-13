@@ -390,62 +390,125 @@
   width: 100vw;
   background: #000;
 }
-
-
-@media screen and (min-width: 800px) {
-  #clb> div> #intro{
-    flex-direction: row;
-  }
-  #clb> div> #intro> div{
-    width: 50% !important;
-  }
-  #clb > #perfil_wr{
-    width: 50vw;
-  }
-  #clb > #perfil_wr>div{
-    top: 0;
-    height: 100%;
-  }
-  #clb > #perfil_wr>#fix{
-    display: none;
-  }
-  #clb > #perfil_wr>div>a{
-    width: 0;
-  }
-  #clb > #perfil_wr>div>#info_wr, #clb > #perfil_wr>div>#pic{
-    margin-left: 0%;
-    width: 100%;
-  }
+/* Mapa */
+#mapa_estudio{
+  position: relative;
+  width: 100vw;
+  height: 520px;
+  background-image: url('../img/mapa_mobile.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
-/* DESKTOP */
-@media screen and (min-width: 650px){
-  .profile_info{
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    min-height: 400px;
-    z-index:0;
+#mapa_estudio>#top_info{
+  width: 90%;
+  padding: 30px 0;
+  margin: 0 auto;
+  -webkit-flex-direction:column;
+  -moz-flex-direction:column;
+  -ms-flex-direction:column;
+  -o-flex-direction:column;
+  flex-direction: column;
+}
+#mapa_estudio>#top_info>div>h3{ font-size: 2.5rem }
+#mapa_estudio>#top_info>div>a{
+  display: block;
+  font-size: 2.2rem;
+  margin: 30px 0;
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -ms-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+}
+#mapa_estudio>#top_info>div>a:hover{ opacity: 0.5 }
+#mapa_estudio>#top_info>div>p>span{ opacity: 0.5 }
+#mapa_estudio>#top_info>div>p>a{
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -ms-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+}
+#mapa_estudio>#top_info>div>p>a:hover{ opacity: 0.7 }
+#mapa_estudio>#top_info>div:nth-child(2){
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: 30px 0;
+}
+#mapa_estudio>#top_info>div:nth-child(2)>p{
+  margin: 10px 0;
+}
+#mapa_estudio>#bott_info{
+  position: absolute;
+  bottom: 30px;
+  left: 5%;
+  width: 90%;
+  height: 90px;
+}
+#mapa_estudio>#bott_info{
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+}
+#mapa_estudio>#bott_info>li:nth-child(2){
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+}
+#mapa_estudio>#bott_info>li:nth-child(2)>div{
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -o-flex-direction: row;
+  flex-direction: row;
+}
+#mapa_estudio>#bott_info>li>div>p,
+#mapa_estudio>#bott_info>li>div>a,
+#mapa_estudio>#bott_info>li>p{
+  display: inline;
+  line-height: 30px;
+}
+#mapa_estudio>#bott_info>li>div>a>img,
+#mapa_estudio>#bott_info>li>a>img{ margin-right: 10px }
+#mapa_estudio>#bott_info>li:first-child{ height: 30px }
+#mapa_estudio>#bott_info>li:nth-child(2){ height: 60px }
+/* Estudio */
+@media screen and (min-width: 600px) {
+  #mapa_estudio{
+    height: 400px;
+    background-image: url('../img/mapa_desktop.png');
   }
-  #profiles_wr > .fabiola{ left: -50% }
-  #profiles_wr > .tatiana{ right: -50% }
-  .profile_info>div{
-    display: none;
-  }
-  .profiles_layout{
-    -webkit-flex-direction: row;
-    -moz-flex-direction: row;
-    -ms-flex-direction: row;
-    -o-flex-direction: row;
+  #mapa_estudio>#top_info{
+    width: 80%;
+    -webkit-justify-content:space-between;
+    -moz-justify-content:space-between;
+    -ms-justify-content:space-between;
+    -o-justify-content:space-between;
+    justify-content:space-between;
+    -webkit-flex-direction:row;
+    -moz-flex-direction:row;
+    -ms-flex-direction:row;
+    -o-flex-direction:row;
     flex-direction: row;
   }
-  .profiles_layout{
-    min-height: 400px;
+  #mapa_estudio>#top_info>div:nth-child(2){ width: 55% }
+  #mapa_estudio>#top_info>div>a{ font-size: 1.4rem }
+  #mapa_estudio>#bott_info{
+    width: 80%;
+    left: 10%;
+    -webkit-flex-direction: row-reverse;
+    -moz-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    -o-flex-direction: row-reverse;
+    flex-direction: row-reverse;
   }
-  .profiles_layout>div{
-    height: auto
-  }
-  .profiles_layout>div>div>a.ig_des{ display: block }
-  .profiles_layout>div>div>a.bt_mob{ display: none }
+  #mapa_estudio>#bott_info>li{ width: 50% }
 }
 /* linea centro */
 #lineacentro{
@@ -456,7 +519,6 @@
   top: calc(50% - 1px);
   z-index: 100000;
 }
-
 /* Proyectos */
 #logoCoverWrap{
   position: fixed;
@@ -519,7 +581,6 @@
     width: 70%;
     margin: 0 auto;
   }
-
   /* Layout 1.2 */
   .layout_1_2 > a{
     display: block;
@@ -563,11 +624,6 @@
     -o-justify-content: flex-end;
     justify-content: flex-end;
   }
-  /* .layout_2_1 >.column_2> iframe{
-    width: 100% !important;
-    position: absolute;
-    top: -180px
-  } */
   .layout_2_1 >.column_2> #v_wr_mob{
     width: 100%;
   }
@@ -602,14 +658,12 @@
     flex-direction: column;
   }
   .layout_2_2 >.column_1{
-    /* border: 1px solid green !important; */
     display: block;
     width: 100%;
     margin: 0;
   }
   .layout_2_2 >.column_1>img{ width: 100%;}
   .layout_2_2 >.column_2{
-    /* border: 1px solid green !important; */
     width: 70%;
     margin: 0 auto;
     -webkit-flex-direction: column-reverse;
@@ -653,10 +707,8 @@
   .layout_3 > .column_1{ width: 20% }
   .layout_3 > .column_2{ width: 80% }
   .layout_3 > div > img {
-    /* border: 1px solid green; */
     width: 100%;
   }
-  /* Layout Slider Mobile */
   .layout_slider_mobile{
     display: block;
     position: relative;
@@ -925,7 +977,36 @@
   height: 100%;
   object-fit: cover;
 }
-
+/* DESKTOP Profiles */
+@media screen and (min-width: 650px){
+  .profile_info{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    min-height: 400px;
+    z-index:0;
+  }
+  #profiles_wr > .fabiola{ left: -50% }
+  #profiles_wr > .tatiana{ right: -50% }
+  .profile_info>div{
+    display: none;
+  }
+  .profiles_layout{
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+  }
+  .profiles_layout{
+    min-height: 400px;
+  }
+  .profiles_layout>div{
+    height: auto
+  }
+  .profiles_layout>div>div>a.ig_des{ display: block }
+  .profiles_layout>div>div>a.bt_mob{ display: none }
+}
 /* DESKTOP */
 @media screen and (min-width: 800px) {
     #mainprojects>article{ width:80vw }
@@ -950,6 +1031,32 @@
     .about_layout>div>#text_intro_wr{
       flex-direction: row-reverse;
     }
+    /* CLB */
+    #clb> div> #intro{
+      flex-direction: row;
+    }
+    #clb> div> #intro> div{
+      width: 50% !important;
+    }
+    #clb > #perfil_wr{
+      width: 50vw;
+    }
+    #clb > #perfil_wr>div{
+      top: 0;
+      height: 100%;
+    }
+    #clb > #perfil_wr>#fix{
+      display: none;
+    }
+    #clb > #perfil_wr>div>a{
+      width: 0;
+    }
+    #clb > #perfil_wr>div>#info_wr, #clb > #perfil_wr>div>#pic{
+      margin-left: 0%;
+      width: 100%;
+    }
+    /* Mapa */
+    #mapa_estudio>#top_info>div>a{ font-size: 2rem }
     /* LAYOUTS */
     .layout_1_1{ display: block }
     .layout_1_2 > a > div { width: 70% }
@@ -1025,7 +1132,6 @@
   width: 100%;
   height: 100%;
 }
-
 #spacebutton{
   position: absolute;
   bottom: 90px;
@@ -1691,4 +1797,5 @@ transition: bottom 0.5s ease-out; }
   height: 100vh;
   z-index: 8000;
   display: none;
+}
 }
