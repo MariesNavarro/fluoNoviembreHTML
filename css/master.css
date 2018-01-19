@@ -144,11 +144,11 @@ body {
     -ms-align-items: flex-end;
     -o-align-items: flex-end;
     align-items: flex-end;
-    -webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease-out;
-    -ms-transition: all 0.5s ease-out;
-    -o-transition: all 0.5s ease-out;
-    transition: all 0.5s ease-out; }
+    -webkit-transition: all 0.8s ease-out;
+    -moz-transition: all 0.8s ease-out;
+    -ms-transition: all 0.8s ease-out;
+    -o-transition: all 0.8s ease-out;
+    transition: all 0.8s ease-out; }
     body #desktopinnner a {
       color: #fff;
       display: inline-block;
@@ -544,7 +544,7 @@ body {
       max-width: 780px;
       height: 435px;
       margin: 150px auto 0 auto; }
-    body #showreel #videoWrap>iframe { width: 100%;}  
+    body #showreel #videoWrap>iframe { width: 100%;}
     body #showreel span {
       position: absolute;
       top: 0;
