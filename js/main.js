@@ -306,8 +306,8 @@ function overWork(c, t){
 function checkForDevice(){
   var ph = _('#telefonofluo'),
       mn = _('#triggerMenu'),
-      reelD = _('#triggerReel'),
-      reelM = reelD.children[0],
+      reelD = _('#triggerReelD'),
+      reelM = _('#triggerReelM'),
       d = _('#desktopinnner');
   if(checkBowser){
 
@@ -992,6 +992,7 @@ let fSc1 = false, fSc2 = false,
 
 function indexStep(c){
   var s = __('.step'),
+      p = __('#instruccion>span'),
       pstp = _('#instruccion');
 
   switch (c) {
@@ -1005,6 +1006,11 @@ function indexStep(c){
       fSc8 = false;
       if(!fSc1){
         console.log("1: Introduccion");
+        p[0].style.display = "block";
+        p[1].style.display = "none";
+        p[2].style.display = "none";
+        p[3].style.display = "none";
+        p[4].style.display = "none";
         changeIcon(c);
         changeStep(c);
       }
@@ -1020,6 +1026,11 @@ function indexStep(c){
       fSc8 = false;
       if(!fSc2){
         console.log("2: Diagnositco");
+        p[0].style.display = "none";
+        p[1].style.display = "block";
+        p[2].style.display = "none";
+        p[3].style.display = "none";
+        p[4].style.display = "none";
         changeIcon(c);
         changeStep(c);
       }
@@ -1035,6 +1046,11 @@ function indexStep(c){
       fSc8 = false;
       if(!fSc3){
         console.log("3: Brief");
+        p[0].style.display = "none";
+        p[1].style.display = "none";
+        p[2].style.display = "block";
+        p[3].style.display = "none";
+        p[4].style.display = "none";
         changeIcon(c);
         changeStep(c);
       }
@@ -1050,6 +1066,11 @@ function indexStep(c){
       fSc8 = false;
       if(!fSc4){
         console.log("4: Concepto");
+        p[0].style.display = "none";
+        p[1].style.display = "none";
+        p[2].style.display = "none";
+        p[3].style.display = "block";
+        p[4].style.display = "none";
         changeIcon(c);
         changeStep(c);
       }
@@ -1065,6 +1086,11 @@ function indexStep(c){
       fSc8 = false;
       if(!fSc5){
         console.log("5: Prototipo");
+        p[0].style.display = "none";
+        p[1].style.display = "none";
+        p[2].style.display = "none";
+        p[3].style.display = "none";
+        p[4].style.display = "block";
         changeIcon(c);
         changeStep(c);
       }
@@ -1080,6 +1106,11 @@ function indexStep(c){
       fSc8 = false;
       if(!fSc6){
         console.log("6: Ajustes");
+        p[0].style.display = "none";
+        p[1].style.display = "none";
+        p[2].style.display = "none";
+        p[3].style.display = "none";
+        p[4].style.display = "none";
         changeIcon(c);
         changeStep(c);
       }
@@ -1095,6 +1126,11 @@ function indexStep(c){
       fSc8 = false;
       if(!fSc7){
         console.log("7: Implementacion");
+        p[0].style.display = "none";
+        p[1].style.display = "none";
+        p[2].style.display = "none";
+        p[3].style.display = "none";
+        p[4].style.display = "none";
         changeIcon(c);
         changeStep(c);
       }
@@ -1110,6 +1146,11 @@ function indexStep(c){
       fSc7 = false;
       if(!fSc8){
         console.log("¿Dudas?");
+        p[0].style.display = "none";
+        p[1].style.display = "none";
+        p[2].style.display = "none";
+        p[3].style.display = "none";
+        p[4].style.display = "none";
         changeStep(c);
       }
       fSc8 = true;
@@ -1128,7 +1169,6 @@ function changeIcon(c){
 
 function changeStep(c){
   var s = __('.step'),
-      p = __('#instruccion>span'),
       wristp = _('#iconosteps'),
       wrimp = _('#implementacion'),
       wrfn = _('#final');
@@ -1136,13 +1176,10 @@ function changeStep(c){
   for (let i = 0; i < s.length; i++) {
     s[i].style.opacity = "0";
     s[c].classList.add('transition');
-    p[i].style.opacity = "0";
-    p[c].classList.add('transition');
   }
 
   setTimeout(function(){
     s[c].style.opacity = 1;
-    p[c].style.opacity = 1;
   },600);
   if(c === 7){
     wristp.style.opacity = "0";
