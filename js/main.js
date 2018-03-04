@@ -6,7 +6,7 @@ var purple = '#9568f6';
 var checkBowser = false;
 if(bowser.mobile || bowser.tablet || /SymbianOS/.test(window.navigator.userAgent)) checkBowser = true;
 
-window.console.log("%cCoded by Mn", "color:pink;  font-size: 10px; background:#000; padding:2px;");
+window.console.log("%cCoded by Mn", "color:#34408f;  font-size: 10px; background:#000; padding:20px;");
 function _(el){return document.querySelector(el); }
 function __(el){return document.querySelectorAll(el); }
     loadingLogo();
@@ -303,6 +303,8 @@ function overWork(c, t){
   }
 }
 
+//agregar onmouseover="mainMenuDes('out')"
+//onmenuout
 function checkForDevice(){
   var ph = _('#telefonofluo'),
       mn = _('#triggerMenu'),
@@ -321,9 +323,9 @@ function checkForDevice(){
   } else {
 
     d.setAttribute('onmouseover', 'mainMenuDes("over")');
-    d.setAttribute('onmouseout', 'mainMenuDes("out")');
+    // d.setAttribute('onmouseout', 'mainMenuDes("out")');
     mn.setAttribute('onmouseover', 'mainMenuDes("over")');
-    mn.setAttribute('onmouseout', 'mainMenuDes("out")');
+    // mn.setAttribute('onmouseout', 'mainMenuDes("out")');
     ph.setAttribute('onclick', 'phonePop("open")');
     ph.setAttribute('title', 'Ver teléfono y horarios');
     reelD.setAttribute('onclick', 'popReel("open")');
@@ -346,7 +348,9 @@ function mainMenuDes(c){
   if(c === 'over'){
     wr.style.right = "2vw";
   } else {
-    wr.style.right = "-18vw";
+    setTimeout(function(){
+      wr.style.right = "-18vw";
+    },200)
   }
 }
 
