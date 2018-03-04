@@ -1,5 +1,5 @@
 function bio(c){
-  let wr = _('#bio');
+  var wr = _('#bio');
   switch (c) {
   //Maries
   case 0:

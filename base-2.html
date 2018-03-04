@@ -365,7 +365,7 @@ fluo.com.mx
       }
       //Si hay botón de "About This Project"
       window.onorientationchange = function(){
-        let aboutthis = _('#aboutthis'),
+        var aboutthis = _('#aboutthis'),
             landscape = _('#landscape');
         if(window.orientation == 90 || window.orientation == -90){
           landscape.style.display = "block";

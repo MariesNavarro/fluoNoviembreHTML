@@ -605,15 +605,15 @@ fluo.com.mx
     <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
     <script type="text/javascript">
-      let sx = _('#layout1_services'),
+      var sx = _('#layout1_services'),
           sxm = _('#layout2_services');
-      let bspc = _('#spacebutton>span');
+      var bspc = _('#spacebutton>span');
       loadServices();
       window.onresize = function(){
         var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";
       };
       window.onorientationchange = function(){
-        let aboutthis = _('#aboutthis'),
+        var aboutthis = _('#aboutthis'),
             landscape = _('#landscape');
         if(window.orientation == 90 || window.orientation == -90){
           landscape.style.display = "block";

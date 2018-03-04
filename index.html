@@ -1,7 +1,7 @@
 <!--
 Fluo Mx
-v4
-6 de Noviembre
+v4.1
+25 de Febrero
 [FLUO]
 info@fluo.com.mx
 fluo.com.mx
@@ -151,14 +151,14 @@ fluo.com.mx
     <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
     <script type="text/javascript">
       //Colores metaballs
-      let home = 1;
-      let bspc = _('#spacebutton>span');
+      var home = 1;
+      var bspc = _('#spacebutton>span');
 
       window.onresize = function(){
         var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";
       };
       window.onorientationchange = function(){
-        let aboutthis = _('#aboutthis'),
+        var aboutthis = _('#aboutthis'),
             landscape = _('#landscape');
         if(window.orientation == 90 || window.orientation == -90){
           landscape.style.display = "block";
@@ -168,7 +168,7 @@ fluo.com.mx
           aboutthis.style.display = "block";
         }
       };
-      let k32 = 0;
+      var k32 = 0;
       window.onkeydown = function(e) {
           e = e || window.event;
           if(e.keyCode === 70) changeHomeValues(home, "f");

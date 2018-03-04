@@ -462,7 +462,7 @@ fluo.com.mx
     <script src="js/bio.js" charset="utf-8" async></script>
     <script src="js/main.js" charset="utf-8"></script>
     <script type="text/javascript">
-      let isOpenF = false,
+      var isOpenF = false,
           isOpenT = false;
       setProfiles();
       window.onresize = function(){
@@ -474,7 +474,7 @@ fluo.com.mx
         removeAboutScroll();
       }
       window.onorientationchange = function(){
-        let aboutthis = _('#aboutthis'),
+        var aboutthis = _('#aboutthis'),
             landscape = _('#landscape');
         if(window.orientation == 90 || window.orientation == -90){
           landscape.style.display = "block";

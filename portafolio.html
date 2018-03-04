@@ -257,7 +257,7 @@ fluo.com.mx
         detectWaveLayouts();
       }
       window.onorientationchange = function(){
-        let aboutthis = _('#aboutthis'),
+        var aboutthis = _('#aboutthis'),
             landscape = _('#landscape');
         if(window.orientation == 90 || window.orientation == -90){
           landscape.style.display = "block";

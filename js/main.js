@@ -1,9 +1,9 @@
-let cyan = '#37e6ef';
-let magenta = '#e337fc';
-let purple = '#9568f6';
+var cyan = '#37e6ef';
+var magenta = '#e337fc';
+var purple = '#9568f6';
 
 "use strict";
-let checkBowser = false;
+var checkBowser = false;
 if(bowser.mobile || bowser.tablet || /SymbianOS/.test(window.navigator.userAgent)) checkBowser = true;
 
 window.console.log("%cCoded by Mn", "color:pink;  font-size: 10px; background:#000; padding:2px;");
@@ -28,7 +28,7 @@ function loadingHover(){
 }
 
 function loadingLogo(){
-  let app, apphover, apploading,
+  var app, apphover, apploading,
       loadingPixi = _('#fluoDeg'),
       logotipo = _('#logotipoMenu');
   apploading = new PIXI.Application(160, 160,{antialias: false, transparent: true, resolution: 1});
@@ -97,7 +97,7 @@ function loadingLogo(){
 }
 
 function loadingPhr(c){
-  let per = _('#per');
+  var per = _('#per');
   if(c > 20 && c < 40){
     per.innerHTML = "Almost 2..."
   } else if (c > 40 && c < 60) {
@@ -111,15 +111,15 @@ function loadingPhr(c){
 
 
 function loadPosters(s, fun){
-  let xhr = [],
+  var xhr = [],
       url = [],
       c = 0,
       line = _('#loading').children[2],
       num;
-  for (let i = 1; i < 8; i++) {
+  for (var i = 1; i < 8; i++) {
     url.push(s+i+'.jpg');
   }
-  for (let i = 0; i < url.length; i++) {
+  for (var i = 0; i < url.length; i++) {
     xhr[i] = new XMLHttpRequest;
     xhr[i].open("GET", url[i], true);
     xhr[i].responseType = "blob";
@@ -139,42 +139,42 @@ function loadPosters(s, fun){
 }
 
 function posterSection(){
-  let wr = _('#loading');
+  var wr = _('#loading');
   wr.style.opacity = "0";
   setTimeout(function(){ wr.style.display = "none"; },600);
 }
 
 function posterProjects(){
-  let wr = _('#loading');
+  var wr = _('#loading');
   wr.style.opacity = "0";
   setTimeout(function(){ wr.style.display = "none"; },600);
 }
 
 function support(a) {
-  let b = " ";
+  var b = " ";
   return "probably" == a.canPlayType("video/webm") || "maybe" == a.canPlayType("video/webm") ? b = "webm" : "probably" != a.canPlayType("video/mp4") && "maybe" != a.canPlayType("video/mp4") || (b = "mp4"), b
 }
 
 function loadVid() {
   if(!checkBowser){
-    let wr = _('#loading'),
+    var wr = _('#loading'),
         cover = __('.cover'),
         xhrVid = [],
         urlList = [],
         line = _('#loading').children[2],
         r = 0;
-    for (let i = 0; i < cover.length; i++) {
+    for (var i = 0; i < cover.length; i++) {
       cover[i].setAttribute('style', ' ');
-      let vid = document.createElement("VIDEO");
+      var vid = document.createElement("VIDEO");
       vid.classList.add('videostyle');
       vid.setAttribute('preload', 'auto');
       cover[i].appendChild(vid);
     }
 
-  let v = __('.videostyle')[0],
+  var v = __('.videostyle')[0],
       a, b = support(v);
       if (" " == b ? a = 0 : "mp4" == b ? a = 1 : "webm" == b && (a = 2), 1 === a) {
-        for (let c = 0; c <= cover.length-1; c++){
+        for (var c = 0; c <= cover.length-1; c++){
         	urlList.push("assets/vid/work-" + c + ".mp4");
         }
         for (var c = 0; c < urlList.length; c++){
@@ -184,7 +184,7 @@ function loadVid() {
           xhrVid[c].onload = function (e){
             if(this.readyState == 4){
               r+=1;
-              let num = Math.round(r*(108/cover.length-1));
+              var num = Math.round(r*(108/cover.length-1));
               line.style.height = num+'%';
               if(r === cover.length){
                 vidRender();
@@ -197,17 +197,17 @@ function loadVid() {
         }
       }
       if (2 === a) {
-        for(let c = 0; c <= cover.length-1; c++){
+        for(var c = 0; c <= cover.length-1; c++){
           urlList.push("assets/vid/work-" + c + ".webm");
         }
-        for(let c = 0; c < urlList.length; c++) {
+        for(var c = 0; c < urlList.length; c++) {
           xhrVid[c] = new XMLHttpRequest;
           xhrVid[c].open("GET", urlList[c], !0);
           xhrVid[c].responseType = "blob";
           xhrVid[c].onload = function (e){
             if(this.readyState == 4){
               r+=1;
-              let num = Math.round(r*(108/cover.length-1));
+              var num = Math.round(r*(108/cover.length-1));
               line.style.height = num+'%';
               if(r === cover.length){
                 vidRender();
@@ -220,7 +220,7 @@ function loadVid() {
         }
     }
   } else {
-    let wr = _('#loading'),
+    var wr = _('#loading'),
         cvMob = __('.cover'),
         line = _('#loading').children[2],
         num,
@@ -257,10 +257,10 @@ function loadVid() {
 }
 
 function vidRender(){
-  let vtag = __('.videostyle'),
+  var vtag = __('.videostyle'),
       a, b = support(vtag[0]);
   for (var i = 0; i < vtag.length; i++) {
-    let src = document.createElement("SOURCE");
+    var src = document.createElement("SOURCE");
       if (" " == b ? a = 0 : "mp4" == b ? a = 1 : "webm" == b && (a = 2), 1 === a) {
         src.setAttribute('src', 'assets/vid/work-'+i+'.mp4');
         src.setAttribute('type', 'video/mp4');
@@ -287,7 +287,7 @@ function sh(array) {
 }
 
 function setOverWork(){
-  let v = __('.videostyle');
+  var v = __('.videostyle');
   for (var i = 0; i < v.length; i++) {
     v[i].setAttribute('onmouseover', 'overWork("over", this)');
     v[i].setAttribute('onmouseout', 'overWork("out", this)');
@@ -365,7 +365,7 @@ function phonePop(c){
 checkForDevice();
 
 function popReel(c){
-  let wr = _('#showreel');
+  var wr = _('#showreel');
   if(c === 'open'){
     wr.style.display  = "block"
     setTimeout(function(){ wr.style.opacity  = "1" },600);
@@ -376,7 +376,7 @@ function popReel(c){
 }
 
 function popSliderWr(c, t){
-  let wr = _('#popSlider'),
+  var wr = _('#popSlider'),
       img = wr.children[1].children[1],
       src = t.getAttribute('data-img'),
       tx = wr.children[1].children[0];
@@ -397,9 +397,9 @@ function popSliderWr(c, t){
 }
 
 function aboutThisPop(c){
-  let wr = _('#abouthis');
+  var wr = _('#abouthis');
   if(wr === null) return;
-  let trigger = _('#triggerAbout'),
+  var trigger = _('#triggerAbout'),
       about = trigger.children[0],
       close = trigger.children[1],
       closeMob = _('.close');
@@ -432,7 +432,7 @@ function aboutThisPop(c){
 
 
 function overLine(c) {
-  let e = _('#lineBackTo');
+  var e = _('#lineBackTo');
   switch (c) {
   case "over":
     e.classList.remove("scaleDownLine");
@@ -454,7 +454,7 @@ function overLine(c) {
 }
 
 function setProfiles(){
- let p = __('.profile_in');
+ var p = __('.profile_in');
  if(checkBowser){
    p[0].setAttribute('onclick', 'profileMobile("f")');
    p[1].setAttribute('onclick', 'profileMobile("t")');
@@ -465,7 +465,7 @@ function setProfiles(){
 }
 
 function profileMobile(c){
-  let wr = _('#profiles_wr'),
+  var wr = _('#profiles_wr'),
       w = window.innerWidth;
   if(c === "f"){
     isOpenF = !isOpenF;
@@ -477,7 +477,7 @@ function profileMobile(c){
 }
 
 function profileDesktop(c){
-  let wr = _('#profiles_wr'),
+  var wr = _('#profiles_wr'),
       bt = _('.close_des_btn'),
       img = bt.children[0],
       fadewr = __('.profile_in'),
@@ -541,7 +541,7 @@ function arrowProfile(c, t){
 }
 
 function checkAbout(){
-  let wr = _('#profiles_wr'),
+  var wr = _('#profiles_wr'),
       w = window.innerWidth;
   if(w < 650 && isOpenF){
     wr.style.left = "100vw";
@@ -558,7 +558,7 @@ function checkAbout(){
 }
 
 function perfilClb(c,n,ig,w,p,b,i){
-  let menu = _('#clb>div'),
+  var menu = _('#clb>div'),
       wr = _('#clb>#perfil_wr');
 
   if(c === "open"){
@@ -575,7 +575,7 @@ function perfilClb(c,n,ig,w,p,b,i){
 }
 
 function fillInfo(n,ig,w,p,b,i){
-  let _n = n, _ig = ig, _w = w, _p = p, _b = b, _i = i;
+  var _n = n, _ig = ig, _w = w, _p = p, _b = b, _i = i;
   if(_ig === 0){
     _('#info>#ig').style.display = "none";
   } else {
@@ -596,13 +596,13 @@ function fillInfo(n,ig,w,p,b,i){
 }
 
 function vSizeMock(w){
-  let wr = _(w),
+  var wr = _(w),
       vd = wr.children[0],
       wr_W = wr.offsetWidth,
       vd_W = vd.getAttribute('width'),
       vd_H = vd.getAttribute('height');
   vd.setAttribute('data-ratio', vd_H / vd_W);
-  let r = vd.getAttribute('data-ratio'),
+  var r = vd.getAttribute('data-ratio'),
       new_H = wr_W * r;
       vd.setAttribute('width', wr_W);
       vd.setAttribute('height', new_H);
@@ -610,7 +610,7 @@ function vSizeMock(w){
 
 //e
 function hideCoverLogo(){
-  let trigger = _('#mainprojects').getBoundingClientRect().top,
+  var trigger = _('#mainprojects').getBoundingClientRect().top,
       wr = _('#logoCoverWrap');
   if(trigger < -10){
     wr.classList.remove('showDisplayFlex');
@@ -622,7 +622,7 @@ function hideCoverLogo(){
 }
 
 function changeBackground(){
-  let backs = [],
+  var backs = [],
       wr = _('#mainprojects'),
       cMain = wr.getAttribute('data-back'),
       c = window.innerHeight/2,
@@ -630,7 +630,7 @@ function changeBackground(){
       fLen = f.length,
       tops = [];
       backs.push(cMain);
-  for (let i = 0; i < fLen; i++) {
+  for (var i = 0; i < fLen; i++) {
     backs.push(f[i].getAttribute('data-back'));
     tops.push(f[i].getBoundingClientRect().top - c);
   }
@@ -639,7 +639,7 @@ function changeBackground(){
   }  else {
     wr.style.background = backs[0];
   }
-  for (let i = 1; i < fLen; i++) {
+  for (var i = 1; i < fLen; i++) {
     if(tops[i] < 0){ wr.style.background = backs[i+1]; }
   }
 }
@@ -657,7 +657,7 @@ function bugArrowSlider(){
 }
 
 function removeAboutScroll(){
-  let about = _('#triggerAbout'),
+  var about = _('#triggerAbout'),
       c = window.innerHeight/2,
       trigger = _('.projects').getBoundingClientRect().top;
   if(trigger < c){
@@ -668,7 +668,7 @@ function removeAboutScroll(){
 }
 
 function detectWaveLayouts(){
-  let wave = _('#wavewrap'),
+  var wave = _('#wavewrap'),
       c = window.innerHeight/2,
       triggerWrap = _('.projects'),
       trigger = triggerWrap.getBoundingClientRect().top;
@@ -681,7 +681,7 @@ function detectWaveLayouts(){
 
 /* wr, fun */
 function detectswipe(el,func) {
-  let swipe_det = new Object();
+  var swipe_det = new Object();
   swipe_det.sX = 0;
   swipe_det.sY = 0;
   swipe_det.eX = 0;
@@ -691,7 +691,7 @@ function detectswipe(el,func) {
   var min_y = 40;
   var max_y = 50;
   var direc = "";
-  let ele = document.getElementById(el);
+  var ele = document.getElementById(el);
   ele.addEventListener('touchstart',function(e){
   var t = e.touches[0];
   swipe_det.sX = t.screenX;
@@ -716,7 +716,7 @@ function detectswipe(el,func) {
   },false);
 }
 
-let c_slider_m = 1;
+var c_slider_m = 1;
 function swipeSliderMobile(el,d){
   if(d === 'prev'){
     c_slider_m++;
@@ -737,7 +737,7 @@ function sliderMobile(c){
   description.innerHTML = c;
 }
 
-let c_slider_d = 0;
+var c_slider_d = 0;
 function swipeSliderDesktop(c){
   if(c === 'next'){
     c_slider_d++;
@@ -752,7 +752,7 @@ function swipeSliderDesktop(c){
 
 
 function initSlider(c, d){
-   let mtrx = [[6,7,1,7,1,2,1,2,3],
+   var mtrx = [[6,7,1,7,1,2,1,2,3],
               [7,1,2,1,2,3,2,3,4],
               [1,2,3,2,3,4,3,4,5],
               [2,3,4,3,4,5,4,5,6],
@@ -792,7 +792,7 @@ function initSlider(c, d){
    setTimeout(function(){
      wr.classList.remove('transition');
      wr.style.left = "-100%";
-     for (let i = 0; i < slides.length; i++) {
+     for (var i = 0; i < slides.length; i++) {
        slides[i].style.backgroundImage = "url("+stringSliderMobile+curr[i]+".jpg)";
      }
      for (var i = 0; i <  slidesScale.length; i++) {
@@ -813,7 +813,7 @@ function initSlider(c, d){
 }
 
 document.onkeydown = function(e){
-  let pop = __('.popIndex');
+  var pop = __('.popIndex');
   e = e || window.event;
   if (e.keyCode == '27') {
    for (var i = 0; i < pop.length; i++) {
@@ -850,9 +850,9 @@ function changeHomeValues(c ,k){
 
 
 /* s */
-let c_services_mobile = 0;
+var c_services_mobile = 0;
 function servicesMobile(c){
-  let s = __('.sliderwr_services>li');
+  var s = __('.sliderwr_services>li');
   if(c === 'next'){
     c_services_mobile++;
     if(c_services_mobile > 7) c_services_mobile = 0;
@@ -875,28 +875,28 @@ function servicesMobile(c){
   }
 }
 function overServices(c, el, t){
-  let i = t.children[2].children[0];
+  var i = t.children[2].children[0];
   i.setAttribute('src', 'img/services/' + el + c + '.svg');
 }
 
 function loadServices(){
  if(!checkBowser){
- 	let s = __('.step'),
+ 	var s = __('.step'),
       wr = _('#loading'),
       xhrVid = [],
       urlList = [];
- 	for(let i =0; i < s.length; i++){
- 		let v = document.createElement("VIDEO");
+ 	for(var i =0; i < s.length; i++){
+ 		var v = document.createElement("VIDEO");
  		v.setAttribute('preload', 'auto');
  		v.setAttribute('loop', ' ');
  		v.setAttribute('autoplay', ' ');
     s[i].appendChild(v);
  	}
-  let v = _('.step>video'),
+  var v = _('.step>video'),
       r = 0,
       a, b = support(v);
     if (" " == b ? a = 0 : "mp4" == b ? a = 1 : "webm" == b && (a = 2), 1 === a) {
-      for (let c = 0; c <= s.length-1; c++){
+      for (var c = 0; c <= s.length-1; c++){
       	urlList.push("assets/services/" + c+ ".mp4");
       }
       for (var c = 0; c < urlList.length; c++){
@@ -906,7 +906,7 @@ function loadServices(){
         xhrVid[c].onload = function (e){
           if(this.readyState == 4){
             r+=1;
-            let num = Math.round(r*(108/s.length-1));
+            var num = Math.round(r*(108/s.length-1));
             loadingPhr(num);
             if(r === s.length){
               renderServices();
@@ -921,17 +921,17 @@ function loadServices(){
       }
     }
     if (2 === a) {
-      for(let c = 0; c <= s.length-1; c++){
+      for(var c = 0; c <= s.length-1; c++){
         urlList.push("assets/services/"+ c+ ".webm");
       }
-      for(let c = 0; c < urlList.length; c++) {
+      for(var c = 0; c < urlList.length; c++) {
         xhrVid[c] = new XMLHttpRequest;
         xhrVid[c].open("GET", urlList[c], !0);
         xhrVid[c].responseType = "blob";
         xhrVid[c].onload = function (e){
         if(this.readyState == 4){
           r+=1;
-          let num = Math.round(r*(108/s.length-1));
+          var num = Math.round(r*(108/s.length-1));
           loadingPhr(num);
           if(r === s.length){
             renderServices();
@@ -950,10 +950,10 @@ function loadServices(){
 }
 
 function renderServices(){
-  let v  = __('.step>video'),
+  var v  = __('.step>video'),
       a, b = support(v[0]);
   for (var i = 0; i < v.length; i++) {
-    let s = document.createElement("SOURCE");
+    var s = document.createElement("SOURCE");
     if (" " == b ? a = 0 : "mp4" == b ? a = 1 : "webm" == b && (a = 2), 1 === a) {
       s.setAttribute('src', 'assets/services/'+i+'.mp4');
       s.setAttribute('type', 'video/mp4');
@@ -972,7 +972,7 @@ function getFlagV(){
       ct = (window.innerWidth/2)+100,
       pstp = _('#instruccion');
 
-  for(let i = 0; i < f.length; i++){
+  for(var i = 0; i < f.length; i++){
     x.push(f[i].getBoundingClientRect().x - ct);
   }
   if(x[0] < 0 && x[1] > 0) indexStep(0);
@@ -985,7 +985,7 @@ function getFlagV(){
   if(x[7] < 0) indexStep(7);
 }
 
-let fSc1 = false, fSc2 = false,
+var fSc1 = false, fSc2 = false,
     fSc3 = false, fSc4 = false,
     fSc5 = false, fSc6 = false,
     fSc7 = false, fSc8 = false;
@@ -1159,7 +1159,7 @@ function indexStep(c){
 }
 
 function changeIcon(c){
-  let istp = __('#iconosteps>img');
+  var istp = __('#iconosteps>img');
 
   for (var i = 0; i < istp.length; i++) {
     istp[i].style.opacity = "0.5";
@@ -1173,7 +1173,7 @@ function changeStep(c){
       wrimp = _('#implementacion'),
       wrfn = _('#final');
 
-  for (let i = 0; i < s.length; i++) {
+  for (var i = 0; i < s.length; i++) {
     s[i].style.opacity = "0";
     s[c].classList.add('transition');
   }
