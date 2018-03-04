@@ -303,14 +303,14 @@ function overWork(c, t){
   }
 }
 
-//agregar onmouseover="mainMenuDes('out')"
-//onmenuout
+
 function checkForDevice(){
   var ph = _('#telefonofluo'),
       mn = _('#triggerMenu'),
       reelD = _('#triggerReelD'),
       reelM = _('#triggerReelM'),
-      d = _('#desktopinnner');
+      d = _('#desktopinnner'),
+      fix = _('.onmenuout');
   if(checkBowser){
 
     d.classList.remove('showDisplayFlex');
@@ -321,7 +321,7 @@ function checkForDevice(){
     reelM.setAttribute('target', '_blank');
     reelM.setAttribute('rel', 'noopener noreferrer');
   } else {
-
+    fix.setAttribute('onmouseover', 'mainMenuDes("out")');
     d.setAttribute('onmouseover', 'mainMenuDes("over")');
     // d.setAttribute('onmouseout', 'mainMenuDes("out")');
     mn.setAttribute('onmouseover', 'mainMenuDes("over")');
