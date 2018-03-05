@@ -371,12 +371,28 @@ checkForDevice();
 function popReel(c){
   var wr = _('#showreel');
   if(c === 'open'){
+    adjustReelSize();
     wr.style.display  = "block"
     setTimeout(function(){ wr.style.opacity  = "1" },600);
   } else {
     wr.style.opacity  = "0"
     setTimeout(function(){ wr.style.display  = "none" },600);
   }
+}
+
+function adjustReelSize(){
+  var wr = _('#videoWrap'),
+      ifr = _('#videoWrap>iframe');
+  setTimeout(function(){
+    var wrW = wr.clientWidth,
+        ifrW = ifr.getAttribute('width'),
+        ifrH = ifr.getAttribute('height');
+    ifr.setAttribute('r', ifrH/ifrW);
+    var r = ifr.getAttribute('r'),
+        newH = wrW * r;
+    ifr.setAttribute('height', newH);
+    ifr.setAttribute('width', wrW);    
+  },300)
 }
 
 function popSliderWr(c, t){

@@ -154,9 +154,7 @@ fluo.com.mx
       var home = 1;
       var bspc = _('#spacebutton>span');
 
-      window.onresize = function(){
-        var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";
-      };
+      window.onresize = function(){ adjustReelSize() }
       window.onorientationchange = function(){
         var aboutthis = _('#aboutthis'),
             landscape = _('#landscape');

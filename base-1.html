@@ -308,9 +308,7 @@ fluo.com.mx
       window.onload = function(){
         smoothScroll.init();
       }
-      window.onresize = function(){
-        var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";
-      }
+      window.onresize = function(){ adjustReelSize() }
       window.onscroll = function(){
         detectWaveLayouts();
         removeAboutScroll();

@@ -439,9 +439,7 @@ fluo.com.mx
         initSlider(0);
         smoothScroll.init();
       }
-      window.onresize = function(){
-        var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";
-      }
+      window.onresize = function(){ adjustReelSize() }
       window.onscroll = function(){
         bugArrowSlider();
         detectWaveLayouts();
