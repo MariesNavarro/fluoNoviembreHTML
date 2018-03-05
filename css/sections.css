@@ -1398,6 +1398,7 @@
   -ms-justify-content: center;
   -o-justify-content: center;
   justify-content: center;
+  z-index: 100;
 }
 #steps_wr>#instruccion{
   position: absolute;
