@@ -80,7 +80,7 @@ fluo.com.mx
       </ul>
     </nav>
     <nav id="back">
-      <a href="#loading" data-scroll onmouseover="overLine('over')" onmouseout="overLine('out')">
+      <a data-scroll href="#backtoflag" onmouseover="overLine('over')" onmouseout="overLine('out')">
         <span>Back to top</span>
       </a>
       <div>
@@ -127,6 +127,7 @@ fluo.com.mx
         </a>
       </div>
     </nav>
+    <div id="backtoflag"></div>
     <!-- COVER LOGO -->
     <section id="logoCoverWrap" class="onmenuout showDisplayFlex" style="background:#480E2C;">
         <div style="background-image:url('img/projects/enotelia/imac_logo.png')"></div>
@@ -428,14 +429,15 @@ fluo.com.mx
     <!-- <div id="lineacentro"></div> -->
     <script src="js/bowser.min.js" charset="utf-8"></script>
     <script src="js/pixi.min.js" charset="utf-8"></script>
-    <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
+    <script src="js/smooth-scroll.min.js"></script>
     <script type="text/javascript">
       var stringSliderMobile = "img/projects/enotelia/slider-";
       loadPosters(stringSliderMobile, posterProjects);
       window.onload = function(){
         detectswipe('swipe_slider', swipeSliderMobile);
         initSlider(0);
+        smoothScroll.init();
       }
       window.onresize = function(){
         var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";

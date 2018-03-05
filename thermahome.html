@@ -80,7 +80,7 @@ fluo.com.mx
       </ul>
     </nav>
     <nav id="back">
-      <a href="#loading" data-scroll onmouseover="overLine('over')" onmouseout="overLine('out')">
+      <a data-scroll href="#backtoflag" onmouseover="overLine('over')" onmouseout="overLine('out')">
         <span>Back to top</span>
       </a>
       <div>
@@ -127,6 +127,7 @@ fluo.com.mx
         </a>
       </div>
     </nav>
+    <div id="backtoflag"></div>
     <!-- COVER LOGO -->
     <section id="logoCoverWrap" class="onmenuout showDisplayFlex" style="background:#3E2C3C;">
         <div style="background-image:url('img/projects/enotelia/logotipo.svg')"></div>
@@ -451,6 +452,7 @@ fluo.com.mx
       window.onload = function(){
         detectswipe('swipe_slider', swipeSliderMobile);
         initSlider(0);
+        smoothScroll.init()
       }
       window.onresize = function(){
         vSizeMock("#v_wr_desk");

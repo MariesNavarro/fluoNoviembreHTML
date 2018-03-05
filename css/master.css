@@ -1280,4 +1280,12 @@ body {
   background: -webkit-linear-gradient(bottom, #e337fc 2%, #5cabfc 50%, #37e6ef 100%);
   background: linear-gradient(to bottom, #e337fc 2%, #5cabfc 50%, #37e6ef 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e337fc', endColorstr='#37e6ef',GradientType=1 ); }
+#backtoflag{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1000000;
+  width: 100vw;
+  height: 2px;
+  background: none}
 /*# sourceMappingURL=master.css.map */

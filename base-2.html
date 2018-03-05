@@ -80,7 +80,7 @@ fluo.com.mx
       </ul>
     </nav>
     <nav id="back">
-      <a href="#loading" data-scroll onmouseover="overLine('over')" onmouseout="overLine('out')">
+      <a data-scroll href="#backtoflag" onmouseover="overLine('over')" onmouseout="overLine('out')">
         <span>Back to top</span>
       </a>
       <div>
@@ -105,6 +105,7 @@ fluo.com.mx
       </a>
       <!-- Se pueden agregar más -->
     </nav>
+    <div id="backtoflag"></div>
     <!-- NAV MOBILE -->
     <nav id="mobileinner">
       <div class="showDisplayFlex">
@@ -353,6 +354,7 @@ fluo.com.mx
     <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
     <script type="text/javascript">
+      window.onload= function(){ smoothScroll.init() }
       window.onresize = function(){
         var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";
       }

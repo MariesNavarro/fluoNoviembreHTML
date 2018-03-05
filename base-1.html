@@ -80,7 +80,7 @@ fluo.com.mx
       </ul>
     </nav>
     <nav id="back">
-      <a href="#loading" data-scroll onmouseover="overLine('over')" onmouseout="overLine('out')">
+      <a data-scroll href="#backtoflag" onmouseover="overLine('over')" onmouseout="overLine('out')">
         <span>Back to top</span>
       </a>
       <div>
@@ -127,6 +127,7 @@ fluo.com.mx
         </a>
       </div>
     </nav>
+    <div id="backtoflag"></div>
     <!-- MAIN -->
     <section class="fullsection layout1_wr onmenuout" style="background:#000;height:100vh">
       <article style="width:90vw; height:100vh;background:purple;margin:0 auto"></article>
@@ -304,6 +305,9 @@ fluo.com.mx
     <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
     <script type="text/javascript">
+      window.onload = function(){
+        smoothScroll.init();
+      }
       window.onresize = function(){
         var size = document.getElementById("size").innerHTML = "Width: " + window.innerWidth + "px , Height: " + window.innerHeight + "px";
       }
