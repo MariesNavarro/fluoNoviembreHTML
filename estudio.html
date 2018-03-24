@@ -68,7 +68,10 @@ fluo.com.mx
         <ul class="showDisplayFlex">
           <li>
             <a href="index.html" title="Ir a inicio">
-              <div id="logotipoMenu"></div>
+              <img src="img/logotipo_fluo_out.svg" width="80" height="80"
+                onmouseover="overIcon('over', 'logotipo_fluo_', this)"
+                onmouseout="overIcon('out', 'logotipo_fluo_', this)"
+              ></img>
             </a>
           </li>
           <li  id="triggerAbout" onclick="aboutThisPop('open')">
@@ -470,15 +473,13 @@ fluo.com.mx
         </div>
     </section>
     <script src="js/bowser.min.js" charset="utf-8"></script>
-    <script src="js/pixi.min.js" charset="utf-8"></script>
-    <script src="js/smooth-scroll.min.js" charset="utf-8"></script>
+    <script src="js/smooth-scroll.min.js" charset="utf-8" async onload="initscroll()"></script>
     <script src="js/bio.js" charset="utf-8" async></script>
     <script src="js/main.js" charset="utf-8"></script>
     <script type="text/javascript">
       var isOpenF = false,
           isOpenT = false;
       setProfiles();
-      window.onload = function(){ smoothScroll.init() }
       window.onresize = function(){
         vSizeMock("#behind");
         checkAbout();

@@ -9,92 +9,13 @@ if(bowser.mobile || bowser.tablet || /SymbianOS/.test(window.navigator.userAgent
 window.console.log("%cCoded by Mn", "color:#34408f;  font-size: 10px; background:#000; padding:20px;");
 function _(el){return document.querySelector(el); }
 function __(el){return document.querySelectorAll(el); }
-    loadingLogo();
 
-function loadingHover(){
-  function onAssetsLoaded(){
-    var frames = [];
-    for (var i = 0; i < 111; i++) {
-        frames.push(PIXI.Texture.fromFrame('fluo_' + i + '.png'));
-    }
-    var anim = new PIXI.extras.AnimatedSprite(frames);
-    anim.width = apphover.renderer.width;
-    anim.height = apphover.renderer.height;
-    anim.animationSpeed = 0.56;
-    anim.alpha = 0.5;
-    anim.play();
-    apphover.stage.addChild(anim);
-  }
+function initscroll(){ smoothScroll.init() }
+
+function overIcon(c, e, t){
+  t.setAttribute('src', 'img/' + e + c + '.svg');
 }
 
-function loadingLogo(){
-  var app, apphover, apploading,
-      loadingPixi = _('#fluoDeg'),
-      logotipo = _('#logotipoMenu');
-  apploading = new PIXI.Application(160, 160,{antialias: false, transparent: true, resolution: 1});
-  loadingPixi.appendChild(apploading.view);
-  app = new PIXI.Application(100, 100,{antialias: false, transparent: true, resolution: 1});
-  logotipo.appendChild(app.view);
-  apphover = new PIXI.Application(100, 100,{antialias: false, transparent: true, resolution: 1});
-  logotipo.appendChild(apphover.view);
-  PIXI.loader
-  .add('img/pixi/logotipo_1.json')
-  .add('img/pixi/logotipo_2.json')
-  .add('img/pixi/logotipo_3.json')
-  .add('img/pixi/hoverlogo_1.json')
-  .add('img/pixi/hoverLogo_2.json')
-  .add('img/pixi/logoLoading.json')
-  .load(onAssetsLoaded);
-  function onAssetsLoaded(){
-    loadingPixi.setAttribute('style', ' ');
-    var framesLoading = [];
-    var frames = [];
-    var framesHover = [];
-    for (var i = 0; i < 66; i++) {
-        framesLoading.push(PIXI.Texture.fromFrame('fluoLoading_' + i + '.png'));
-    }
-    for (var i = 0; i < 237; i++) {
-        frames.push(PIXI.Texture.fromFrame('fluo_' + i + '.png'));
-    }
-    for (var i = 0; i < 134; i++) {
-        framesHover.push(PIXI.Texture.fromFrame('fluoHover_' + i + '.png'));
-    }
-    var aniLoad = new PIXI.extras.AnimatedSprite(framesLoading);
-    var anim = new PIXI.extras.AnimatedSprite(frames);
-    var animH = new PIXI.extras.AnimatedSprite(framesHover);
-    aniLoad.width = apploading.renderer.width;
-		aniLoad.height = apploading.renderer.height;
-    aniLoad.animationSpeed = 0.56;
-    aniLoad.play();
-
-    anim.width = app.renderer.width;
-		anim.height = app.renderer.height;
-    animH.width = app.renderer.width;
-		animH.height = app.renderer.height;
-    anim.animationSpeed = 0.56;
-    anim.play();
-
-    animH.alpha = 0;
-    animH.animationSpeed = 0.56;
-    animH.interactive = true;
-    animH.loop = false;
-    animH.play();
-
-    animH.mouseover = function(mouseData) {
-      this.alpha = 1;
-      setTimeout(function(){ anim.alpha = 0; },1600)
-      this.gotoAndPlay(0);
-    }
-    animH.mouseout = function(mouseData) {
-      this.alpha = 0;
-      anim.alpha = 1;
-      this.stop();
-    }
-    apploading.stage.addChild(aniLoad);
-    app.stage.addChild(anim);
-    apphover.stage.addChild(animH);
-  }
-}
 
 function loadingPhr(c){
   var per = _('#per');
@@ -108,7 +29,6 @@ function loadingPhr(c){
     per.innerHTML = "Almost 5..."
   }
 }
-
 
 function loadPosters(s, fun){
   var xhr = [],
@@ -391,7 +311,7 @@ function adjustReelSize(){
     var r = ifr.getAttribute('r'),
         newH = wrW * r;
     ifr.setAttribute('height', newH);
-    ifr.setAttribute('width', wrW);    
+    ifr.setAttribute('width', wrW);
   },300)
 }
 

@@ -321,14 +321,12 @@ body {
           top: 3px;
           left: 5px;
           color: #e337fc; }
-      body nav#bottom ul li a div, body nav#top ul li a div {
-        width: 60px;
-        height: 60px; }
-        body nav#bottom ul li a div canvas, body nav#top ul li a div canvas {
-          position: absolute;
-          left: 0;
-          width: 100%;
-          height: 100%; }
+      body nav#top ul li a img {
+        display: block;
+        width: 80px;
+        height: 80px;
+      }
+
       body nav#bottom ul li::before, body nav#bottom ul li::after, body nav#top ul li::before, body nav#top ul li::after {
         position: absolute;
         top: -2px;
