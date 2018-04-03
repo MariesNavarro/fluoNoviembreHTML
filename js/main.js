@@ -906,6 +906,18 @@ function renderServices(){
   }
 }
 
+function preventStepsOver(){
+  var f = _("#flagPrevent").getBoundingClientRect().x,
+      wristp = _('#iconosteps');
+      if(f < 0){
+        wristp.classList.remove("hideDisplay");
+        wristp.classList.add("showDisplayFlex");
+      } else {
+        wristp.classList.remove("showDisplayFlex");
+        wristp.classList.add("hideDisplay");
+      }
+}
+
 function getFlagV(){
   var f = __('.flagV'),
       x = [],
@@ -1099,7 +1111,7 @@ function indexStep(c){
 }
 
 function changeIcon(c){
-  var istp = __('#iconosteps>img');
+  var istp = __('#iconosteps>a>img');
 
   for (var i = 0; i < istp.length; i++) {
     istp[i].style.opacity = "0.5";

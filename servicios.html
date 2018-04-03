@@ -139,15 +139,6 @@ fluo.com.mx
       <!-- ANIMATION -->
       <div id="steps_wr">
         <!-- Iconos -->
-        <div id="iconosteps" class="showDisplayFlex">
-          <img src="img/services/icons/0.svg" width="40" style="opacity:0.5">
-          <img src="img/services/icons/1.svg" width="40" style="opacity:0.5">
-          <img src="img/services/icons/2.svg" width="40" style="opacity:0.5">
-          <img src="img/services/icons/3.svg" width="40" style="opacity:0.5">
-          <img src="img/services/icons/4.svg" width="40" style="opacity:0.5">
-          <img src="img/services/icons/5.svg" width="40" style="opacity:0.5">
-          <img src="img/services/icons/6.svg" width="40" style="opacity:0.5">
-        </div>
         <!-- Implementacion -->
         <div id="implementacion" style="opacity:0">
           <p>Keep Going</p>
@@ -261,7 +252,7 @@ fluo.com.mx
                 <li>E-commerce</li>
               </ul>
             </li>
-            <li onmouseover="overServices('over', 'motion-', this)" onmouseout="overServices('out', 'motion-', this)">
+            <li id="flagPrevent" onmouseover="overServices('over', 'motion-', this)" onmouseout="overServices('out', 'motion-', this)">
               <span class="gradientFluo"></span><span style="bottom:0" class="gradientFluo"></span>
               <div>
                 <img src="img/services/motion-out.svg" >
@@ -275,7 +266,7 @@ fluo.com.mx
           </ul>
         </div>
         <!-- PASO 1 -->
-        <div>
+        <div id="step_1">
             <div class="flagV" style="left:calc(50% - 200px)"></div>
             <h4>
               <span>1</span>
@@ -284,7 +275,7 @@ fluo.com.mx
             <p>Tomamos un café y nos cuentas de qué se trata tu marca.</p>
         </div>
         <!-- PASO 2 -->
-        <div>
+        <div id="step_2">
           <div class="flagV"></div>
           <h4>
             <span>2</span>
@@ -293,7 +284,7 @@ fluo.com.mx
           <p>Analizamos el estado de tu proyecto y definimos los objetivos y la estrategia inicial.</p>
         </div>
         <!-- PASO 3 -->
-        <div>
+        <div id="step_3">
           <div class="flagV"></div>
           <h4>
             <span>3</span>
@@ -302,7 +293,7 @@ fluo.com.mx
           <p>Nos cuentas a detalle sobre tu proyecto, historia, contexto, y gustos.</p>
         </div>
         <!-- PASO 4 -->
-        <div>
+        <div id="step_4">
           <div class="flagV"></div>
           <h4>
             <span>4</span>
@@ -311,7 +302,7 @@ fluo.com.mx
           <p>Presentamos propuestas de concepto que se adecuan a tus gustos y necesidades.</p>
         </div>
         <!-- PASO 5 -->
-        <div>
+        <div id="step_5">
           <div class="flagV"></div>
           <h4>
             <span>5</span>
@@ -320,7 +311,7 @@ fluo.com.mx
           <p>Presentamos propuestas de concepto que se adecuan a tus gustos y necesidades.</p>
         </div>
         <!-- PASO 6 -->
-        <div>
+        <div id="step_6">
           <div class="flagV"></div>
           <h4>
             <span>6</span>
@@ -329,7 +320,7 @@ fluo.com.mx
           <p>Te damos un prototipo muy cercano al resultado final, nos haces comentarios.</p>
         </div>
         <!-- PASO 7 -->
-        <div>
+        <div id="step_7">
           <div class="flagV"></div>
           <h4>
             <span>7</span>
@@ -596,6 +587,17 @@ fluo.com.mx
         </li>
       </ul>
     </section>
+    <div id="wrsteps">
+      <div id="iconosteps" class="hideDisplay">
+        <a data-scroll href="#step_1" onclick="indexStep(0)"><img src="img/services/icons/0.svg" width="40" style="opacity:0.5"></a>
+        <a data-scroll href="#step_2" onclick="indexStep(1)"><img src="img/services/icons/1.svg" width="40" style="opacity:0.5"></a>
+        <a data-scroll href="#step_3" onclick="indexStep(2)"><img src="img/services/icons/2.svg" width="40" style="opacity:0.5"></a>
+        <a data-scroll href="#step_4" onclick="indexStep(3)"><img src="img/services/icons/3.svg" width="40" style="opacity:0.5"></a>
+        <a data-scroll href="#step_5" onclick="indexStep(4)"><img src="img/services/icons/4.svg" width="40" style="opacity:0.5"></a>
+        <a data-scroll href="#step_6" onclick="indexStep(5)"><img src="img/services/icons/5.svg" width="40" style="opacity:0.5"></a>
+        <a data-scroll href="#step_7" onclick="indexStep(6)"><img src="img/services/icons/6.svg" width="40" style="opacity:0.5"></a>
+      </div>
+    </div>
     <!-- POP LANDSCAPE -->
     <section id="landscape">
       <div>
@@ -612,6 +614,7 @@ fluo.com.mx
         </div>
     </section>
     <span id="lineadePruebaCentro"></span>
+    <script src="js/smooth-scroll.min.js" charset="utf-8" async onload="initscroll()"></script>
     <script src="js/bowser.min.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/jquery.easing.1.3.js" charset="utf-8"></script>
@@ -647,6 +650,7 @@ fluo.com.mx
             sxm.style.overflowX = "scroll";
             sxm.scrollLeft -= (e.deltaY * 2);
             getFlagV();
+            preventStepsOver();
           }
           e.preventDefault();
         });

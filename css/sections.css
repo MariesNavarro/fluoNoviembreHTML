@@ -1387,7 +1387,7 @@
   height: 100vh;
   background: #323433;
 }
-#steps_wr>#iconosteps{
+#iconosteps{
   position: absolute;
   left: calc(50% - 150px);
   top: 30px;
@@ -1398,7 +1398,14 @@
   -ms-justify-content: center;
   -o-justify-content: center;
   justify-content: center;
-  z-index: 100;
+  z-index: 100000 !important;
+}
+#iconosteps>a{
+  display: block;
+  cursor: pointer;
+}
+#iconosteps>a:hover{
+  opacity: 0.5;
 }
 #steps_wr>#instruccion{
   position: absolute;
