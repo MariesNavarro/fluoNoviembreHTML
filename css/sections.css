@@ -645,6 +645,13 @@
     width: 100%;
     height: 20px;
   }
+  .layout_2_1 >.column_lobo{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    top: 0;
+    background: red;
+  }
   /* Layout 2_2 */
   .layout_2_2 {
     display: -webkit-box;
@@ -706,6 +713,8 @@
   }
   .layout_3 > .column_1{ width: 20% }
   .layout_3 > .column_2{ width: 80% }
+    /* exepcion lobonoesta */
+  .layout_3 > .lobo{ width: 100% }
   .layout_3 > div > img {
     width: 100%;
   }
