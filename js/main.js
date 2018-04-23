@@ -226,6 +226,7 @@ function overWork(c, t){
 
 function checkForDevice(){
   var ph = _('#telefonofluo'),
+      phInfo = __(".telefonofluo"),
       mn = _('#triggerMenu'),
       reelD = _('#triggerReelD'),
       reelM = _('#triggerReelM'),
@@ -240,6 +241,9 @@ function checkForDevice(){
     reelM.setAttribute('href', 'https://vimeo.com/175730619');
     reelM.setAttribute('target', '_blank');
     reelM.setAttribute('rel', 'noopener noreferrer');
+    for (var i = 0; i < phInfo.length; i++) {
+      phInfo[i].setAttribute('href', 'tel:57303009');
+    }
   } else {
     fix.setAttribute('onmouseover', 'mainMenuDes("out")');
     d.setAttribute('onmouseover', 'mainMenuDes("over")');
@@ -249,6 +253,12 @@ function checkForDevice(){
     ph.setAttribute('onclick', 'phonePop("open")');
     ph.setAttribute('title', 'Ver teléfono y horarios');
     reelD.setAttribute('onclick', 'popReel("open")');
+    for (var i = 0; i < phInfo.length; i++) {
+      phInfo[i].setAttribute('onclick', 'phonePop("open")');
+    }
+    for (var i = 0; i < phInfo.length; i++) {
+      phInfo[i].setAttribute('title', 'Ver teléfono y horarios');
+    }
   }
 }
 
