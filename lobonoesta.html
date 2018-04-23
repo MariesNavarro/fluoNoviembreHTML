@@ -318,13 +318,13 @@ fluo.com.mx
         </div>
         <div class="der showDisplayFlex">
           <div>
-            <h5>Objetivos</h5>
+            <h5 class="subt_project">Objetivos</h5>
             <p>
-              Haciendo gala del color y la fotografía de la película se lleva a cabo el diseño y desarrollo de un sitio con herramientas de video en alta calidad y full screen.
+              Haciendo gala del color y la fotografía de la película se lleva a cabo el diseño y desarrollo de un sitio con herramientas de video en alta calidad y full screen.
             </p>
           </div>
           <div>
-            <h5>Rol de Fluo</h5>
+            <h5 class="subt_project">Rol de Fluo</h5>
             <ul class="showGrid">
               <li>Sitio Web</li>
               <li></li>
@@ -349,6 +349,7 @@ fluo.com.mx
       window.onresize = function(){
         vSizeMock("#v_wr_desk");
         vSizeMock("#v_wr_mob");
+        var s = _("#size").innerHTML = "Width: " + window.innerWidth + " x " + "Height:" + window.innerHeight;
       }
       window.onscroll = function(){
         detectWaveLayouts();

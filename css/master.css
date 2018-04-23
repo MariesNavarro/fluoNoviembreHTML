@@ -11,18 +11,7 @@
   src: url("fonts/CircularStd-Black.eot?#iefix") format("embedded-opentype"), url("fonts/CircularStd-Black.woff") format("woff"), url("fonts/CircularStd-Black.ttf") format("truetype");
   font-weight: 700;
   font-style: bold; }
-@font-face {
-  font-family: "Baskerville";
-  src: url("fonts/Baskerville-Bold.eot");
-  src: url("fonts/Baskerville-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/Baskerville-Bold.woff") format("woff"), url("fonts/Baskerville-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: bold; }
-@font-face {
-  font-family: "BaskervilleItalic";
-  src: url("fonts/Baskerville-Bold-Italic.eot");
-  src: url("fonts/Baskerville-Bold-Italic.eot?#iefix") format("embedded-opentype"), url("fonts/Baskerville-Bold-Italic.woff") format("woff"), url("fonts/Baskerville-Bold-Italic.ttf") format("truetype");
-  font-weight: 700;
-  font-style: bold; }
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700,900');
 * {
   margin: 0;
   padding: 0;
@@ -37,7 +26,15 @@
   font-style: italic; }
 
 h1, h2, h3, h4, h5, h6, b {
-  font-family: "CircularBlack", sans-serif; }
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+}
+.subt_project{
+  font-family: "CircularBlack", sans-serif !important;
+  font-weight: bold !important;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
 body {
   position: absolute;
   top: 0;
@@ -46,9 +43,11 @@ body {
   min-width: 300px;
   font-size: 16px;
   font-family: "CircularBook", sans-serif;
+  font-weight: 400;
   color: #fff;
   background: #000;
   overflow-x: hidden;
+  letter-spacing: 1px;
   /* Navegadores */
   /* About This Project */
   /* Showreel */
@@ -435,15 +434,20 @@ body {
       -moz-align-items: center;
       -ms-align-items: center;
       -o-align-items: center;
-      align-items: center; }
+      align-items: center;
+     }
       body #abouthis article .izq {
         width: 100%;
-        z-index: 100; }
+        z-index: 100;
+      }
         body #abouthis article .izq p {
-          padding: 15px 0; }
+          padding: 15px 0;
+          font-size: 1.2rem;
+          line-height: 1.2; }
         body #abouthis article .izq h4 {
           display: inline-block;
-          font-size: 1.5rem;
+          font-size: 3rem;
+          font-weight: 900;
           padding: 5px 0; }
           body #abouthis article .izq h4 .pleca {
             display: block;
@@ -937,14 +941,17 @@ body {
       justify-content: flex-start;
       align-items: flex-start; }
       body #abouthis article .der {
-        width: 30%; }
+        width: 40%; }
       body #abouthis article .izq {
-        width: 25%;
+        width: 60%;
         margin-right: 15%; }
         body #abouthis article .izq h4 {
-          font-size: 1.9rem; }
+          font-size: 4rem;
+          font-weight: 700 }
         body #abouthis article .izq p {
-          font-size: 1.1rem; }
+          font-size: 1.2rem;
+          line-height: 1.2;
+         }
     body #abouthis .bts {
       height: 100vh; }
 
@@ -1018,7 +1025,6 @@ body {
 
   body .projects article a {
     height: 360px; }
-
   a.izq .info_wr {
     margin-left: 70px !important; }
 
