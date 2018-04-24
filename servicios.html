@@ -17,7 +17,7 @@ fluo.com.mx
 	<meta http-equiv="pragma" content="no-cache"/>
 	<meta name="google" content="notranslate"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0000, minimum-scale=1.0000, maximum-scale=1.0000, user-scalable=yes">
-  <title>Fluo Mx | Services</title> <!-- REVISAR -->
+  <title>Fluo Mx | Servicios</title> <!-- REVISAR -->
   <link rel="canonical" href="index.html" />
   <meta name="description" content=""/> <!-- FALTA -->
   <meta name="keywords" content=" "/> <!-- FALTA -->
@@ -74,8 +74,8 @@ fluo.com.mx
               ></img>
             </a>
           </li>
-          <li  id="triggerAbout" onclick="aboutThisPop('open')">
-            <a role="button" class="closeLi" style="display:none">Close</a>
+          <li  id="tagline">
+            <p class="hideOpacity transition">Diseño Interactivo</p>
           </li>
           <li id="triggerMenu" class="menuLi">
             <a role="button">Menu</a>
@@ -146,16 +146,16 @@ fluo.com.mx
         </div>
         <!-- Final -->
         <div id="final" style="opacity:0">
-          <p>Tu marca esta viva.</p>
+          <p>¡Eureka! Tu proyecto está vivo.</p>
         </div>
         <!-- Instrucción -->
         <p id="instruccion">
           <span style="display:none">Nos encanta el café!</span>
           <span style="display:none">Esto es gratis!</span>
-          <span style="display:none">Queremos saber todo sobre ti.</span>
-          <span style="display:none">Empieza la parte que más nos gusta...</span>
-          <span style="display:none">El mero mole!</span>
-          <span style="display:none"></span>
+          <span style="display:none">Queremos saberlo todo.</span>
+          <span style="display:none">…Empieza la parte que más nos gusta :)</span>
+          <span style="display:none">¡Nuestro mero mole!</span>
+          <span style="display:none">¡Los detalles son lo más importante!</span>
           <span style="display:none"></span>
           <span style="display:none"></span>
         </p>
@@ -183,49 +183,52 @@ fluo.com.mx
           </div>
           <ul class="showDisplayFlex">
             <li>
-              <p style="font-family:'BaskervilleItalic';">
-                  Las marcas, como el universo,
-                  están en flujo constante.
+              <p class="playfair"> Hola. Somos Fluo, un estudio dedicado al diseño interactivo. </p>
+              <br>
+              <p class="playfair">
+                Nos enfocamos en integrar y a convertir ideas en proyectos finales,
+                pensando siempre en las necesidades actuales del mercado digital y
+                proponiendo las más refrescantes formas de abordar proyectos.
               </p>
               <a href="estudio.html#mapa_estudio" class="gradientFluo">
                 Contáctanos
               </a>
             </li>
             <li>
-              <p>
-                Somos un estudio creativo enfocado en experiencias
-                inmersivas que elevan el potencial visual de cada marca
-                por medio de herramientas digitales y análogas. Cada
-                solución está hecha a la medida de cada proyecto y
-                de cada cliente, mediante un mismo un proceso de
-                trabajo- el cual nos resulta muy divertido!
-                Hacemos conexiones entre usuarios y negocios mediante
-                experiencias interactivas, basadas en la importancia
-                del diseño. Colaboramos con marcas y agencias para
-                crear experiencias de impacto.
+              <p class="intro2">
+                Buscamos diseñar experiencias interactivas para personas,
+                marcas o proyectos que permitan al público vivir algo nuevo
+                y diferente, inmersos en una propuesta diseñada a la medida.
+              </p>
+              <br>
+              <p class="intro2">
+                Trabajamos con todo tipo de clientes ofreciendo una amplia gama
+                de propuestas creativas en función a las condiciones que se presenten.
+                Queremos que tu proyecto fluya en la simultaneidad actual.
               </p>
             </li>
           </ul>
           <div id="scroll">
             <p>Scroll para explorar</p>
-            <img src="img/wave-services.svg">
+            <span></span>
           </div>
         </div>
         <!-- INTRO 2 -->
         <div id="servicios">
           <ul class="showDisplayFlex">
-            <li onmouseover="overServices('over', 'estrategia-', this)" onmouseout="overServices('out', 'estrategia-', this)">
-              <span class="gradientFluo"></span><span style="bottom:0" class="gradientFluo"></span>
-              <div>
-                <img src="img/services/estrategia-out.svg">
-              </div>
-              <ul>
-                <li>Investigación</li>
-                <li>Análisis</li>
-                <li>Estrategia creativa</li>
-                <li>Naming</li>
-                <li>Copywriting</li>
-              </ul>
+              <li onmouseover="overServices('over', 'estrategia-', this)" onmouseout="overServices('out', 'estrategia-', this)">
+                <span class="gradientFluo"></span><span style="bottom:0" class="gradientFluo"></span>
+                <div>
+                  <img src="img/services/estrategia-out.svg">
+                </div>
+                <ul>
+                  <li>Investigación</li>
+                  <li>Análisis</li>
+                  <li>Estrategia creativa</li>
+                  <li>Naming</li>
+                  <li>Copywriting</li>
+                </ul>
+                <a href="portafolio.html"></a>
             </li>
             <li onmouseover="overServices('over', 'branding-', this)" onmouseout="overServices('out', 'branding-', this)">
               <span class="gradientFluo"></span><span style="bottom:0" class="gradientFluo"></span>
@@ -239,6 +242,7 @@ fluo.com.mx
                 <li>Ilustración</li>
                 <li>Fotografía</li>
               </ul>
+              <a href="portafolio.html"></a>
             </li>
             <li onmouseover="overServices('over', 'web-', this)" onmouseout="overServices('out', 'web-', this)">
               <span class="gradientFluo"></span><span style="bottom:0" class="gradientFluo"></span>
@@ -248,9 +252,11 @@ fluo.com.mx
               <ul>
                 <li>UX</li>
                 <li>UI</li>
-                <li>Desarrollo (front y back end)</li>
+                <li>Front End</li>
+                <li>Back End</li>
                 <li>E-commerce</li>
               </ul>
+              <a href="portafolio.html"></a>
             </li>
             <li id="flagPrevent" onmouseover="overServices('over', 'motion-', this)" onmouseout="overServices('out', 'motion-', this)">
               <span class="gradientFluo"></span><span style="bottom:0" class="gradientFluo"></span>
@@ -258,10 +264,13 @@ fluo.com.mx
                 <img src="img/services/motion-out.svg" >
               </div>
               <ul>
+                <li>Producción</li>
+                <li>Edición</li>
+                <li>Dirección</li>
                 <li>Animación 2D</li>
-                <li>Video (producción, dirección, edición)</li>
-                <li>Video mapping</li>
+                <li>Video Mapping</li>
               </ul>
+              <a href="https://vimeo.com/175730619" target="_blank"></a>
             </li>
           </ul>
         </div>
@@ -290,7 +299,7 @@ fluo.com.mx
             <span>3</span>
             <p>Brief</p>
           </h4>
-          <p>Nos cuentas a detalle sobre tu proyecto, historia, contexto, y gustos.</p>
+          <p>Cuéntanos todo sobre la historia, contexto, gustos y metas de tu proyecto.</p>
         </div>
         <!-- PASO 4 -->
         <div id="step_4">
@@ -308,7 +317,7 @@ fluo.com.mx
             <span>5</span>
             <p>Diseño</p>
           </h4>
-          <p>Presentamos propuestas de concepto que se adecuan a tus gustos y necesidades.</p>
+          <p>Presentamos una variedad de propuestas creativas sobre las que partimos para concretar el estilo final.</p>
         </div>
         <!-- PASO 6 -->
         <div id="step_6">
@@ -317,7 +326,7 @@ fluo.com.mx
             <span>6</span>
             <p>Prototipo y ajustes</p>
           </h4>
-          <p>Te damos un prototipo muy cercano al resultado final, nos haces comentarios.</p>
+          <p>Te damos un prototipo cercano al resultado final, nos haces comentarios, sugerencias, cambios.</p>
         </div>
         <!-- PASO 7 -->
         <div id="step_7">
@@ -333,19 +342,15 @@ fluo.com.mx
           <div class="flagV"></div>
         </div>
         <!-- Dudas -->
-        <div id="dudas">
+        <div id="dudas" >
+          <div id="lastFlag"></div>
           <h3>
             ¿Tienes Dudas? <br>
             Te guiamos.
           </h3>
           <div class="showDisplayFlex">
             <p>
-              Cuando se trata de mejorar
-              la comunicación y diseño de una marca,
-              podría decirse que somos expertos.
-              Queremos integrar tu esencia con las
-              últimas tendencias y refrescar tu
-              identidad visual.
+              Si leíste hasta aquí, salúdanos y obtén el diagnóstico de tu marca gratis. Escríbenos y averigua cómo podemos integrar tu personalidad a las últimas tendencias.
             </p>
           </div>
           <a href="mailto:info@fluo.com.mx?Subject=Contacto%20desde%20web" class="gradientFluo">
@@ -473,7 +478,7 @@ fluo.com.mx
               <!-- 3 Brief -->
               <li style="display:none">
                 <div class="icons" style="background-image:url('img/services/mobile/i3.svg')"></div>
-                <p>Queremos saber todo sobre ti.</p>
+                <p>Queremos saberlo todo.</p>
                 <img src="img/services/2.gif">
                 <div class="info">
                   <span>3</span>
@@ -489,7 +494,7 @@ fluo.com.mx
               <!-- 4 Moodboards -->
               <li style="display:none">
                 <div class="icons" style="background-image:url('img/services/mobile/i4.svg')"></div>
-                <p>Empieza la parte que más nos gusta...</p>
+                <p>…Empieza la parte que más nos gusta :)</p>
                 <img src="img/services/3.gif">
                 <div class="info">
                   <span>4</span>
@@ -498,14 +503,14 @@ fluo.com.mx
                     <span class="gradientFluo"></span>
                   </div>
                   <div class="stepmobileinfo showDisplayFlex">
-                    <p>Presentamos propuestas de concepto que se adecuan a tus gustos y necesidades.</p>
+                    <p>Buscamos ejemplos y referencias para empezar a definir el estilo de la propuesta.</p>
                   </div>
                 </div>
               </li>
               <!-- 5 Diseño -->
               <li style="display:none">
                 <div class="icons" style="background-image:url('img/services/mobile/i5.svg')"></div>
-                <p>El mero mole!</p>
+                <p>¡Nuestro mero mole!</p>
                 <img src="img/services/4.gif">
                 <div class="info">
                   <span>5</span>
@@ -521,7 +526,7 @@ fluo.com.mx
               <!-- 6 Prototipo -->
               <li style="display:none">
                 <div class="icons" style="background-image:url('img/services/mobile/i6.svg')"></div>
-                <p style="opacity:0"></p>
+                <p style="opacity:0">¡Los detalles son lo más importante!</p>
                 <img src="img/services/5.gif">
                 <div class="info">
                   <span>6</span>
@@ -553,7 +558,7 @@ fluo.com.mx
               <!-- 8 Marca Viva -->
               <li class="last_step_mobile" style="display:none">
                 <span></span>
-                <p>Tu marca esta viva.</p>
+                <p>¡Eureka! Tu proyecto está vivo.</p>
                 <img src="img/services/7.gif">
                 <div class="info">
                   <span></span>
@@ -573,12 +578,7 @@ fluo.com.mx
             <span>¿Tienes Dudas te guiamos?</span>
             <div class="showDisplayFlex">
               <p>
-                Cuando se trata de mejorar la
-                comunicación y diseño de una marca,
-                podría decirse que somos expertos.
-                Queremos integrar tu esencia con las
-                últimas tendencias y refrescar tu
-                identidad visual.
+                Si leíste hasta aquí, salúdanos y obtén el diagnóstico de tu marca gratis. Escríbenos y averigua cómo podemos integrar tu personalidad a las últimas tendencias.
               </p>
               <a href="mailto:info@fluo.com.mx?Subject=Contacto%20desde%20web" class="gradientFluo">
                 Salúdanos

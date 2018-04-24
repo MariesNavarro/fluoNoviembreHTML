@@ -359,6 +359,13 @@ body {
         content: "Menu"; }
       body nav#bottom ul li.contactLi::before, body nav#bottom ul li.contactLi::after, body nav#top ul li.contactLi::before, body nav#top ul li.contactLi::after {
         content: "Estudio"; }
+  body nav#top  ul li#tagline{
+    text-transform: uppercase;
+    opacity: 0.5;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
   body #abouthis {
     position: fixed;
     width: 100vw;

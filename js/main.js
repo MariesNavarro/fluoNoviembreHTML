@@ -932,11 +932,14 @@ function getFlagV(){
   var f = __('.flagV'),
       x = [],
       ct = (window.innerWidth/2)+100,
-      pstp = _('#instruccion');
-
+      pstp = _('#instruccion'),
+      tagline = _('#tagline>p'),
+      lastFlag = _('#lastFlag');
+  var last = lastFlag.getBoundingClientRect().x;
   for(var i = 0; i < f.length; i++){
     x.push(f[i].getBoundingClientRect().x - ct);
   }
+
   if(x[0] < 0 && x[1] > 0) indexStep(0);
   if(x[1] < 0 && x[2] > 0) indexStep(1);
   if(x[2] < 0 && x[3] > 0) indexStep(2);
@@ -945,6 +948,16 @@ function getFlagV(){
   if(x[5] < 0 && x[6] > 0) indexStep(5);
   if(x[6] < 0 && x[7] > 0) indexStep(6);
   if(x[7] < 0) indexStep(7);
+
+
+  if(last < 50){
+    tagline.classList.remove("hideOpacity");
+    tagline.classList.add("showOpacity");
+  }
+  if(last > 50){
+    tagline.classList.remove("showOpacity");
+    tagline.classList.add("hideOpacity");
+  }
 }
 
 var fSc1 = false, fSc2 = false,
@@ -956,7 +969,6 @@ function indexStep(c){
   var s = __('.step'),
       p = __('#instruccion>span'),
       pstp = _('#instruccion');
-
   switch (c) {
     case 0:
       fSc2 = false;
@@ -973,6 +985,7 @@ function indexStep(c){
         p[2].style.display = "none";
         p[3].style.display = "none";
         p[4].style.display = "none";
+        p[5].style.display = "none";
         changeIcon(c);
         changeStep(c);
       }
@@ -993,6 +1006,7 @@ function indexStep(c){
         p[2].style.display = "none";
         p[3].style.display = "none";
         p[4].style.display = "none";
+        p[5].style.display = "none";
         changeIcon(c);
         changeStep(c);
       }
@@ -1013,6 +1027,7 @@ function indexStep(c){
         p[2].style.display = "block";
         p[3].style.display = "none";
         p[4].style.display = "none";
+        p[5].style.display = "none";
         changeIcon(c);
         changeStep(c);
       }
@@ -1033,6 +1048,7 @@ function indexStep(c){
         p[2].style.display = "none";
         p[3].style.display = "block";
         p[4].style.display = "none";
+        p[5].style.display = "none";
         changeIcon(c);
         changeStep(c);
       }
@@ -1053,6 +1069,7 @@ function indexStep(c){
         p[2].style.display = "none";
         p[3].style.display = "none";
         p[4].style.display = "block";
+        p[5].style.display = "none";
         changeIcon(c);
         changeStep(c);
       }
@@ -1073,6 +1090,7 @@ function indexStep(c){
         p[2].style.display = "none";
         p[3].style.display = "none";
         p[4].style.display = "none";
+        p[5].style.display = "block";
         changeIcon(c);
         changeStep(c);
       }
@@ -1093,6 +1111,7 @@ function indexStep(c){
         p[2].style.display = "none";
         p[3].style.display = "none";
         p[4].style.display = "none";
+        p[5].style.display = "none";
         changeIcon(c);
         changeStep(c);
       }
@@ -1113,6 +1132,7 @@ function indexStep(c){
         p[2].style.display = "none";
         p[3].style.display = "none";
         p[4].style.display = "none";
+        p[5].style.display = "none";
         changeStep(c);
       }
       fSc8 = true;

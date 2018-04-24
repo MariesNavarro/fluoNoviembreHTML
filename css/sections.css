@@ -1278,7 +1278,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../img/back-services.svg');
+  background-image: url('../img/back-services.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1459,7 +1459,7 @@
   top: calc(50% - 15px);
 }
 #steps_wr>#final{
-  background-image: url('../img/back-services.svg');
+  background-image: url('../img/back-services.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1471,6 +1471,11 @@
   text-align: center;
   font-size: 2rem;
 }
+#lastFlag{
+  position: absolute;
+  width: 20px;
+  height: 100%;
+  background: none;}
 #layout1_services>#steps_wr>ul{
   position: absolute;
   left: calc(50% - 200px);
@@ -1554,6 +1559,7 @@
   display: block;
   width: 100%;
   height: 4px;
+  margin-top: 10px;
 }
 #intro>ul{
   width: 80%;
@@ -1575,13 +1581,20 @@
   width: 85%;
   display: block;
   font-size: 0.9rem;
+  line-height: 1.2;
+  letter-spacing: 1.5px;
 }
+.playfair{
+  font-family: 'Playfair Display', serif;
+  font-weight: lighter;
+}
+.intro2{ opacity: 0.5 }
 #intro>ul>li>a{
   text-transform: uppercase;
   margin: 30px 0;
   display: block;
   text-align: center;
-  width: 90%;
+  width: 80%;
   line-height: 40px;
   border: 6px solid #fff;
 }
@@ -1594,22 +1607,26 @@
   opacity: 0;
 }
 #intro>#scroll>p{
-  width: 150px;
+  position: absolute;
+  width: 230px;
+  height: 130px;
+  right: 0;
   display: block;
   text-align: center;
-  position: absolute;
-  left: -80px;
-  line-height: 20px;
-  top: calc(50% - 10px);
-  font-size: 0.8rem;
+  top: calc(50% - 80px);
+  font-size: 1.25rem;
   z-index: 200;
+  transform: rotate(90deg);
 }
-#intro>#scroll>img{
-  height: 500px;
+/* #intro>#scroll>span{
+  display: block;
   position: absolute;
-  right: 0;
+  left: calc(50% - 2px);
   top: calc(50% - 250px);
-}
+  width: 2px;
+  height: 120px;
+  background: #fff;
+} */
 #servicios{ background: #000 }
 #servicios>ul{
   width: 100%;
@@ -1630,6 +1647,13 @@
   transition: all 0.5s ease-out;
 }
 #servicios>ul>li:hover{ background: #333; }
+#servicios>ul>li>a{
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: none;
+}
 #servicios>ul>li>div{
   position: absolute;
   top: 40px;
@@ -1667,17 +1691,17 @@
   overflow: hidden;
 }
 #dudas>h3{
-  margin-top: 5%;
+  margin-top: 70px;
   font-size: 7rem;
-  position: absolute;
+  position: relative;
   width: 90%;
   text-align: center;
   left: 5%;
   text-transform: uppercase;
   opacity: 0.3;
+  font-family: 'CircularBlack';
 }
 #dudas>div{
-  margin-top: 20%;
   -webkit-justify-content: center;
   -moz-justify-content: center;
   -ms-justify-content: center;
@@ -1685,14 +1709,18 @@
   justify-content: center;
 }
 #dudas>div>p{
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   display: block;
   text-align: center;
-  width: 40%;
+  width: 45%;
   min-width: 300px;
   max-width: 600px;
   color: #fff;
   opacity: 1;
+  font-family: 'Playfair Display';
+  line-height: 1.2;
+  letter-spacing: 1.5px;
+  margin-top: 20px;
 }
 #dudas>a{
   font-size: 2.3rem;
@@ -1751,7 +1779,7 @@ transition: bottom 0.5s ease-out; }
     width: 50%;
     height: 100%;
   }
-  #intro>ul>li>p{ font-size: 1.3rem }
+  #intro>ul>li>p{ font-size: 1.1rem }
   #intro>ul>li>a{ margin: 100px 0 }
   #intro>#scroll{
     opacity: 1;
