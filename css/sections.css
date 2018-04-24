@@ -12,7 +12,7 @@
 }
 .about_layout>div>h2{
   display: inline-block;
-  font-size: 2rem;
+  font-size: 3.5rem;
   line-height: 40px;
   margin: 5px auto 30px auto;
 }
@@ -20,6 +20,7 @@
   display: none;
   width: 100%;
   height: 3px;
+  margin-top: 10px;
 }
 .about_layout>div>#text_intro_wr{
   width: 100%;
@@ -30,7 +31,12 @@
   flex-direction: column;
 }
 #text_intro_wr> #column_2{ display: none; }
-#text_intro_wr> li > p{ line-height: 1.2; }
+#text_intro_wr> li > p{
+  line-height: 1.2;
+  letter-spacing: 1.5px;
+}
+#text_intro_wr> li > p > b > a { color: #7D7DFF }
+#text_intro_wr> li > p > b > a:hover { opacity: 0.5 }
 #text_intro_wr> li >a{
   display: block;
   width: 300px;
@@ -240,7 +246,7 @@
   display: block;
   width: 80%;
   margin: 0 auto;
-  font-family: 'Baskerville', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   line-height: 1.3;
 }
@@ -253,8 +259,8 @@
 }
 #clb >div> #intro> #column_2 > ul>li>a{
   cursor: pointer;
-  font-family: 'BaskervilleItalic', serif;
-  font-size: 3rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
   letter-spacing: 1px;
   margin: 5px 0 5px 5px;
   opacity: 0.5;
