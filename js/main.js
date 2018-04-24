@@ -1,6 +1,8 @@
-var cyan = '#37e6ef';
-var magenta = '#e337fc';
-var purple = '#9568f6';
+var cyan = '#37e6ef',
+    magenta = '#e337fc',
+    verde = '#00ff86',
+    azul = '#0a46ff',
+    purple = '#9568f6';
 
 "use strict";
 var checkBowser = false;
@@ -772,7 +774,49 @@ document.onkeydown = function(e){
    aboutThisPop('close');
   }
 }
+instructions();
+function instructions(){
 
+  var wr = _('#instruction'),
+      i = __('.instruction'),
+      n = 0;
+  var timer = setInterval(function(){
+    n++;
+    changeIns(n);
+  },3200);
+  function changeIns(n){
+    if(n === 1){
+        i[0].classList.remove("showOpacity");
+        i[0].classList.add("hideOpacity");
+        i[1].classList.remove("hideDisplay");
+        i[1].classList.add("showDisplay");
+      setTimeout(function(){
+        i[0].classList.remove("showDisplay");
+        i[0].classList.add("hideDisplay");
+        i[1].classList.remove("hideOpacity");
+        i[1].classList.add("showOpacity");
+      },200);
+    }
+    if(n === 2){
+      i[1].classList.remove("showOpacity");
+      i[1].classList.add("hideOpacity");
+      i[2].classList.remove("hideDisplay");
+      i[2].classList.add("showDisplay");
+      setTimeout(function(){
+        i[1].classList.remove("showDisplay");
+        i[1].classList.add("hideDisplay");
+        i[2].classList.remove("hideOpacity");
+        i[2].classList.add("showOpacity");
+      },200)
+    }
+    if(n === 3){
+      wr.style.opacity = "0";
+      setTimeout(function(){
+        wr.style.display = "none";
+      },500)
+    }
+  }
+}
 
 function changeHome(){
   // console.log("Change home");
@@ -793,7 +837,11 @@ function changeHomeValues(c ,k){
     case 'u':
       // lv0 = " ";
       console.log("U");
-      lv0 = new LavaLamp(screen.width, screen.height, 10, purple, cyan);
+      lv0 = new LavaLamp(screen.width, screen.height, 10, purple, verde);
+    break;
+    case 'o':
+      console.log("O");
+      lv0 = new LavaLamp(screen.width, screen.height, 10, cyan, verde);
     break;
   }
 }

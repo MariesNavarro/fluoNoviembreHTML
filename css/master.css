@@ -53,13 +53,7 @@ body {
   background: #000;
   overflow-x: hidden;
   letter-spacing: 1px;
-  /* Navegadores */
-  /* About This Project */
-  /* Showreel */
-  /* Loading */
-  /* popPhone */
-  /* popPhone */
-  /* popPhone */ }
+ }
   body nav {
     position: fixed;
     z-index: 4500; }
@@ -614,6 +608,40 @@ body {
       display: block;
       width: 7px;
       height: 0; }
+  body #instruction{
+    position: fixed;
+    width: 100vw;
+    min-width: 250px;
+    height: 100vh;
+    background: #000;
+    z-index: 9300;
+    opacity: 0.5;
+  }
+  body #instruction> ul{
+    position: absolute;
+    width: 350px;
+    height: 100px;
+    left: calc(50% - 125px);
+    top: calc(50% - 50px);
+    text-align: center;
+  }
+  body #instruction> ul> li{
+    font-size: 1.2rem;
+    font-weight: bold }
+  body #instruction> ul> li:first-child{
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-transform: uppercase }
+  body #instruction> ul> li:nth-child(3)>div{
+    -webkit-justify-content:space-around;
+    -moz-justify-content:space-around;
+    -ms-justify-content:space-around;
+    -o-justify-content:space-around;
+    justify-content:space-around;
+    width: 70%;
+    position: relative;
+    margin: 10px auto;
+  }
   body #landscape {
     position: fixed;
     top: 0;
@@ -1219,7 +1247,12 @@ body {
   -ms-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out; }
-
+.transition_7 {
+  -webkit-transition: all 0.7s ease-out;
+  -moz-transition: all 0.7s ease-out;
+  -ms-transition: all 0.7s ease-out;
+  -o-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out; }
 .hideDisplay {
   display: none; }
 

@@ -17,7 +17,7 @@ fluo.com.mx
 	<meta http-equiv="pragma" content="no-cache"/>
 	<meta name="google" content="notranslate"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0000, minimum-scale=1.0000, maximum-scale=1.0000, user-scalable=yes">
-  <title>Fluo Mx | Layout Noviembre</title> <!-- REVISAR -->
+  <title>Fluo Mx</title> <!-- REVISAR -->
   <link rel="canonical" href="index.html" />
   <meta name="description" content=""/> <!-- FALTA -->
   <meta name="keywords" content=" "/> <!-- FALTA -->
@@ -62,6 +62,22 @@ fluo.com.mx
       <p id="per">Almost there 1...</p>
       <span class="gradientFluoTop transit"></span>
     </div>
+    <!-- INSTRUCTIONS -->
+    <div id="instruction" class="transition_7">
+      <ul>
+        <li class="instruction showOpacity showDisplay transition_7">Diseño Interactivo</li>
+        <li class="instruction hideOpacity hideDisplay transition_7">Mantén presionado y desliza tu cursor para explorar.</li>
+        <li class="instruction hideOpacity hideDisplay transition_7">
+          <p>Para cambiar de color teclea</p>
+          <div class="showDisplayFlex">
+            <img src="img/icons/instrucion-f.svg" width="40" height="40">
+            <img src="img/icons/instrucion-l.svg" width="40" height="40">
+            <img src="img/icons/instrucion-u.svg" width="40" height="40">
+            <img src="img/icons/instrucion-o.svg" width="40" height="40">
+          </div>
+        </li>
+      </ul>
+    </div>
     <!-- NAVIGATION -->
     <nav id="top">
         <!-- NAV TOP -->
@@ -74,9 +90,9 @@ fluo.com.mx
               ></img>
             </a>
           </li>
-          <li  id="triggerAbout" onclick="aboutThisPop('open')">
-            <a role="button" class="closeLi" style="display:none">Close</a>
-          </li>
+          <!-- <li  id="tagline">
+            <p>Diseño Interactivo</p>
+          </li> -->
           <li id="triggerMenu" class="menuLi">
             <a role="button">Menu</a>
           </li>
@@ -186,6 +202,7 @@ fluo.com.mx
           if(e.keyCode === 70) changeHomeValues(home, "f");
           if(e.keyCode === 76) changeHomeValues(home, "l");
           if(e.keyCode === 85) changeHomeValues(home, "u");
+          if(e.keyCode === 79) changeHomeValues(home, "o");
 
           if (e.keyCode == '32') {
             k32 +=(1/20)*100;
