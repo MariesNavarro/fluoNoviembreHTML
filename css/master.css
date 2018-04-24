@@ -151,6 +151,7 @@ body {
       color: #fff;
       display: inline-block;
       padding: 5px 0; }
+    body #desktopinnner a:hover img { opacity: 0.5 }
     body #desktopinnner a:hover span {
       width: 100%; }
     body #desktopinnner span {
@@ -268,6 +269,9 @@ body {
           text-align: center;
           display: inline-block;
           width: 100px; }
+        body nav#bottom ul li#btnIns:hover{
+          opacity: 0.5;
+        }
         body nav#bottom ul li a.aboutLi::before, body nav#bottom ul li a.aboutLi::after, body nav#top ul li a.aboutLi::before, body nav#top ul li a.aboutLi::after {
           text-align: center;
           width: 100px;
@@ -621,7 +625,7 @@ body {
     position: absolute;
     width: 350px;
     height: 100px;
-    left: calc(50% - 125px);
+    left: calc(50% - 175px);
     top: calc(50% - 50px);
     text-align: center;
   }

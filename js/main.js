@@ -774,48 +774,57 @@ document.onkeydown = function(e){
    aboutThisPop('close');
   }
 }
-instructions();
-function instructions(){
-
+function instructions(c){
   var wr = _('#instruction'),
-      i = __('.instruction'),
-      n = 0;
-  var timer = setInterval(function(){
-    n++;
-    changeIns(n);
-  },3200);
-  function changeIns(n){
-    if(n === 1){
-        i[0].classList.remove("showOpacity");
-        i[0].classList.add("hideOpacity");
-        i[1].classList.remove("hideDisplay");
-        i[1].classList.add("showDisplay");
-      setTimeout(function(){
-        i[0].classList.remove("showDisplay");
-        i[0].classList.add("hideDisplay");
-        i[1].classList.remove("hideOpacity");
-        i[1].classList.add("showOpacity");
-      },200);
-    }
-    if(n === 2){
-      i[1].classList.remove("showOpacity");
-      i[1].classList.add("hideOpacity");
-      i[2].classList.remove("hideDisplay");
-      i[2].classList.add("showDisplay");
-      setTimeout(function(){
-        i[1].classList.remove("showDisplay");
-        i[1].classList.add("hideDisplay");
-        i[2].classList.remove("hideOpacity");
-        i[2].classList.add("showOpacity");
-      },200)
-    }
-    if(n === 3){
+      i = __('.instruction');
+      if(c === "again"){
+        wr.style.display = "block";
+        setTimeout(function(){
+            wr.style.opacity = "0.5";
+        },200);
+      }
+      //phase1
+    setTimeout(function(){
+          i[0].classList.remove("showOpacity");
+          i[0].classList.add("hideOpacity");
+          i[1].classList.remove("hideDisplay");
+          i[1].classList.add("showDisplay");
+        setTimeout(function(){
+          i[0].classList.remove("showDisplay");
+          i[0].classList.add("hideDisplay");
+          i[1].classList.remove("hideOpacity");
+          i[1].classList.add("showOpacity");
+        },200);
+    },2000);
+    //phase2
+    setTimeout(function(){
+        i[1].classList.remove("showOpacity");
+        i[1].classList.add("hideOpacity");
+        i[2].classList.remove("hideDisplay");
+        i[2].classList.add("showDisplay");
+        setTimeout(function(){
+          i[1].classList.remove("showDisplay");
+          i[1].classList.add("hideDisplay");
+          i[2].classList.remove("hideOpacity");
+          i[2].classList.add("showOpacity");
+        },200)
+    },4200);
+    //phase3 - reset
+    setTimeout(function(){
       wr.style.opacity = "0";
       setTimeout(function(){
         wr.style.display = "none";
+        i[2].classList.remove("showDisplay");
+        i[2].classList.add("hideDisplay");
+        i[2].classList.remove("showOpacity");
+        i[2].classList.add("hideOpacity");
+
+        i[1].classList.remove("hideDisplay");
+        i[1].classList.add("showDisplay");
+        i[1].classList.remove("hideOpacity");
+        i[1].classList.add("showOpacity");
       },500)
-    }
-  }
+  },6400);
 }
 
 function changeHome(){

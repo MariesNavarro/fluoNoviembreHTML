@@ -104,6 +104,11 @@ fluo.com.mx
         <li class="showLi">
           <a href="servicios.html">Servicios</a>
         </li>
+        <li>
+          <a id="btnIns" role="button" onclick="instructions('again')">
+            <img src="img/icons/instructions.svg" width="40" height="40">
+          </a>
+        </li>
         <li class="contactLi">
           <a href="estudio.html">Estudio</a>
         </li>
@@ -124,6 +129,21 @@ fluo.com.mx
           Reel
           <span></span>
         </p>
+      </a>
+      <a>
+        <img src="img/icons/menu-ig.svg" width="30" height="30">
+      </a>
+      <a>
+        <img src="img/icons/menu-be.svg" width="30" height="30">
+      </a>
+      <a>
+        <img src="img/icons/menu-vi.svg" width="30" height="30">
+      </a>
+      <a>
+        <img src="img/icons/menu-fb.svg" width="30" height="30">
+      </a>
+      <a>
+        <img src="img/icons/menu-mail.svg" width="30" height="30">
       </a>
       <!-- Se pueden agregar más -->
     </nav>
@@ -183,7 +203,7 @@ fluo.com.mx
       //Colores metaballs
       var home = 1;
       var bspc = _('#spacebutton>span');
-
+      instructions();
       window.onresize = function(){ adjustReelSize() }
       window.onorientationchange = function(){
         var aboutthis = _('#aboutthis'),
