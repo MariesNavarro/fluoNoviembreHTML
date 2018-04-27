@@ -29,7 +29,7 @@
 
 * i {
   font-style: italic; }
-
+* p { font-size: 1.1rem;}
 h1, h2, h3, h4, h5, h6, b {
   font-family: 'Playfair Display', serif;
   letter-spacing: 1px;
@@ -99,7 +99,7 @@ body {
           body #mobileinner div a p i {
             position: relative; }
           body #mobileinner div a p i::after, body #mobileinner div a p i::before {
-            content: "Close";
+            content: "Cerrar";
             position: absolute;
             opacity: 0.4;
             z-index: -2;
@@ -197,9 +197,9 @@ body {
       color: #fff;
       display: block;
       position: absolute;
-      top: calc(50% - 65px);
+      top: calc(50% - 85px);
       left: calc(50% - 15px);
-      height: 130px;
+      height: 230px;
       width: 30px;
       -webkit-transform: rotate(180deg);
       -moz-transform: rotate(180deg);
@@ -210,7 +210,7 @@ body {
         display: block;
         position: absolute;
         left: 30px;
-        width: 130px;
+        width: 230px;
         height: 30px;
         text-align: center;
         line-height: 30px;
@@ -277,7 +277,7 @@ body {
           width: 100px;
           display: inline-block;
           position: absolute;
-          content: "About this project";
+          content: "Sobre este proyecto";
           opacity: 0;
           z-index: -2;
           -webkit-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
@@ -302,7 +302,7 @@ body {
           color: #37e6ef; }
         body nav#bottom ul li a.closeLi::before, body nav#bottom ul li a.closeLi::after, body nav#top ul li a.closeLi::before, body nav#top ul li a.closeLi::after {
           position: absolute;
-          content: "Close";
+          content: "Cerrar";
           opacity: 0.4;
           z-index: -2;
           -webkit-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
@@ -362,8 +362,9 @@ body {
     opacity: 0.5;
     letter-spacing: 2px;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
+
   body #abouthis {
     position: fixed;
     width: 100vw;
@@ -392,7 +393,7 @@ body {
       transition: opacity 0.5s ease-out; }
     body #abouthis .close::after, body #abouthis .close::before {
       position: absolute;
-      content: "Close";
+      content: "Cerrar";
       opacity: 0.3;
       z-index: -2;
       -webkit-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
@@ -462,7 +463,8 @@ body {
           body #abouthis article .izq h4 .pleca {
             display: block;
             width: 100%;
-            height: 3px; }
+            height: 3px;
+          margin-top: 10px;}
       body #abouthis article .der {
         width: 100%;
         z-index: 100;
@@ -528,7 +530,7 @@ body {
       z-index: 2; }
     body #showreel a::before, body #showreel a::after {
       position: absolute;
-      content: "Close";
+      content: "Cerrar";
       font-style: italic;
       opacity: 0;
       z-index: 1;
@@ -661,7 +663,8 @@ body {
       display: block;
       text-align: center;
       margin: 100px auto 30px auto; }
-  body #popPhone {
+
+  body #popPhone, body #popHangout{
     position: fixed;
     top: 0;
     width: 100vw;
@@ -673,7 +676,20 @@ body {
     -ms-transition: opacity 0.5s ease-out;
     -o-transition: opacity 0.5s ease-out;
     transition: opacity 0.5s ease-out; }
-    body #popPhone a {
+    body #popHangout{ background: rgba(0,0,0,0.5) }
+    body #popHangout div{
+      position: absolute;
+      left: calc(50% - 150px);
+      top: calc(50% - 150px);
+      width: 300px;
+      height: 220px;
+      background: #000;
+      text-align: center;
+    }
+    body #popHangout div p{
+      line-height: 220px;
+    }
+    body #popPhone a, #popHangout a{
       position: absolute;
       display: block;
       margin: 15px auto;
@@ -683,14 +699,14 @@ body {
       z-index: 8100;
       top: calc(30% - 15px);
       left: calc(50% - 75px); }
-    body #popPhone a::after, body #popPhone a::before {
+    body #popPhone a::after, body #popPhone a::before, #popHangout a::after, #popHangout a::before {
       position: absolute;
       text-align: center;
       width: 150px;
       left: -2px;
       top: -2px;
       color: #e337fc;
-      content: "Close";
+      content: "Cerrar";
       opacity: 0;
       -webkit-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
       -moz-animation: glitch 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s both infinite;
@@ -702,9 +718,10 @@ body {
       -ms-transition: opacity 0.5s ease-out;
       -o-transition: opacity 0.5s ease-out;
       transition: opacity 0.5s ease-out; }
-    body #popPhone a:hover::after, body #popPhone a:hover::before {
+    body #popPhone a:hover::after, body #popPhone a:hover::before,
+    #popHangout a:hover::after, #popHangout a:hover::before {
       opacity: 0.4; }
-    body #popPhone a::after {
+    body #popPhone a::after, #popHangout a::after {
       left: 2px;
       top: 2px;
       color: #37e6ef; }
@@ -957,9 +974,7 @@ body {
   body nav#top ul li a div {
     width: 80px;
     height: 80px; }
-    body nav#top ul li a div canvas {
-      width: 80px;
-      height: 80px; }
+    body nav#top  ul li#tagline{font-size: 1.2rem }
 
   /* Showreel */
   body #abouthis {
@@ -990,7 +1005,7 @@ body {
         width: 60%;
         margin-right: 15%; }
         body #abouthis article .izq h4 {
-          font-size: 4rem;
+          font-size: 5.3rem;
           font-weight: 700 }
         body #abouthis article .izq p {
           font-size: 1.2rem;
@@ -1012,6 +1027,7 @@ body {
       body .projects article a .info_wr {
         height: 50%; }
         body .projects article a .info_wr h4 {
+          font-size: 2.3rem !important;
           margin-top: 50px !important; }
     body .projects article a.izq .info_wr {
       float: left;

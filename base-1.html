@@ -1,10 +1,7 @@
 <!--
 Fluo Mx
-v4.1
-25 de Febrero
-[FLUO]
-info@fluo.com.mx
-fluo.com.mx
+v4.3
+23 de Abril
 -->
 <html>
 <!DOCTYPE html>
@@ -59,7 +56,7 @@ fluo.com.mx
     <!-- LOADING -->
     <div id="loading" class="hideDisplay">
       <div id="fluoDeg" style="background-image:url('img/loading-cover.png')"></div>
-      <p id="per">Almost there 1...</p>
+      <p id="per">Ya casi…</p>
       <span class="gradientFluoTop transit"></span>
     </div>
     <!-- NAVIGATION -->
@@ -155,6 +152,21 @@ fluo.com.mx
             <span></span>
           </p>
         </a>
+        <a href="https://www.instagram.com/fluomx/" target="_blank">
+          <img src="img/icons/menu-ig.svg" width="30" height="30">
+        </a>
+        <a href="https://www.behance.net/fluomx" target="_blank">
+          <img src="img/icons/menu-be.svg" width="30" height="30">
+        </a>
+        <a href="https://vimeo.com/fluomx" target="_blank">
+          <img src="img/icons/menu-vi.svg" width="30" height="30">
+        </a>
+        <a href="https://www.facebook.com/fluomx/" target="_blank">
+          <img src="img/icons/menu-fb.svg" width="30" height="30">
+        </a>
+        <a href="mailto:info@fluo.com.mx?Subject=Contacto%20desde%20web">
+          <img src="img/icons/menu-mail.svg" width="30" height="30">
+        </a>
       </div>
     </nav>
     <div id="backtoflag"></div>
@@ -166,19 +178,15 @@ fluo.com.mx
     <section class="fullsection projects">
       <article class="showDisplayFlex">
         <!-- PROJ PREV -->
-        <a class="izq" href="#">
+        <a class="beforeafter izq" href="#">
           <!-- INFO -->
           <div>
             <div class="info_wr">
               <span>
-                <h4> Lemon Films </h4>
+                <h4 class="beforeafterTit"></h4>
                 <span class="linea gradientFluo"></span>
               </span>
               <p>
-                Asociación sin fines de lucro
-                para fomentar el crecimiento
-                de mujeres y niños de bajos
-                recursos.
               </p>
               <span class="navPrev">
                 <p>Anterior</p>
@@ -190,17 +198,15 @@ fluo.com.mx
           <div class="imgProject" style="background-image:url('img/covers/lemon.jpg')"></div>
         </a>
         <!-- PROJ NXT -->
-        <a class="der" href="#">
+        <a class="beforeafter der" href="#">
           <!-- INFO -->
           <div>
             <div class="info_wr">
               <span>
-                <h4> Yot Mx </h4>
+                <h4 class="beforeafterTit"></h4>
                 <span class="linea gradientFluo"></span>
               </span>
               <p>
-                Comercializadora de vinos
-                y licores en México.
               </p>
               <span class="navNext">
                 <p>Siguiente</p>
@@ -228,8 +234,7 @@ fluo.com.mx
               <li><a href="mailto:info@fluo.com.mx?Subject=Contacto%20desde%20web" title="Enviar correo" target="blank" >Mail</a></li>
             </ul>
             <ul class="showDisplayFlex">
-              <li><p>All Rights Reserved FluoMx© 2017</p></li>
-              <li><p>Coded by FluoMx</p></li>
+              <li><p>All Rights Reserved FluoMx© 2018</p></li>
             </ul>
           </div>
           <ul class="showDisplayFlex">
@@ -332,8 +337,10 @@ fluo.com.mx
     </section>
     <script src="js/bowser.min.js" charset="utf-8"></script>
     <script src="js/smooth-scroll.min.js" charset="utf-8" async onload="initscroll()"></script>
+    <script src="js/projects.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
     <script type="text/javascript">
+     randomBeforeAfter();
       window.onresize = function(){ adjustReelSize() }
       window.onscroll = function(){
         detectWaveLayouts();
