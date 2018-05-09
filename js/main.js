@@ -22,13 +22,13 @@ function overIcon(c, e, t){
 function loadingPhr(c){
   var per = _('#per');
   if(c > 20 && c < 40){
-    per.innerHTML = "Almost 2..."
+    per.innerHTML = "Ya casi 2..."
   } else if (c > 40 && c < 60) {
-    per.innerHTML = "Almost 3..."
+    per.innerHTML = "Ya casi 3..."
   } else if (c > 60 && c < 80){
-    per.innerHTML = "Almost 4..."
+    per.innerHTML = "Ya casi 4..."
   } else if (c > 80){
-    per.innerHTML = "Almost 5..."
+    per.innerHTML = "Ya casi 5..."
   }
 }
 
@@ -785,17 +785,36 @@ document.onkeydown = function(e){
    aboutThisPop('close');
   }
 }
+
+// function exitInstructions(){
+//   console.log("Exit instructions");
+//   var wr = _('#instruction');
+//   wr.style.opacity = "0";
+//   setTimeout(function(){
+//     wr.style.display = "none";
+//   },600);
+// }
+
 function instructions(c){
   var wr = _('#instruction'),
       i = __('.instruction');
+
+  var timeout_1, timeout_2, timeout_3;
       if(c === "again"){
         wr.style.display = "block";
         setTimeout(function(){
             wr.style.opacity = "0.5";
         },200);
+        normal();
       }
+      if(c === 'normal'){ normal() }
+      if(c === 'exit'){ wr.style.display = "none"; }
+
+
+    function normal(n){
+
       //phase1
-    setTimeout(function(){
+    timeout_1 = setTimeout(function(){
           i[0].classList.remove("showOpacity");
           i[0].classList.add("hideOpacity");
           i[1].classList.remove("hideDisplay");
@@ -808,7 +827,7 @@ function instructions(c){
         },200);
     },3000);
     //phase2
-    setTimeout(function(){
+    timeout_2 = setTimeout(function(){
         i[1].classList.remove("showOpacity");
         i[1].classList.add("hideOpacity");
         i[2].classList.remove("hideDisplay");
@@ -821,7 +840,7 @@ function instructions(c){
         },200)
     },6200);
     //phase3 - reset
-    setTimeout(function(){
+    timeout_3 = setTimeout(function(){
       wr.style.opacity = "0";
       setTimeout(function(){
         wr.style.display = "none";
@@ -836,6 +855,35 @@ function instructions(c){
         i[1].classList.add("showOpacity");
       },500)
   },9400);
+
+  // if(n === 'exit') { console.log("Return");
+  //   wr.style.opacity = "0";
+  //   setTimeout(function(){
+  //       clearTimeout(timeout_1);
+  //       clearTimeout(timeout_2);
+  //       clearTimeout(timeout_3);
+  //       console.log(timeout_1);
+  //       wr.style.display = "none";
+  //       setTimeout(function(){
+  //         i[2].classList.remove("showDisplay");
+  //         i[2].classList.add("hideDisplay");
+  //         i[2].classList.remove("showOpacity");
+  //         i[2].classList.add("hideOpacity");
+  //
+  //         i[1].classList.remove("hideDisplay");
+  //         i[1].classList.add("showDisplay");
+  //         i[1].classList.remove("hideOpacity");
+  //         i[1].classList.add("showOpacity");
+  //
+  //
+  //         i[0].classList.remove("showDisplay");
+  //         i[0].classList.add("hideDisplay");
+  //         i[0].classList.remove("showOpacity");
+  //         i[0].classList.add("hideOpacity");
+  //       },1000)
+  //     },500)
+  //   }
+  }
 }
 
 function instructionsMobile(c){

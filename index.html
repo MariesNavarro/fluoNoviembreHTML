@@ -60,7 +60,7 @@ v4.3
       <span class="gradientFluoTop transit"></span>
     </div>
     <!-- INSTRUCTIONS -->
-    <div id="instruction" class="transition_7">
+    <div id="instruction" class="transition_7" onclick="instructions('exit')">
       <ul>
         <li class="instruction showOpacity showDisplay transition_7">Diseño Interactivo</li>
         <li class="instruction hideOpacity hideDisplay transition_7">Mantén presionado y desliza tu cursor para explorar.</li>
@@ -219,7 +219,7 @@ v4.3
       if(checkBowser){
         instructionsMobile();
       } else {
-        instructions();
+        instructions('normal');
       }
 
       window.onresize = function(){ adjustReelSize() }
